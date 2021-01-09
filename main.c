@@ -14,13 +14,13 @@ bool initializeConnect(){
     {
         printf("Connection error\n");
         return false;
-    }    
+    }
 }
 
 void handleTTData(){
     char *payload;
     payload = receiveTTData();
-    printf("hey");
+    printf("%d \n", payload[0]);
 }
 
 int main(){
