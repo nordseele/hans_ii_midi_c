@@ -8,11 +8,11 @@ bool initializeConnect(){
     int tt = init_TT();
     if(tt >= 0)
     {
-        printf("Connect Success!...\n");
+        printf("Connected\n");
         return true;
     }else
     {
-        printf("Connect false!>>>\n");
+        printf("Connection error\n");
         return false;
     }    
 }
