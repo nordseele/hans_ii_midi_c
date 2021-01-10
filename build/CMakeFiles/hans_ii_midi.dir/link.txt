@@ -1,0 +1,1 @@
+/usr/bin/cc    CMakeFiles/hans_ii_midi.dir/main.c.o CMakeFiles/hans_ii_midi.dir/bsc.c.o  -o hans_ii_midi  -L/home/pi/hans_ii_midi_c/rtmidi  -L/home/pi/hans_ii_midi_c/pigpio -Wl,-rpath,/home/pi/hans_ii_midi_c/rtmidi:/home/pi/hans_ii_midi_c/pigpio:/home/pi/hans_ii_midi_c/build/pigpio pigpio/librtmidi.so.5.0.0 -lpigpio -ljack /usr/lib/arm-linux-gnueabihf/libasound.so -lpthread 

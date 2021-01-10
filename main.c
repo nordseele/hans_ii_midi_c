@@ -3,6 +3,9 @@
 #include <pigpio.h>
 #include <stdbool.h>
 #include "bsc.h"
+#include "rtmidi/rtmidi_c.h"
+
+struct RtMidiWrapper *midiin;
 
 bool initializeConnect(){
     int tt = init_TT();
@@ -25,6 +28,7 @@ void handleTTData(){
 
 int main(){
     bool status = initializeConnect();
+    midiin = rtmidi_in_create_default();
     while (status)
     {
         handleTTData();
