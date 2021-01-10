@@ -6,5 +6,5 @@
 int init_TT();
 char* receiveTTData();
 static int getControlBits(int, bool);
-
+extern void midi_init(void);
 #endif
