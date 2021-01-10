@@ -49,18 +49,19 @@ int main()
   midiin->setCallback( &mycallback );
   // Don't ignore sysex, timing, or active sensing messages.
   midiin->ignoreTypes( false, false, false );
+
+ while (status)
+  {
+      handleTTData();
+  }
+
   std::cout << "\nReading MIDI input ... press <enter> to quit.\n";
   char input;
   std::cin.get(input);
   // Clean up
  cleanup:
   delete midiin;
-  
-  while (status)
-  {
-      handleTTData();
-  }
 
-  return 1;
+  return 0;
 }
 
