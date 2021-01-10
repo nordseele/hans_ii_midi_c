@@ -33,11 +33,7 @@ void mycallback( double deltatime, std::vector< unsigned char > *message, void *
 }
 int main()
 {
-    bool status = initializeConnect(); 
-    while (status)
-    {
-        handleTTData();
-    }
+  bool status = initializeConnect(); 
 
   RtMidiIn *midiin = new RtMidiIn();
   // Check available ports.
@@ -59,6 +55,12 @@ int main()
   // Clean up
  cleanup:
   delete midiin;
+  
+  while (status)
+  {
+      handleTTData();
+  }
+
   return 0;
 }
 
