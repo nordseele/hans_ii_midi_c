@@ -6,6 +6,7 @@
 #include "rtmidi/rtmidi_c.h"
 
 struct RtMidiWrapper *midiin;
+struct RtMidiWrapper *midiout;
 
 bool initializeConnect(){
     int tt = init_TT();
@@ -50,10 +51,12 @@ static void midi_callback(double timeStamp, const uint8_t *message, void *userDa
 
 void midi_init(void)
 {
-	printf("mid init");
+	printf("Hans RtMidi init");
 
 	midiin = rtmidi_in_create_default();
 	printf("%p", midiin->ptr);
+
+    midiout = rtmidi_out_create_default();
 
 	uint32_t portcount = rtmidi_get_port_count(midiin);
 	printf("%d", midiin->ok);
