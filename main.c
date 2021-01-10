@@ -52,13 +52,11 @@ static void midi_callback(double timeStamp, const uint8_t *message, void *userDa
 void midi_init(void)
 {
 	printf("Hans RtMidi init");
-    const char *inputname = "Hans_II_IN";
-    const char *outputname = "Hans_II_OUT";
 
-	midiin = rtmidi_in_create(RTMIDI_API_LINUX_ALSA, *inputname, 1);
+	midiin = rtmidi_in_create_default();
 	printf("%p", midiin->ptr);
 
-    midiout = rtmidi_out_create(RTMIDI_API_LINUX_ALSA, *outputname);
+    midiout = rtmidi_out_create_default();
 
 	uint32_t portcount = rtmidi_get_port_count(midiin);
 	printf("%d", midiin->ok);
