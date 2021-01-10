@@ -1,6 +1,8 @@
 #include <iostream>
 #include <cstdlib>
 #include "RtMidi.h"
+#include "bsc.h"
+
 void mycallback( double deltatime, std::vector< unsigned char > *message, void *userData )
 {
   unsigned int nBytes = message->size();

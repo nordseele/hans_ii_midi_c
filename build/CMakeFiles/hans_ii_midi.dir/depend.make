@@ -6,5 +6,6 @@ CMakeFiles/hans_ii_midi.dir/bsc.cpp.o: ../bsc.cpp
 CMakeFiles/hans_ii_midi.dir/bsc.cpp.o: ../bsc.h
 
 CMakeFiles/hans_ii_midi.dir/main.cpp.o: ../rtmidi/RtMidi.h
+CMakeFiles/hans_ii_midi.dir/main.cpp.o: ../bsc.h
 CMakeFiles/hans_ii_midi.dir/main.cpp.o: ../main.cpp
 
