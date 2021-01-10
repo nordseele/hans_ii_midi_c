@@ -7,6 +7,7 @@
 
 struct RtMidiWrapper *midiin;
 struct RtMidiWrapper *midiout;
+enum RtMidiApi;
 
 bool initializeConnect(){
     int tt = init_TT();
@@ -53,10 +54,10 @@ void midi_init(void)
 {
 	printf("Hans RtMidi init");
 
-	midiin = rtmidi_in_create_default();
+	midiin = rtmidi_in_create(RTMIDI_API_LINUX_ALSA, "Hans_ii_in");
 	printf("%p", midiin->ptr);
 
-    midiout = rtmidi_out_create_default();
+    midiout = rtmidi_out_create(RTMIDI_API_LINUX_ALSA, "Hans_ii_out" );
 
 	uint32_t portcount = rtmidi_get_port_count(midiin);
 	printf("%d", midiin->ok);
