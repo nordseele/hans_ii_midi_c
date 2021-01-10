@@ -57,47 +57,47 @@ include CMakeFiles/hans_ii_midi.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/hans_ii_midi.dir/flags.make
 
-CMakeFiles/hans_ii_midi.dir/main.c.o: CMakeFiles/hans_ii_midi.dir/flags.make
-CMakeFiles/hans_ii_midi.dir/main.c.o: ../main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/hans_ii_midi.dir/main.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/hans_ii_midi.dir/main.c.o   -c /home/pi/hans_ii_midi_c/main.c
+CMakeFiles/hans_ii_midi.dir/main.cpp.o: CMakeFiles/hans_ii_midi.dir/flags.make
+CMakeFiles/hans_ii_midi.dir/main.cpp.o: ../main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/hans_ii_midi.dir/main.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/hans_ii_midi.dir/main.cpp.o -c /home/pi/hans_ii_midi_c/main.cpp
 
-CMakeFiles/hans_ii_midi.dir/main.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/hans_ii_midi.dir/main.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/pi/hans_ii_midi_c/main.c > CMakeFiles/hans_ii_midi.dir/main.c.i
+CMakeFiles/hans_ii_midi.dir/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/hans_ii_midi.dir/main.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pi/hans_ii_midi_c/main.cpp > CMakeFiles/hans_ii_midi.dir/main.cpp.i
 
-CMakeFiles/hans_ii_midi.dir/main.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/hans_ii_midi.dir/main.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/pi/hans_ii_midi_c/main.c -o CMakeFiles/hans_ii_midi.dir/main.c.s
+CMakeFiles/hans_ii_midi.dir/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/hans_ii_midi.dir/main.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pi/hans_ii_midi_c/main.cpp -o CMakeFiles/hans_ii_midi.dir/main.cpp.s
 
-CMakeFiles/hans_ii_midi.dir/bsc.c.o: CMakeFiles/hans_ii_midi.dir/flags.make
-CMakeFiles/hans_ii_midi.dir/bsc.c.o: ../bsc.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/hans_ii_midi.dir/bsc.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/hans_ii_midi.dir/bsc.c.o   -c /home/pi/hans_ii_midi_c/bsc.c
+CMakeFiles/hans_ii_midi.dir/bsc.cpp.o: CMakeFiles/hans_ii_midi.dir/flags.make
+CMakeFiles/hans_ii_midi.dir/bsc.cpp.o: ../bsc.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/hans_ii_midi.dir/bsc.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/hans_ii_midi.dir/bsc.cpp.o -c /home/pi/hans_ii_midi_c/bsc.cpp
 
-CMakeFiles/hans_ii_midi.dir/bsc.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/hans_ii_midi.dir/bsc.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/pi/hans_ii_midi_c/bsc.c > CMakeFiles/hans_ii_midi.dir/bsc.c.i
+CMakeFiles/hans_ii_midi.dir/bsc.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/hans_ii_midi.dir/bsc.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pi/hans_ii_midi_c/bsc.cpp > CMakeFiles/hans_ii_midi.dir/bsc.cpp.i
 
-CMakeFiles/hans_ii_midi.dir/bsc.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/hans_ii_midi.dir/bsc.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/pi/hans_ii_midi_c/bsc.c -o CMakeFiles/hans_ii_midi.dir/bsc.c.s
+CMakeFiles/hans_ii_midi.dir/bsc.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/hans_ii_midi.dir/bsc.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pi/hans_ii_midi_c/bsc.cpp -o CMakeFiles/hans_ii_midi.dir/bsc.cpp.s
 
 # Object files for target hans_ii_midi
 hans_ii_midi_OBJECTS = \
-"CMakeFiles/hans_ii_midi.dir/main.c.o" \
-"CMakeFiles/hans_ii_midi.dir/bsc.c.o"
+"CMakeFiles/hans_ii_midi.dir/main.cpp.o" \
+"CMakeFiles/hans_ii_midi.dir/bsc.cpp.o"
 
 # External object files for target hans_ii_midi
 hans_ii_midi_EXTERNAL_OBJECTS =
 
-hans_ii_midi: CMakeFiles/hans_ii_midi.dir/main.c.o
-hans_ii_midi: CMakeFiles/hans_ii_midi.dir/bsc.c.o
+hans_ii_midi: CMakeFiles/hans_ii_midi.dir/main.cpp.o
+hans_ii_midi: CMakeFiles/hans_ii_midi.dir/bsc.cpp.o
 hans_ii_midi: CMakeFiles/hans_ii_midi.dir/build.make
 hans_ii_midi: pigpio/librtmidi.so.5.0.0
 hans_ii_midi: /usr/lib/arm-linux-gnueabihf/libasound.so
 hans_ii_midi: CMakeFiles/hans_ii_midi.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable hans_ii_midi"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable hans_ii_midi"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/hans_ii_midi.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

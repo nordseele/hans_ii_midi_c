@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.13.4)
 
 project(hans_ii_midi)
 
-add_executable(${PROJECT_NAME} main.c bsc.c)
+add_executable(${PROJECT_NAME} main.cpp bsc.cpp)
 
 set(CMAKE_CXX_FLAGS "-Wall -D__LINUX_ALSA__ -lpthread"  ${CMAKE_CXX_FLAGS})
 

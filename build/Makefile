@@ -650,59 +650,59 @@ apinames/fast:
 	$(MAKE) -f pigpio/CMakeFiles/apinames.dir/build.make pigpio/CMakeFiles/apinames.dir/build
 .PHONY : apinames/fast
 
-bsc.o: bsc.c.o
+bsc.o: bsc.cpp.o
 
 .PHONY : bsc.o
 
 # target to build an object file
-bsc.c.o:
-	$(MAKE) -f CMakeFiles/hans_ii_midi.dir/build.make CMakeFiles/hans_ii_midi.dir/bsc.c.o
-.PHONY : bsc.c.o
+bsc.cpp.o:
+	$(MAKE) -f CMakeFiles/hans_ii_midi.dir/build.make CMakeFiles/hans_ii_midi.dir/bsc.cpp.o
+.PHONY : bsc.cpp.o
 
-bsc.i: bsc.c.i
+bsc.i: bsc.cpp.i
 
 .PHONY : bsc.i
 
 # target to preprocess a source file
-bsc.c.i:
-	$(MAKE) -f CMakeFiles/hans_ii_midi.dir/build.make CMakeFiles/hans_ii_midi.dir/bsc.c.i
-.PHONY : bsc.c.i
+bsc.cpp.i:
+	$(MAKE) -f CMakeFiles/hans_ii_midi.dir/build.make CMakeFiles/hans_ii_midi.dir/bsc.cpp.i
+.PHONY : bsc.cpp.i
 
-bsc.s: bsc.c.s
+bsc.s: bsc.cpp.s
 
 .PHONY : bsc.s
 
 # target to generate assembly for a file
-bsc.c.s:
-	$(MAKE) -f CMakeFiles/hans_ii_midi.dir/build.make CMakeFiles/hans_ii_midi.dir/bsc.c.s
-.PHONY : bsc.c.s
+bsc.cpp.s:
+	$(MAKE) -f CMakeFiles/hans_ii_midi.dir/build.make CMakeFiles/hans_ii_midi.dir/bsc.cpp.s
+.PHONY : bsc.cpp.s
 
-main.o: main.c.o
+main.o: main.cpp.o
 
 .PHONY : main.o
 
 # target to build an object file
-main.c.o:
-	$(MAKE) -f CMakeFiles/hans_ii_midi.dir/build.make CMakeFiles/hans_ii_midi.dir/main.c.o
-.PHONY : main.c.o
+main.cpp.o:
+	$(MAKE) -f CMakeFiles/hans_ii_midi.dir/build.make CMakeFiles/hans_ii_midi.dir/main.cpp.o
+.PHONY : main.cpp.o
 
-main.i: main.c.i
+main.i: main.cpp.i
 
 .PHONY : main.i
 
 # target to preprocess a source file
-main.c.i:
-	$(MAKE) -f CMakeFiles/hans_ii_midi.dir/build.make CMakeFiles/hans_ii_midi.dir/main.c.i
-.PHONY : main.c.i
+main.cpp.i:
+	$(MAKE) -f CMakeFiles/hans_ii_midi.dir/build.make CMakeFiles/hans_ii_midi.dir/main.cpp.i
+.PHONY : main.cpp.i
 
-main.s: main.c.s
+main.s: main.cpp.s
 
 .PHONY : main.s
 
 # target to generate assembly for a file
-main.c.s:
-	$(MAKE) -f CMakeFiles/hans_ii_midi.dir/build.make CMakeFiles/hans_ii_midi.dir/main.c.s
-.PHONY : main.c.s
+main.cpp.s:
+	$(MAKE) -f CMakeFiles/hans_ii_midi.dir/build.make CMakeFiles/hans_ii_midi.dir/main.cpp.s
+.PHONY : main.cpp.s
 
 # Help Target
 help:

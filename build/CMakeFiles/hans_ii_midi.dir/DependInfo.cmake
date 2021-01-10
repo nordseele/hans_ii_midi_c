@@ -1,16 +1,16 @@
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
-  "C"
+  "CXX"
   )
 # The set of files for implicit dependencies of each language:
-set(CMAKE_DEPENDS_CHECK_C
-  "/home/pi/hans_ii_midi_c/bsc.c" "/home/pi/hans_ii_midi_c/build/CMakeFiles/hans_ii_midi.dir/bsc.c.o"
-  "/home/pi/hans_ii_midi_c/main.c" "/home/pi/hans_ii_midi_c/build/CMakeFiles/hans_ii_midi.dir/main.c.o"
+set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/pi/hans_ii_midi_c/bsc.cpp" "/home/pi/hans_ii_midi_c/build/CMakeFiles/hans_ii_midi.dir/bsc.cpp.o"
+  "/home/pi/hans_ii_midi_c/main.cpp" "/home/pi/hans_ii_midi_c/build/CMakeFiles/hans_ii_midi.dir/main.cpp.o"
   )
-set(CMAKE_C_COMPILER_ID "GNU")
+set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
-set(CMAKE_C_TARGET_INCLUDE_PATH
+set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../rtmidi"
   "../pigpio"
   )
