@@ -1,0 +1,6 @@
+[submodule "pigpio"]
+	path = pigpio
+	url = https://github.com/joan2937/pigpio.git
+[submodule "rtmidi"]
+	path = rtmidi
+	url = https://github.com/thestk/rtmidi.git
