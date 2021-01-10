@@ -14,7 +14,7 @@ TT to Hans | II to MIDI
     cd build
     make
 
-Run (temp):
+#### Run (temp):
 
 sudo ./home/pi/hans_ii_midi_c/build/hans_ii_midi
 
