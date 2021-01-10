@@ -36,6 +36,18 @@ int main(){
     return 0;
 }
 
+static void midi_callback(double timeStamp, const uint8_t *message, void *userData)
+{
+	(void) timeStamp;
+	(void) userData;
+
+	for (uint8_t i = 0; i < sizeof(message); i++) {
+		printf("Message %i %u ", i, (uint8_t) message[i]);
+	}
+
+	printf("\n");
+}
+
 void midi_init(void)
 {
 	printf("mid init");
@@ -67,14 +79,4 @@ void midi_init(void)
 	}
 }
 
-static void midi_callback(double timeStamp, const uint8_t *message, void *userData)
-{
-	(void) timeStamp;
-	(void) userData;
 
-	for (uint8_t i = 0; i < sizeof(message); i++) {
-		printf("Message %i %u ", i, (uint8_t) message[i]);
-	}
-
-	printf("\n");
-}
