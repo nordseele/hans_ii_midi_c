@@ -20,13 +20,14 @@ void followTeletype() {
     {
         cout << "Opened connection with Teletype\n";
         xfer.rxCnt = 0;
-        // Using a while loop is probably not the best but... Todo: use events.
+        // Todo: use events.
         while(1){
             bscXfer(&xfer);
             if(xfer.rxCnt > 0) {
                 cout << "Received " << xfer.rxCnt << " bytes: ";
                 for(int i = 0; i < xfer.rxCnt; i++)
-                    cout << +xfer.rxBuf[i] + " ";
+
+                    cout << +xfer.rxBuf[i];
                 cout << "\n";
             }
     }

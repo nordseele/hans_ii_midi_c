@@ -26,6 +26,8 @@ int main()
   midiin->setCallback( &callback );
   midiin->ignoreTypes( false, false, false );
 
+  midiout->openVirtualPort("Hans_II_OUT");
+
   followTeletype();
 
   std::cout << "\nReading MIDI input ... press <enter> to quit.\n";
