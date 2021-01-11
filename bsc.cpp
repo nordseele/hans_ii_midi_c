@@ -12,16 +12,17 @@ void followTeletype() {
     gpioInitialise();
     cout << "Initialized GPIOs\n";
     // Close old device (if any)
-    xfer.control = getControlBits(SLAVE_I2C_ADDRESS, false); // To avoid conflicts when restarting
+    xfer.control = getControlBits(SLAVE_I2C_ADDRESS, false);
     bscXfer(&xfer);
     // Set I2C slave Address to 0x0A
     xfer.control = getControlBits(SLAVE_I2C_ADDRESS, true);
-    int status = bscXfer(&xfer); // Should now be visible in I2C-Scanners
+    int status = bscXfer(&xfer); 
     
     if (status >= 0)
     {
         cout << "Opened connection with Teletype\n";
         xfer.rxCnt = 0;
+        // Using a while loop is probably not the best but hey... Todo: use events.
         while(1){
             bscXfer(&xfer);
             if(xfer.rxCnt > 0) {
@@ -30,9 +31,7 @@ void followTeletype() {
                     cout << xfer.rxBuf[i];
                 cout << "\n";
             }
-            //if (xfer.rxCnt > 0){
-            //    cout << xfer.rxBuf;
-            //}
+
     }
     }else
         cout << "Failed to communicate with Teletype\n";

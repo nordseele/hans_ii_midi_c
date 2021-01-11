@@ -3,31 +3,6 @@
 #include "RtMidi.h"
 #include "bsc.h"
 
-/* bool initializeConnect(){
-    int tt = init_TT();
-    if(tt >= 0)
-    {
-        printf("Connected\n");
-        return true;
-    }else
-    {
-        printf("Connection error\n");
-        return false;
-    }
-} */
-
-/* void handleTTData(){
-    char *payload;
-    payload = receiveTTData();
-    size_t n = sizeof(payload)/sizeof(payload[0]);
- 
-    // loop through the elements of the array
-    for (size_t i = 0; i < n; i++) {
-        std::cout << payload[i] << ' ';
-    }
-}
- */
-
 void callback( double deltatime, std::vector< unsigned char > *message, void *userData )
 {
   unsigned int nBytes = message->size();
@@ -38,8 +13,6 @@ void callback( double deltatime, std::vector< unsigned char > *message, void *us
 }
 int main()
 {
-/*   bool status = initializeConnect(); 
- */
   RtMidiIn *midiin = new RtMidiIn();
   RtMidiOut *midiout = new RtMidiOut();
   unsigned int nPorts = midiin->getPortCount();
