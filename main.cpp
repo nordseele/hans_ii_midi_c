@@ -6,7 +6,7 @@
 
 using namespace std;
 
-void callback( double deltatime, std::vector< unsigned char > *message, void *userData )
+void callback( double deltatime, vector< unsigned char > *message, void *userData )
 {
   unsigned int nBytes = message->size();
   for ( unsigned int i=0; i<nBytes; i++ )
@@ -29,10 +29,7 @@ int main()
 
   midiout->openVirtualPort("Hans_II_OUT");
 
-  std::vector<unsigned char> message;
-    message.push_back(144);
-    message.push_back(64);
-    message.push_back(90);
+  vector<unsigned char> message{144, 60, 40};
  
     gpioInitialise();
     cout << "Initialized GPIOs\n";
