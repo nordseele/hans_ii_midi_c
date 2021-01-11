@@ -19,10 +19,10 @@ bsc_xfer_t xfer;
 
 int main()
 {
+  std::vector<unsigned char> message;
   RtMidiIn *midiin = new RtMidiIn();
   RtMidiOut *midiout = new RtMidiOut();
   unsigned int nPorts = midiin->getPortCount();
-  std::vector<unsigned char> message;
 
   midiin->openVirtualPort("Hans_II_IN");
   midiin->setCallback( &callback );
@@ -72,8 +72,4 @@ int main()
   delete midiin; */
 
   return 0;
-}
-
-void sendMidiData() {
-
 }

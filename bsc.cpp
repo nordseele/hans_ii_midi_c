@@ -4,14 +4,6 @@
 
 using namespace std;
 
-
-
-void followTeletype() {
-
-}
-
-
-
 int getControlBits(int address /* max 127 */, bool open) {
     /*
     Excerpt from http://abyz.me.uk/rpi/pigpio/cif.html#bscXfer regarding the control bits:
