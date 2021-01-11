@@ -22,7 +22,7 @@ int main()
     goto cleanup;
   }
 
-  midiin->openPort( 0 );
+  midiin->openVirtualPort("Hans_II_IN");
   midiin->setCallback( &callback );
   midiin->ignoreTypes( false, false, false );
 
