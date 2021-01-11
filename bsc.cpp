@@ -9,10 +9,10 @@ bsc_xfer_t xfer;
 void followTeletype() {
     gpioInitialise();
     cout << "Initialized GPIOs\n";
-    // Close old device (if any)
+    // Close any old device
     xfer.control = getControlBits(SLAVE_I2C_ADDRESS, false);
     bscXfer(&xfer);
-    // Set I2C slave Address to 0x0A
+    // Set I2C slave Address 
     xfer.control = getControlBits(SLAVE_I2C_ADDRESS, true);
     int status = bscXfer(&xfer); 
     
@@ -20,13 +20,13 @@ void followTeletype() {
     {
         cout << "Opened connection with Teletype\n";
         xfer.rxCnt = 0;
-        // Using a while loop is probably not the best but hey... Todo: use events.
+        // Using a while loop is probably not the best but... Todo: use events.
         while(1){
             bscXfer(&xfer);
             if(xfer.rxCnt > 0) {
                 cout << "Received " << xfer.rxCnt << " bytes: ";
                 for(int i = 0; i < xfer.rxCnt; i++)
-                    cout << xfer.rxBuf[i];
+                    cout << +xfer.rxBuf[i];
                 cout << "\n";
             }
     }
