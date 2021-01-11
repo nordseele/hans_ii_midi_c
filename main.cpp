@@ -54,7 +54,7 @@ int main()
              /*    for(int i = 0; i < xfer.rxCnt; i++) {
                   cout << +xfer.rxBuf[i];
                 } */
-            midiout->sendMessage(&message);    
+            //midiout->sendMessage(&message);    
             //cout << "\n";
             } 
         } 
