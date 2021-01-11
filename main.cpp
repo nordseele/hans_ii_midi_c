@@ -3,7 +3,7 @@
 #include "RtMidi.h"
 #include "bsc.h"
 
-bool initializeConnect(){
+/* bool initializeConnect(){
     int tt = init_TT();
     if(tt >= 0)
     {
@@ -14,9 +14,9 @@ bool initializeConnect(){
         printf("Connection error\n");
         return false;
     }
-}
+} */
 
-void handleTTData(){
+/* void handleTTData(){
     char *payload;
     payload = receiveTTData();
     size_t n = sizeof(payload)/sizeof(payload[0]);
@@ -26,6 +26,7 @@ void handleTTData(){
         std::cout << payload[i] << ' ';
     }
 }
+ */
 
 void callback( double deltatime, std::vector< unsigned char > *message, void *userData )
 {
@@ -37,8 +38,8 @@ void callback( double deltatime, std::vector< unsigned char > *message, void *us
 }
 int main()
 {
-  bool status = initializeConnect(); 
-
+/*   bool status = initializeConnect(); 
+ */
   RtMidiIn *midiin = new RtMidiIn();
   RtMidiOut *midiout = new RtMidiOut();
   unsigned int nPorts = midiin->getPortCount();
@@ -52,11 +53,7 @@ int main()
   midiin->setCallback( &callback );
   midiin->ignoreTypes( false, false, false );
 
-  
-  while (status)
-  {
-      handleTTData();
-  }
+  followTeletype();
 
   std::cout << "\nReading MIDI input ... press <enter> to quit.\n";
   char input;

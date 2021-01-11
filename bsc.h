@@ -3,8 +3,8 @@
 
 #define SLAVE_I2C_ADDRESS 0x41
 
-int init_TT();
-char* receiveTTData();
-static int getControlBits(int, bool);
+void followTeletype();
+void closeSlave();
+int getControlBits(int, bool);
 extern void midi_init(void);
 #endif

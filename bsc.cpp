@@ -1,41 +1,45 @@
 #include <pigpio.h>
-#include <stdio.h>
+#include <iostream>
 #include <string.h>
 #include <stdbool.h>
 #include "bsc.h"
 
+using namespace std;
+
 static bsc_xfer_t xfer;
 
-int init_TT(){
+void followTeletype() {
     gpioInitialise();
-    printf("GPIO OK\n");
-    xfer.control = getControlBits(SLAVE_I2C_ADDRESS, false);
-
+    cout << "Initialized GPIOs\n";
+    // Close old device (if any)
+    xfer.control = getControlBits(SLAVE_I2C_ADDRESS, false); // To avoid conflicts when restarting
     bscXfer(&xfer);
+    // Set I2C slave Address to 0x0A
     xfer.control = getControlBits(SLAVE_I2C_ADDRESS, true);
-    int status = bscXfer(&xfer); 
-
-    return status;
-}
-
-char* receiveTTData(){
-    char *payload;
-    printf("Opened follower\n");
-    xfer.rxCnt = 0;
-    payload = &xfer.rxBuf[0];
-
-    while(1){
-        bscXfer(&xfer);
-        if(xfer.rxCnt > 0)
-        {
-            printf("Receiving Data ... %s\n", xfer.rxBuf);
-            break;
-        }
+    int status = bscXfer(&xfer); // Should now be visible in I2C-Scanners
+    
+    if (status >= 0)
+    {
+        cout << "Opened connection with Teletype\n";
+        xfer.rxCnt = 0;
+        while(1){
+            bscXfer(&xfer);
+            if(xfer.rxCnt > 0) {
+                cout << "Received " << xfer.rxCnt << " bytes: ";
+                for(int i = 0; i < xfer.rxCnt; i++)
+                    cout << xfer.rxBuf[i];
+                cout << "\n";
+            }
+            //if (xfer.rxCnt > 0){
+            //    cout << xfer.rxBuf;
+            //}
     }
-    return payload;
+    }else
+        cout << "Failed to communicate with Teletype\n";
 }
 
-static int getControlBits(int address /* max 127 */, bool open) {
+
+int getControlBits(int address /* max 127 */, bool open) {
     /*
     Excerpt from http://abyz.me.uk/rpi/pigpio/cif.html#bscXfer regarding the control bits:
     22 21 20 19 18 17 16 15 14 13 12 11 10 09 08 07 06 05 04 03 02 01 00
