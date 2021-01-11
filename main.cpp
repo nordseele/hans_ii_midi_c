@@ -54,7 +54,7 @@ int main()
              /*    for(int i = 0; i < xfer.rxCnt; i++) {
                   cout << +xfer.rxBuf[i];
                 } */
-            //midiout->sendMessage(&message);    
+            midiout->sendMessage(&message);    
             //cout << "\n";
             } 
         } 
@@ -62,13 +62,13 @@ int main()
     else {
        cout << "Failed to communicate with Teletype\n"; 
     }
-/* 
+ 
   std::cout << "\nReading MIDI input ... press <enter> to quit.\n";
   char input;
-  std::cin.get(input); */
+  std::cin.get(input); 
   // Clean up
-/*  cleanup:
-  delete midiin; */
+ cleanup:
+  delete midiin; 
 
   return 0;
 }
