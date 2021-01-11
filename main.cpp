@@ -48,6 +48,9 @@ int main()
             bscXfer(&xfer);
             if(xfer.rxCnt > 0) {
                 // cout << "Received " << xfer.rxCnt << " bytes: ";
+                // WIP DO NOT USE 💆🏻
+                // 👾 TODO: search status byte of a Midi message, add some guards to prevent bad midi messages etc ⚠️ 
+
               switch (xfer.rxCnt) 
               {
               case 4:
