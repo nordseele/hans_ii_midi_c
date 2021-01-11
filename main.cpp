@@ -49,7 +49,7 @@ int main()
             if(xfer.rxCnt > 0) {
                 cout << "Received " << xfer.rxCnt << " bytes: ";
                 for(int i = 0; i < xfer.rxCnt; i++) {
-                  cout << +xfer.rxBuf[i];
+                  cout << +xfer.rxBuf[i] << " ";
                 } 
             midiout->sendMessage(&message);    
             cout << "\n";
