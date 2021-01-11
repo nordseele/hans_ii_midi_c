@@ -47,10 +47,24 @@ int main()
         while(1) {
             bscXfer(&xfer);
             if(xfer.rxCnt > 0) {
-                cout << "Received " << xfer.rxCnt << " bytes: ";
-                for(int i = 0; i < xfer.rxCnt; i++) {
-                  cout << +xfer.rxBuf[i] << " ";
-                } 
+                // cout << "Received " << xfer.rxCnt << " bytes: ";
+              switch (xfer.rxCnt) 
+              {
+              case 4:
+                cout << +xfer.rxBuf[1] << +xfer.rxBuf[2] << +xfer.rxBuf[3];
+                break;
+              case 8:
+                cout << +xfer.rxBuf[1] << +xfer.rxBuf[2] << +xfer.rxBuf[3];
+                cout << +xfer.rxBuf[5] << +xfer.rxBuf[6] << +xfer.rxBuf[7];
+                break;
+              
+              default:
+                break;
+              }
+
+            /*for(int i = 0; i < xfer.rxCnt; i++) {
+                cout << +xfer.rxBuf[i] << " ";
+              } */
             midiout->sendMessage(&message);    
             cout << "\n";
             } 
