@@ -30,6 +30,10 @@ int main()
 
   midiout->openVirtualPort("Hans_II_OUT");
 
+    message[0] = 144;
+    message[1] = 64;
+    message[2] = 90;
+    
     gpioInitialise();
     cout << "Initialized GPIOs\n";
     // Close any old device
@@ -48,13 +52,9 @@ int main()
             if(xfer.rxCnt > 0) {
             cout << "Received " << xfer.rxCnt << " bytes: ";
                 for(int i = 0; i < xfer.rxCnt; i++) {
-                    if (xfer.rxBuf[i] != 79) {
-                        cout << +xfer.rxBuf[i];
-                    }
+                  cout << +xfer.rxBuf[i];
                 }
-            message[0] = 144;
-            message[1] = 64;
-            message[2] = 90;
+
             midiout->sendMessage(&message);    
             cout << "\n";
             } 
