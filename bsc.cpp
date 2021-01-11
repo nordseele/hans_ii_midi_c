@@ -1,12 +1,10 @@
 #include <pigpio.h>
 #include <iostream>
-#include <string.h>
-#include <stdbool.h>
 #include "bsc.h"
 
 using namespace std;
 
-static bsc_xfer_t xfer;
+bsc_xfer_t xfer;
 
 void followTeletype() {
     gpioInitialise();
@@ -31,7 +29,6 @@ void followTeletype() {
                     cout << xfer.rxBuf[i];
                 cout << "\n";
             }
-
     }
     }else
         cout << "Failed to communicate with Teletype\n";
