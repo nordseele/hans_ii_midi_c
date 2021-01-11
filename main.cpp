@@ -29,11 +29,11 @@ int main()
 
   midiout->openVirtualPort("Hans_II_OUT");
 
-  //std::vector<unsigned char> message;
-    /* message[0] = 144;
-    message[1] = 64;
-    message[2] = 90;
- */
+  std::vector<unsigned char> message;
+    message.push_back(144);
+    message.push_back(64);
+    message.push_back(90);
+ 
     gpioInitialise();
     cout << "Initialized GPIOs\n";
     // Close any old device
@@ -54,8 +54,8 @@ int main()
                 for(int i = 0; i < xfer.rxCnt; i++) {
                   cout << +xfer.rxBuf[i];
                 } 
-            //midiout->sendMessage(&message);    
-            //cout << "\n";
+            midiout->sendMessage(&message);    
+            cout << "\n";
             } 
         } 
     }
