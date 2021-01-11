@@ -16,25 +16,27 @@ void followTeletype() {
     xfer.control = getControlBits(SLAVE_I2C_ADDRESS, true);
     int status = bscXfer(&xfer); 
     
-    if (status >= 0)
-    {
+    if (status >= 0) {
         cout << "Opened connection with Teletype\n";
         xfer.rxCnt = 0;
         // Todo: use events.
-        while(1){
+        while(1) {
             bscXfer(&xfer);
             if(xfer.rxCnt > 0) {
-                cout << "Received " << xfer.rxCnt << " bytes: ";
-                for(int i = 0; i < xfer.rxCnt; i++)
-
-                    cout << +xfer.rxBuf[i];
-                cout << "\n";
-            }
+            cout << "Received " << xfer.rxCnt << " bytes: ";
+                for(int i = 0; i < xfer.rxCnt; i++) {
+                    if (xfer.rxBuf[i] != 79) {
+                        cout << +xfer.rxBuf[i];
+                    }
+                }
+            cout << "\n";
+            } 
+        } 
     }
-    }else
-        cout << "Failed to communicate with Teletype\n";
+    else {
+       cout << "Failed to communicate with Teletype\n"; 
+    }
 }
-
 
 int getControlBits(int address /* max 127 */, bool open) {
     /*
