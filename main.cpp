@@ -3,7 +3,6 @@
 #include "RtMidi.h"
 #include "bsc.h"
 
-
 bool initializeConnect(){
     int tt = init_TT();
     if(tt >= 0)
@@ -20,10 +19,15 @@ bool initializeConnect(){
 void handleTTData(){
     char *payload;
     payload = receiveTTData();
-    printf("%d \n", payload[0]);
+    size_t n = sizeof(payload)/sizeof(payload[0]);
+ 
+    // loop through the elements of the array
+    for (size_t i = 0; i < n; i++) {
+        std::cout << payload[i] << ' ';
+    }
 }
 
-void mycallback( double deltatime, std::vector< unsigned char > *message, void *userData )
+void callback( double deltatime, std::vector< unsigned char > *message, void *userData )
 {
   unsigned int nBytes = message->size();
   for ( unsigned int i=0; i<nBytes; i++ )
@@ -36,21 +40,20 @@ int main()
   bool status = initializeConnect(); 
 
   RtMidiIn *midiin = new RtMidiIn();
-  // Check available ports.
+  RtMidiOut *midiout = new RtMidiOut();
   unsigned int nPorts = midiin->getPortCount();
+
   if ( nPorts == 0 ) {
     std::cout << "No ports available!\n";
     goto cleanup;
   }
+
   midiin->openPort( 0 );
-  // Set our callback function.  This should be done immediately after
-  // opening the port to avoid having incoming messages written to the
-  // queue.
-  midiin->setCallback( &mycallback );
-  // Don't ignore sysex, timing, or active sensing messages.
+  midiin->setCallback( &callback );
   midiin->ignoreTypes( false, false, false );
 
- while (status)
+  
+  while (status)
   {
       handleTTData();
   }
