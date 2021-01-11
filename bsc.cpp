@@ -7,10 +7,13 @@ using namespace std;
 int getControlBits(int address /* max 127 */, bool open) {
     /*
     Excerpt from http://abyz.me.uk/rpi/pigpio/cif.html#bscXfer regarding the control bits:
+
     22 21 20 19 18 17 16 15 14 13 12 11 10 09 08 07 06 05 04 03 02 01 00
     a  a  a  a  a  a  a  -  -  IT HC TF IR RE TE BK EC ES PL PH I2 SP EN
+
     Bits 0-13 are copied unchanged to the BSC CR register. See pages 163-165 of the Broadcom 
     peripherals document for full details. 
+
     aaaaaaa defines the I2C slave address (only relevant in I2C mode)
     IT  invert transmit status flags
     HC  enable host control

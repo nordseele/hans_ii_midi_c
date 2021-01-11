@@ -19,7 +19,6 @@ bsc_xfer_t xfer;
 
 int main()
 {
-  std::vector<unsigned char> message;
   RtMidiIn *midiin = new RtMidiIn();
   RtMidiOut *midiout = new RtMidiOut();
   unsigned int nPorts = midiin->getPortCount();
@@ -30,6 +29,7 @@ int main()
 
   midiout->openVirtualPort("Hans_II_OUT");
 
+  std::vector<unsigned char> message;
     message[0] = 144;
     message[1] = 64;
     message[2] = 90;
@@ -62,13 +62,6 @@ int main()
     else {
        cout << "Failed to communicate with Teletype\n"; 
     }
- 
-  std::cout << "\nReading MIDI input ... press <enter> to quit.\n";
-  char input;
-  std::cin.get(input); 
-  // Clean up
- cleanup:
-  delete midiin; 
 
   return 0;
 }
