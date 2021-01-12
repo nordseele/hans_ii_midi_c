@@ -5,7 +5,7 @@
 #include "bsc.h"
 
 #define SLAVE_I2C_ADDRESS 0x41
-#define DEBUG false
+#define DEBUG true
 
 using namespace std;
 
@@ -51,7 +51,8 @@ int main()
         bscXfer(&xfer);
         if(xfer.rxCnt > 0) {
           if (DEBUG) {
-            cout << "debug";
+            cout << "debug\n";
+            cout << xfer.rxBuf;
           }
 
           for(int i = 0; i < xfer.rxCnt; i++) {
