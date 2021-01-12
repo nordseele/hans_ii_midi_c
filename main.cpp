@@ -31,8 +31,6 @@ int main()
   midiin->ignoreTypes( false, false, false );
 
   midiout->openVirtualPort("Hans_II_OUT");
-
-  vector<unsigned char> message{144, 60, 40};
  
   gpioInitialise();
   cout << "Initialized GPIOs\n";
@@ -52,7 +50,10 @@ int main()
         if(xfer.rxCnt > 0) {
           if (DEBUG) {
             cout << "debug\n";
-            cout << xfer.rxBuf;
+            for(int i = 0; i < bscXfer.rxBuf.size(); i++) {
+              cout << +bscXfer.rxBuf[i] << " ";
+            }
+            cout << "\n";
           }
 
           for(int i = 0; i < xfer.rxCnt; i++) {
