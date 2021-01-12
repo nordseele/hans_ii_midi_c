@@ -50,9 +50,8 @@ int main()
               for(int i = 0; i < xfer.rxCnt; i++) {
                 int op = xfer.rxBuf[i] >> 7;
                 int res = op & 0xF0;
-                if (op == 1) { 
                   cout << res;
-                }
+                
               }
             midiout->sendMessage(&message);    
             cout << "\n";
