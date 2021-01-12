@@ -84,11 +84,7 @@ int main()
                     break;
                   }
                 }
-
-               // cout << ops << " " << op << " " << res << " " << "\n";   
               }
-            // midiout->sendMessage(&message);    
-            cout << "\n";
             } 
         } 
     }
