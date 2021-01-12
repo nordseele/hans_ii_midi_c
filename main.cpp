@@ -54,13 +54,19 @@ int main()
                 if (is_status_byte == 1) {
                   int operation = byte & 0xF0;
                   switch (operation)
+
+                  vector<unsigned char> message;
+
                   {
                   case 0x80:
                     cout << "note off expecting two more bytes";
                     break;
                   case 0x90:
-
-                    midiout->sendMessage(xfer.rxBuf[i], xfer.rxBuf[i + 1], xfer.rxBuf[i + 2]);
+                    message.push_back(xfer.rxBuf[i]);
+                    message.push_back(xfer.rxBuf[i + 1]);
+                    message.push_back(xfer.rxBuf[i + 2]);
+                    
+                    midiout->sendMessage(&message);
                     break;
                   case 0xB0:
                     cout << "controller expecting two more bytes";
