@@ -51,7 +51,7 @@ int main()
                 int ops = xfer.rxBuf[i];
                 int op = xfer.rxBuf[i] >> 7;
                 int res = (op & 0xF0 == 0);
-                  cout << ops << op << res << "\n";   
+                  cout << ops << " " << op << " " << res << " " << "\n";   
               }
             midiout->sendMessage(&message);    
             cout << "\n";
