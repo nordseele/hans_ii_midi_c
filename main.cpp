@@ -40,6 +40,7 @@ int main()
     xfer.control = getControlBits(SLAVE_I2C_ADDRESS, true);
     int status = bscXfer(&xfer); 
     
+    // Parse, format and send MIDI message 
     if (status >= 0) {
         cout << "Opened connection with Teletype\n";
         xfer.rxCnt = 0;
