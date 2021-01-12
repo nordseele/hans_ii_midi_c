@@ -59,7 +59,8 @@ int main()
                     cout << "note off expecting two more bytes";
                     break;
                   case 0x90:
-                    midiout->sendMessage({xfer.rxBuf[i], xfer.rxBuf[i + 1], xfer.rxBuf[i + 2]});
+
+                    midiout->sendMessage(xfer.rxBuf[i], xfer.rxBuf[i + 1], xfer.rxBuf[i + 2]);
                     break;
                   case 0xB0:
                     cout << "controller expecting two more bytes";
