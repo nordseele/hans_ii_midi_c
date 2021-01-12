@@ -24,7 +24,6 @@ int main()
 {
   RtMidiIn *midiin = new RtMidiIn();
   RtMidiOut *midiout = new RtMidiOut();
-  unsigned int nPorts = midiin->getPortCount();
 
   midiin->openVirtualPort("Hans_II_IN");
   midiin->setCallback( &callback );
@@ -49,9 +48,9 @@ int main()
         bscXfer(&xfer);
         if(xfer.rxCnt > 0) {
           if (DEBUG) {
-            cout << "debug\n";
-            for(int i = 0; i < bscXfer.rxBuf.size(); i++) {
-              cout << +bscXfer.rxBuf[i] << " ";
+            cout << "received\n";
+            for(int i = 0; i < xfer.rxCnt; i++) {
+              cout << +xfer.rxBuf[i] << " ";
             }
             cout << "\n";
           }
