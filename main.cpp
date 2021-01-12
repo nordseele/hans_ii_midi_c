@@ -52,8 +52,8 @@ int main()
                 int is_status_byte = xfer.rxBuf[i] >> 7;
 
                 if (is_status_byte == 1) {
-                  int message_type = is_status_byte & 0xF0;
-                  switch (mesage_type)
+                  int operation = is_status_byte & 0xF0;
+                  switch (operation)
                   {
                   case 0x80:
                     cout << "note off";
