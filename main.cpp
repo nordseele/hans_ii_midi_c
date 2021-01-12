@@ -47,27 +47,29 @@ int main()
         while(1) {
             bscXfer(&xfer);
             if(xfer.rxCnt > 0) {
-                // cout << "Received " << xfer.rxCnt << " bytes: ";
-                // WIP DO NOT USE 💆🏻
-                // 👾 TODO: search status byte of a Midi message, add some guards to prevent bad midi messages etc ⚠️ 
-
-              switch (xfer.rxCnt) 
-              {
-              case 4:
-                cout << +xfer.rxBuf[1] << +xfer.rxBuf[2] << +xfer.rxBuf[3];
-                break;
-              case 8:
-                cout << +xfer.rxBuf[1] << +xfer.rxBuf[2] << +xfer.rxBuf[3];
-                cout << +xfer.rxBuf[5] << +xfer.rxBuf[6] << +xfer.rxBuf[7];
-                break;
-              
-              default:
-                break;
+              for(int i = 0; i < xfer.rxCnt; i++) {
+                if (xfer.rxBuf[i] >> 7 != 0) { 
+                  switch (xfer.rxBuf[i] & 0xF0)
+                  {
+                  case 80:
+                    cout << "note off";
+                    break;
+                  case 90:
+                    cout << "note on";
+                    break;
+                  case B0:
+                    cout << "controller";
+                    break;
+                  case C0:
+                    cout << "program change";
+                    break;
+                  
+                  default:
+                    cout << "unknown MIDI command";
+                    break;
+                  }
+                }
               }
-
-            /*for(int i = 0; i < xfer.rxCnt; i++) {
-                cout << +xfer.rxBuf[i] << " ";
-              } */
             midiout->sendMessage(&message);    
             cout << "\n";
             } 
