@@ -48,8 +48,9 @@ int main()
             bscXfer(&xfer);
             if(xfer.rxCnt > 0) {
               for(int i = 0; i < xfer.rxCnt; i++) {
-                if (xfer.rxBuf[i] >> 7 == 1) { 
-                  switch (xfer.rxBuf[i] & 0xF0)
+                int op == xfer.rxBuf[i] >> 7;
+                if ( op == 1) { 
+                  switch (op & 0xF0)
                   {
                   case 80:
                     cout << "note off";
