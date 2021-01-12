@@ -5,37 +5,42 @@
 #include "bsc.h"
 
 #define SLAVE_I2C_ADDRESS 0x41
-#define DEBUG true
+#define DEBUG false
 
 using namespace std;
 
-void callback( double deltatime, vector< unsigned char > *message, void *userData )
+void midi_in_callback( double deltatime, vector< unsigned char > *message, void *userData )
 {
   unsigned int nBytes = message->size();
-  for ( unsigned int i=0; i<nBytes; i++ )
+  for (unsigned int i=0; i<nBytes; i++) {
     std::cout << "Byte " << i << " = " << (int)message->at(i) << ", ";
-  if ( nBytes > 0 )
-    std::cout << "stamp = " << deltatime << std::endl;
+    if (nBytes > 0){
+        std::cout << "stamp = " << deltatime << std::endl;
+    }
+  }
 }
 
 bsc_xfer_t xfer;
 
 int main()
 {
+  // MIDI init
   RtMidiIn *midiin = new RtMidiIn();
   RtMidiOut *midiout = new RtMidiOut();
 
   midiin->openVirtualPort("Hans_II_IN");
-  midiin->setCallback( &callback );
+  midiin->setCallback( &midi_in_callback );
   midiin->ignoreTypes( false, false, false );
-
   midiout->openVirtualPort("Hans_II_OUT");
  
+  // I2C follower init
   gpioInitialise();
   cout << "Initialized GPIOs\n";
+
   // Close any old device
   xfer.control = getControlBits(SLAVE_I2C_ADDRESS, false);
   bscXfer(&xfer);
+
   // Set I2C slave Address 
   xfer.control = getControlBits(SLAVE_I2C_ADDRESS, true);
   int status = bscXfer(&xfer); 
@@ -125,3 +130,11 @@ int main()
 
   return 0;
 }
+
+/*
+  HANS_II_MIDI // Teletype to MIDI via I2C 0.0.1
+  Nordseele 2021 | written in pure "newbie" c++ | Could (and will) surely be improved but needs intensive testing first.
+  Usage: Connect Teletype to Hans (ii follower). Use the Disting EX MIDI ops.
+  Requirements: Hans add-on board for RPI Z.
+  Libraries: Pigpio + RTMidi.
+*/

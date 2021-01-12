@@ -1,7 +1,5 @@
 # hans_ii_midi_c
 
-WIP do not use
-
 TT to Hans | II to MIDI
 
 #### Compile:
@@ -25,3 +23,8 @@ sudo ./home/pi/hans_ii_midi_c/build/hans_ii_midi
     sudo systemctl stop pigpio
     sudo systemctl disable pigpio
 
+#### Tasks
+
+    - Create a service. 
+    - 🧹
+    - ⚒
