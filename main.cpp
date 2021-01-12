@@ -50,25 +50,7 @@ int main()
               for(int i = 0; i < xfer.rxCnt; i++) {
                 int op = xfer.rxBuf[i] >> 7;
                 if ( op == 1) { 
-                  switch (op & 0xF0)
-                  {
-                  case 80:
-                    cout << "note off";
-                    break;
-                  case 90:
-                    cout << "note on";
-                    break;
-                  case 0xB0:
-                    cout << "controller";
-                    break;
-                  case 0xC0:
-                    cout << "program change";
-                    break;
-                  
-                  default:
-                    cout << "unknown MIDI command";
-                    break;
-                  }
+                  cout << op &0xF0;
                 }
               }
             midiout->sendMessage(&message);    
