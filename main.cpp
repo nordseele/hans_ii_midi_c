@@ -4,6 +4,9 @@
 #include <pigpio.h>
 #include "bsc.h"
 
+#define SLAVE_I2C_ADDRESS 0x41
+#define DEBUG false
+
 using namespace std;
 
 void callback( double deltatime, vector< unsigned char > *message, void *userData )
@@ -40,13 +43,17 @@ int main()
   xfer.control = getControlBits(SLAVE_I2C_ADDRESS, true);
   int status = bscXfer(&xfer); 
   
-  // Parse, format and send MIDI message -- use event ? 
+  // Parse, format and send MIDI message -- Use event ? 
   if (status >= 0) {
       cout << "Opened connection with Teletype\n";
       xfer.rxCnt = 0;
       while(1) {
         bscXfer(&xfer);
         if(xfer.rxCnt > 0) {
+          if (DEBUG) {
+            cout << "debug";
+          }
+
           for(int i = 0; i < xfer.rxCnt; i++) {
             int byte = xfer.rxBuf[i];
             int is_status_byte = xfer.rxBuf[i] >> 7;
@@ -88,21 +95,22 @@ int main()
                 }
                 break;
               case 0xF0:
-                  if (xfer.rxBuf[i] == 0xF8){
-                    message.push_back(xfer.rxBuf[i]);
-                    midiout->sendMessage(&message);
-                  } else if (xfer.rxBuf[i] == 0xFA){
-                    message.push_back(xfer.rxBuf[i]);
-                    midiout->sendMessage(&message);                      
-                  } else if (xfer.rxBuf[i] == 0xFB){
-                    message.push_back(xfer.rxBuf[i]);
-                    midiout->sendMessage(&message);                      
-                  } else if (xfer.rxBuf[i] == 0xFC){
-                    message.push_back(xfer.rxBuf[i]);
-                    midiout->sendMessage(&message);                      
-                  }
+                if (xfer.rxBuf[i] == 0xF8){
+                  message.push_back(xfer.rxBuf[i]);
+                  midiout->sendMessage(&message);
+                } else if (xfer.rxBuf[i] == 0xFA){
+                  message.push_back(xfer.rxBuf[i]);
+                  midiout->sendMessage(&message);                      
+                } else if (xfer.rxBuf[i] == 0xFB){
+                  message.push_back(xfer.rxBuf[i]);
+                  midiout->sendMessage(&message);                      
+                } else if (xfer.rxBuf[i] == 0xFC){
+                  message.push_back(xfer.rxBuf[i]);
+                  midiout->sendMessage(&message);                      
+                }
                 break;            
               default:
+                cout << "MIDI function not implemented"
                 break;
               }
             }
