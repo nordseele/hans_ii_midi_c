@@ -49,8 +49,8 @@ int main()
             if(xfer.rxCnt > 0) {
               for(int i = 0; i < xfer.rxCnt; i++) {
                 int op = xfer.rxBuf[i] >> 7;
-                int res = op & 0xF0;
-                  cout << op;
+                int res = (op & 0xF0 == 0);
+                  cout << op << "\n";
                   cout << res;
                 
               }
