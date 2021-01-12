@@ -110,7 +110,7 @@ int main()
                 }
                 break;            
               default:
-                cout << "MIDI function not implemented"
+                cout << "MIDI function not implemented";
                 break;
               }
             }
