@@ -57,10 +57,10 @@ int main()
                   case 90:
                     cout << "note on";
                     break;
-                  case B0:
+                  case 0xB0:
                     cout << "controller";
                     break;
-                  case C0:
+                  case 0xC0:
                     cout << "program change";
                     break;
                   
