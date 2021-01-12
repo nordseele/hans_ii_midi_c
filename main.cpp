@@ -31,71 +31,84 @@ int main()
 
   vector<unsigned char> message{144, 60, 40};
  
-    gpioInitialise();
-    cout << "Initialized GPIOs\n";
-    // Close any old device
-    xfer.control = getControlBits(SLAVE_I2C_ADDRESS, false);
-    bscXfer(&xfer);
-    // Set I2C slave Address 
-    xfer.control = getControlBits(SLAVE_I2C_ADDRESS, true);
-    int status = bscXfer(&xfer); 
-    
-    // Parse, format and send MIDI message 
-    if (status >= 0) {
-        cout << "Opened connection with Teletype\n";
-        xfer.rxCnt = 0;
-        // Todo: use events.
-        while(1) {
-            bscXfer(&xfer);
-            if(xfer.rxCnt > 0) {
-              for(int i = 0; i < xfer.rxCnt; i++) {
-                int byte = xfer.rxBuf[i];
-                int is_status_byte = xfer.rxBuf[i] >> 7;
+  gpioInitialise();
+  cout << "Initialized GPIOs\n";
+  // Close any old device
+  xfer.control = getControlBits(SLAVE_I2C_ADDRESS, false);
+  bscXfer(&xfer);
+  // Set I2C slave Address 
+  xfer.control = getControlBits(SLAVE_I2C_ADDRESS, true);
+  int status = bscXfer(&xfer); 
+  
+  // Parse, format and send MIDI message -- use event ? 
+  if (status >= 0) {
+      cout << "Opened connection with Teletype\n";
+      xfer.rxCnt = 0;
+      while(1) {
+        bscXfer(&xfer);
+        if(xfer.rxCnt > 0) {
+          for(int i = 0; i < xfer.rxCnt; i++) {
+            int byte = xfer.rxBuf[i];
+            int is_status_byte = xfer.rxBuf[i] >> 7;
 
-                if (is_status_byte == 1) {
-                  int operation = byte & 0xF0;
-                  vector<unsigned char> message;
-                  switch (operation)
-                  {
-                  case 0x80:
-                    message.push_back(xfer.rxBuf[i]);
-                    message.push_back(xfer.rxBuf[i + 1]);
-                    message.push_back(xfer.rxBuf[i + 2]);
-                    if (message.size() == 3) {
-                      midiout->sendMessage(&message);
-                    }
-                    break;
-                  case 0x90:
-                    message.push_back(xfer.rxBuf[i]);
-                    message.push_back(xfer.rxBuf[i + 1]);
-                    message.push_back(xfer.rxBuf[i + 2]);
-                    if (message.size() == 3) {
-                      midiout->sendMessage(&message);
-                    }
-                    break;
-                  case 0xB0:
-                    message.push_back(xfer.rxBuf[i]);
-                    message.push_back(xfer.rxBuf[i + 1]);
-                    message.push_back(xfer.rxBuf[i + 2]);
-                    if (message.size() == 3) {
-                      midiout->sendMessage(&message);
-                    }
-                    break;
-                  case 0xC0:
-                    message.push_back(xfer.rxBuf[i]);
-                    message.push_back(xfer.rxBuf[i + 1]);
-                    if (message.size() == 2) {
-                      midiout->sendMessage(&message);
-                    }
-                    break;
-                  
-                  default:
-                    break;
-                  }
+            if (is_status_byte == 1) {
+              int operation = byte & 0xF0;
+              vector<unsigned char> message;
+              switch (operation)
+              {
+              case 0x80:
+                message.push_back(xfer.rxBuf[i]);
+                message.push_back(xfer.rxBuf[i + 1]);
+                message.push_back(xfer.rxBuf[i + 2]);
+                if (message.size() == 3) {
+                  midiout->sendMessage(&message);
                 }
+                break;
+              case 0x90:
+                message.push_back(xfer.rxBuf[i]);
+                message.push_back(xfer.rxBuf[i + 1]);
+                message.push_back(xfer.rxBuf[i + 2]);
+                if (message.size() == 3) {
+                  midiout->sendMessage(&message);
+                }
+                break;
+              case 0xB0:
+                message.push_back(xfer.rxBuf[i]);
+                message.push_back(xfer.rxBuf[i + 1]);
+                message.push_back(xfer.rxBuf[i + 2]);
+                if (message.size() == 3) {
+                  midiout->sendMessage(&message);
+                }
+                break;
+              case 0xC0:
+                message.push_back(xfer.rxBuf[i]);
+                message.push_back(xfer.rxBuf[i + 1]);
+                if (message.size() == 2) {
+                  midiout->sendMessage(&message);
+                }
+                break;
+              case 0xF0:
+                  if (xfer.rxBuf[i] == 0xF8){
+                    message.push_back(xfer.rxBuf[i]);
+                    midiout->sendMessage(&message);
+                  } else if (xfer.rxBuf[i] == 0xFA){
+                    message.push_back(xfer.rxBuf[i]);
+                    midiout->sendMessage(&message);                      
+                  } else if (xfer.rxBuf[i] == 0xFB){
+                    message.push_back(xfer.rxBuf[i]);
+                    midiout->sendMessage(&message);                      
+                  } else if (xfer.rxBuf[i] == 0xFC){
+                    message.push_back(xfer.rxBuf[i]);
+                    midiout->sendMessage(&message);                      
+                  }
+                break;            
+              default:
+                break;
               }
-            } 
+            }
+          }
         } 
+      } 
     }
     else {
        cout << "Failed to communicate with Teletype\n"; 
