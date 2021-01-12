@@ -60,24 +60,32 @@ int main()
                     message.push_back(xfer.rxBuf[i]);
                     message.push_back(xfer.rxBuf[i + 1]);
                     message.push_back(xfer.rxBuf[i + 2]);
-                    midiout->sendMessage(&message);
+                    if (message.size() == 3) {
+                      midiout->sendMessage(&message);
+                    }
                     break;
                   case 0x90:
                     message.push_back(xfer.rxBuf[i]);
                     message.push_back(xfer.rxBuf[i + 1]);
                     message.push_back(xfer.rxBuf[i + 2]);
-                    midiout->sendMessage(&message);
+                    if (message.size() == 3) {
+                      midiout->sendMessage(&message);
+                    }
                     break;
                   case 0xB0:
                     message.push_back(xfer.rxBuf[i]);
                     message.push_back(xfer.rxBuf[i + 1]);
                     message.push_back(xfer.rxBuf[i + 2]);
-                    midiout->sendMessage(&message);
+                    if (message.size() == 3) {
+                      midiout->sendMessage(&message);
+                    }
                     break;
                   case 0xC0:
                     message.push_back(xfer.rxBuf[i]);
                     message.push_back(xfer.rxBuf[i + 1]);
-                    midiout->sendMessage(&message);
+                    if (message.size() == 2) {
+                      midiout->sendMessage(&message);
+                    }
                     break;
                   
                   default:
