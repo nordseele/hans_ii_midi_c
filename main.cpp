@@ -48,7 +48,7 @@ int main()
             bscXfer(&xfer);
             if(xfer.rxCnt > 0) {
               for(int i = 0; i < xfer.rxCnt; i++) {
-                int op == xfer.rxBuf[i] >> 7;
+                int op = xfer.rxBuf[i] >> 7;
                 if ( op == 1) { 
                   switch (op & 0xF0)
                   {
