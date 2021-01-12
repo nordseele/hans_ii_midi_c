@@ -52,7 +52,7 @@ int main()
                 int is_status_byte = xfer.rxBuf[i] >> 7;
 
                 if (is_status_byte == 1) {
-                  int operation = is_status_byte & 0xF0;
+                  int operation = byte & 0xF0;
                   cout << operation;
                 }
 
