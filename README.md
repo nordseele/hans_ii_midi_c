@@ -1,4 +1,4 @@
-# hans_ii_midi_c
+# # Hans [ ii > MIDI ]
 
 TT to Hans | II to MIDI
 
