@@ -53,7 +53,24 @@ int main()
 
                 if (is_status_byte == 1) {
                   int operation = byte & 0xF0;
-                  cout << operation;
+                  switch (operation)
+                  {
+                  case 0x80:
+                    cout << "note off expecting two more bytes";
+                    break;
+                  case 0x90:
+                    cout << "note on expecting two more bytes";
+                    break;
+                  case 0xB0:
+                    cout << "controller expecting two more bytes";
+                    break;
+                  case 0xC0:
+                    cout << "prg change expecting one more bytes";
+                    break;
+                  
+                  default:
+                    break;
+                  }
                 }
 
                // cout << ops << " " << op << " " << res << " " << "\n";   
