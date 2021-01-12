@@ -48,10 +48,28 @@ int main()
             bscXfer(&xfer);
             if(xfer.rxCnt > 0) {
               for(int i = 0; i < xfer.rxCnt; i++) {
-                int ops = xfer.rxBuf[i];
-                int op = xfer.rxBuf[i] >> 7;
-                int res = (op & 0xF0 == 0);
-                  cout << ops << " " << op << " " << res << " " << "\n";   
+                int byte = xfer.rxBuf[i];
+                int is_status_byte = xfer.rxBuf[i] >> 7;
+
+                if (is_status_byte == 1) {
+                  int message_type = is_status_byte & 0xF0;
+                  switch (mesage_type)
+                  {
+                  case 0x80:
+                    cout << "note off";
+                    break;
+                  case 0x90:
+                    cout << "note on";
+                    break;
+                  
+                  default:
+                    break;
+                  }
+                }
+
+
+
+                cout << ops << " " << op << " " << res << " " << "\n";   
               }
             midiout->sendMessage(&message);    
             cout << "\n";
