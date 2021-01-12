@@ -53,18 +53,7 @@ int main()
 
                 if (is_status_byte == 1) {
                   int operation = is_status_byte & 0xF0;
-                  switch (operation)
-                  {
-                  case 0x80:
-                    cout << "note off";
-                    break;
-                  case 0x90:
-                    cout << "note on";
-                    break;
-                  
-                  default:
-                    break;
-                  }
+                  cout << operation;
                 }
 
                // cout << ops << " " << op << " " << res << " " << "\n";   
