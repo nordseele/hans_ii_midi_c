@@ -3,7 +3,7 @@ Description=Hans_ii_midi
 After=network.target
 
 [Service]
-ExecStart=/usr/local/bin/hans_ii_midi
+ExecStart=/home/pi/hans_ii_midi_c/build/hans_ii_midi
 Restart=on-failure
 User=pi
 
