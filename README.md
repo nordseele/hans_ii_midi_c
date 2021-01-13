@@ -1,6 +1,6 @@
-# # Hans [ ii > MIDI ]
+# # Hans [ Teletype ii => MIDI ] 
 
-TT to Hans | II to MIDI
+Monome Teletype + Hans | II to MIDI
 
 #### Compile:
 
