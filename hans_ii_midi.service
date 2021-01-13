@@ -5,7 +5,7 @@ After=network.target
 [Service]
 ExecStart=/home/pi/hans_ii_midi_c/build/hans_ii_midi
 Restart=on-failure
-User=pi
+User=root
 
 [Install]
 WantedBy=multi-user.target
