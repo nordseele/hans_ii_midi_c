@@ -1,6 +1,5 @@
 file(REMOVE_RECURSE
   "CMakeFiles/hans_ii_midi.dir/main.cpp.o"
-  "CMakeFiles/hans_ii_midi.dir/bsc.cpp.o"
   "hans_ii_midi.pdb"
   "hans_ii_midi"
 )

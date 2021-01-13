@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../rtmidi/RtMidi.h
+exception
+-
+iostream
+-
+string
+-
+vector
+-
+
+/home/pi/hans_ii_midi_c/rtmidi/tests/cmidiin.cpp
+iostream
+-
+cstdlib
+-
+RtMidi.h
+/home/pi/hans_ii_midi_c/rtmidi/tests/RtMidi.h
+

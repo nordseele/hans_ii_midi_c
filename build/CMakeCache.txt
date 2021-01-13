@@ -20,7 +20,7 @@ ALSA_INCLUDE_DIR:PATH=/usr/include
 //The ALSA (asound) library
 ALSA_LIBRARY:FILEPATH=/usr/lib/arm-linux-gnueabihf/libasound.so
 
-//Build as shared library
+//Create shared libraries
 BUILD_SHARED_LIBS:BOOL=ON
 
 //Build the testing tree.
@@ -204,6 +204,21 @@ CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 //Value Computed by CMake
 CMAKE_PROJECT_NAME:STATIC=hans_ii_midi
 
+//Value Computed by CMake
+CMAKE_PROJECT_VERSION:STATIC=0.71
+
+//Value Computed by CMake
+CMAKE_PROJECT_VERSION_MAJOR:STATIC=0
+
+//Value Computed by CMake
+CMAKE_PROJECT_VERSION_MINOR:STATIC=71
+
+//Value Computed by CMake
+CMAKE_PROJECT_VERSION_PATCH:STATIC=
+
+//Value Computed by CMake
+CMAKE_PROJECT_VERSION_TWEAK:STATIC=
+
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/usr/bin/ranlib
 
@@ -270,6 +285,54 @@ COVERAGE_COMMAND:FILEPATH=/usr/bin/gcov
 //Extra command line flags to pass to the coverage tool
 COVERAGE_EXTRA_FLAGS:STRING=-l
 
+//Enable to build Debian packages
+CPACK_BINARY_DEB:BOOL=OFF
+
+//Enable to build FreeBSD packages
+CPACK_BINARY_FREEBSD:BOOL=OFF
+
+//Enable to build IFW packages
+CPACK_BINARY_IFW:BOOL=OFF
+
+//Enable to build NSIS packages
+CPACK_BINARY_NSIS:BOOL=OFF
+
+//Enable to build RPM packages
+CPACK_BINARY_RPM:BOOL=OFF
+
+//Enable to build STGZ packages
+CPACK_BINARY_STGZ:BOOL=ON
+
+//Enable to build TBZ2 packages
+CPACK_BINARY_TBZ2:BOOL=OFF
+
+//Enable to build TGZ packages
+CPACK_BINARY_TGZ:BOOL=ON
+
+//Enable to build TXZ packages
+CPACK_BINARY_TXZ:BOOL=OFF
+
+//Enable to build TZ packages
+CPACK_BINARY_TZ:BOOL=ON
+
+//Enable to build RPM source packages
+CPACK_SOURCE_RPM:BOOL=OFF
+
+//Enable to build TBZ2 source packages
+CPACK_SOURCE_TBZ2:BOOL=ON
+
+//Enable to build TGZ source packages
+CPACK_SOURCE_TGZ:BOOL=ON
+
+//Enable to build TXZ source packages
+CPACK_SOURCE_TXZ:BOOL=ON
+
+//Enable to build TZ source packages
+CPACK_SOURCE_TZ:BOOL=ON
+
+//Enable to build ZIP source packages
+CPACK_SOURCE_ZIP:BOOL=OFF
+
 //How many times to retry timed-out CTest submissions.
 CTEST_SUBMIT_RETRY_COUNT:STRING=3
 
@@ -309,11 +372,9 @@ P4COMMAND:FILEPATH=P4COMMAND-NOTFOUND
 //pkg-config executable
 PKG_CONFIG_EXECUTABLE:FILEPATH=/usr/bin/pkg-config
 
-//Value Computed by CMake
-Project_BINARY_DIR:STATIC=/home/pi/hans_ii_midi_c/build
-
-//Value Computed by CMake
-Project_SOURCE_DIR:STATIC=/home/pi/hans_ii_midi_c
+//Where can one of the python3.7, python3, python, ipy32 or ipy
+// libraries be found
+Python_EXECUTABLE:FILEPATH=/usr/bin/python3.7
 
 //Compile with ALSA support.
 RTMIDI_API_ALSA:BOOL=ON
@@ -330,8 +391,14 @@ RTMIDI_API_WINMM:BOOL=OFF
 //Name of 'uninstall' build target
 RTMIDI_TARGETNAME_UNINSTALL:STRING=uninstall
 
+//Path to a file.
+RT_INCLUDE_DIR:PATH=/usr/include
+
+//Path to a library.
+RT_LIBRARIES:FILEPATH=/usr/lib/arm-linux-gnueabihf/librt.so
+
 //Value Computed by CMake
-RtMidi_BINARY_DIR:STATIC=/home/pi/hans_ii_midi_c/build/pigpio
+RtMidi_BINARY_DIR:STATIC=/home/pi/hans_ii_midi_c/build/rtmidi
 
 //Value Computed by CMake
 RtMidi_SOURCE_DIR:STATIC=/home/pi/hans_ii_midi_c/rtmidi
@@ -358,17 +425,11 @@ hans_ii_midi_BINARY_DIR:STATIC=/home/pi/hans_ii_midi_c/build
 //Value Computed by CMake
 hans_ii_midi_SOURCE_DIR:STATIC=/home/pi/hans_ii_midi_c
 
-//Path to a file.
-pigpio_INCLUDE_DIR:PATH=/usr/include
+//Value Computed by CMake
+pigpio_BINARY_DIR:STATIC=/home/pi/hans_ii_midi_c/build/pigpio
 
-//Path to a library.
-pigpio_LIBRARY:FILEPATH=/usr/lib/libpigpio.so
-
-//Path to a library.
-pigpiod_if2_LIBRARY:FILEPATH=/usr/lib/libpigpiod_if2.so
-
-//Path to a library.
-pigpiod_if_LIBRARY:FILEPATH=/usr/lib/libpigpiod_if.so
+//Value Computed by CMake
+pigpio_SOURCE_DIR:STATIC=/home/pi/hans_ii_midi_c/pigpio
 
 //Path to a library.
 pkgcfg_lib_jack_jack:FILEPATH=/usr/lib/arm-linux-gnueabihf/libjack.so
@@ -527,7 +588,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=2
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=3
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
@@ -568,10 +629,50 @@ CMAKE_STRIP-ADVANCED:INTERNAL=1
 CMAKE_UNAME:INTERNAL=/bin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
+//Compiler support for a deprecated attribute
+COMPILER_HAS_DEPRECATED:INTERNAL=1
+//Test COMPILER_HAS_DEPRECATED_ATTR
+COMPILER_HAS_DEPRECATED_ATTR:INTERNAL=1
+//Test COMPILER_HAS_HIDDEN_INLINE_VISIBILITY
+COMPILER_HAS_HIDDEN_INLINE_VISIBILITY:INTERNAL=1
+//Test COMPILER_HAS_HIDDEN_VISIBILITY
+COMPILER_HAS_HIDDEN_VISIBILITY:INTERNAL=1
 //ADVANCED property for variable: COVERAGE_COMMAND
 COVERAGE_COMMAND-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: COVERAGE_EXTRA_FLAGS
 COVERAGE_EXTRA_FLAGS-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CPACK_BINARY_DEB
+CPACK_BINARY_DEB-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CPACK_BINARY_FREEBSD
+CPACK_BINARY_FREEBSD-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CPACK_BINARY_IFW
+CPACK_BINARY_IFW-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CPACK_BINARY_NSIS
+CPACK_BINARY_NSIS-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CPACK_BINARY_RPM
+CPACK_BINARY_RPM-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CPACK_BINARY_STGZ
+CPACK_BINARY_STGZ-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CPACK_BINARY_TBZ2
+CPACK_BINARY_TBZ2-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CPACK_BINARY_TGZ
+CPACK_BINARY_TGZ-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CPACK_BINARY_TXZ
+CPACK_BINARY_TXZ-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CPACK_BINARY_TZ
+CPACK_BINARY_TZ-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CPACK_SOURCE_RPM
+CPACK_SOURCE_RPM-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CPACK_SOURCE_TBZ2
+CPACK_SOURCE_TBZ2-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CPACK_SOURCE_TGZ
+CPACK_SOURCE_TGZ-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CPACK_SOURCE_TXZ
+CPACK_SOURCE_TXZ-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CPACK_SOURCE_TZ
+CPACK_SOURCE_TZ-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CPACK_SOURCE_ZIP
+CPACK_SOURCE_ZIP-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CTEST_SUBMIT_RETRY_COUNT
 CTEST_SUBMIT_RETRY_COUNT-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CTEST_SUBMIT_RETRY_DELAY
@@ -588,8 +689,8 @@ FIND_PACKAGE_MESSAGE_DETAILS_ALSA:INTERNAL=[/usr/lib/arm-linux-gnueabihf/libasou
 FIND_PACKAGE_MESSAGE_DETAILS_PkgConfig:INTERNAL=[/usr/bin/pkg-config][v0.29()]
 //Details about finding Threads
 FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
-//Details about finding pigpio
-FIND_PACKAGE_MESSAGE_DETAILS_pigpio:INTERNAL=[/usr/include][/usr/lib/libpigpio.so][/usr/lib/libpigpiod_if.so][/usr/lib/libpigpiod_if2.so][v()]
+//Details about finding rt
+FIND_PACKAGE_MESSAGE_DETAILS_rt:INTERNAL=[/usr/lib/arm-linux-gnueabihf/librt.so][/usr/include][v()]
 //ADVANCED property for variable: GITCOMMAND
 GITCOMMAND-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: HGCOMMAND
@@ -606,6 +707,12 @@ MEMORYCHECK_SUPPRESSIONS_FILE-ADVANCED:INTERNAL=1
 P4COMMAND-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: PKG_CONFIG_EXECUTABLE
 PKG_CONFIG_EXECUTABLE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Python_EXECUTABLE
+Python_EXECUTABLE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: RT_INCLUDE_DIR
+RT_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: RT_LIBRARIES
+RT_LIBRARIES-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: SCPCOMMAND
 SCPCOMMAND-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: SITE

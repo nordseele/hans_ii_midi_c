@@ -1,0 +1,1 @@
+/usr/bin/cc   -rdynamic CMakeFiles/pigpiod.dir/pigpiod.c.o  -o pigpiod -Wl,-rpath,/home/pi/hans_ii_midi_c/build/pigpio: libpigpio.so -lrt -lpthread 

@@ -1,1 +1,1 @@
-/usr/bin/c++  -Wall -D__LINUX_ALSA__ -lpthread -Wall   CMakeFiles/sysextest.dir/tests/sysextest.cpp.o  -o tests/sysextest -Wl,-rpath,/home/pi/hans_ii_midi_c/build/pigpio librtmidi.so.5.0.0 -ljack /usr/lib/arm-linux-gnueabihf/libasound.so -lpthread 
+/usr/bin/c++   -Wall   CMakeFiles/sysextest.dir/tests/sysextest.cpp.o  -o tests/sysextest -Wl,-rpath,/home/pi/hans_ii_midi_c/build/pigpio librtmidi.so.5.0.0 -ljack /usr/lib/arm-linux-gnueabihf/libasound.so -lpthread 

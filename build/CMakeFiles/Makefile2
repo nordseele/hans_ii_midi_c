@@ -68,10 +68,11 @@ CMAKE_BINARY_DIR = /home/pi/hans_ii_midi_c/build
 # Target rules for target CMakeFiles/hans_ii_midi.dir
 
 # All Build rule for target.
-CMakeFiles/hans_ii_midi.dir/all: pigpio/CMakeFiles/rtmidi.dir/all
+CMakeFiles/hans_ii_midi.dir/all: pigpio/CMakeFiles/pigpio.dir/all
+CMakeFiles/hans_ii_midi.dir/all: rtmidi/CMakeFiles/rtmidi.dir/all
 	$(MAKE) -f CMakeFiles/hans_ii_midi.dir/build.make CMakeFiles/hans_ii_midi.dir/depend
 	$(MAKE) -f CMakeFiles/hans_ii_midi.dir/build.make CMakeFiles/hans_ii_midi.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num=5,6,7 "Built target hans_ii_midi"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num=5,6 "Built target hans_ii_midi"
 .PHONY : CMakeFiles/hans_ii_midi.dir/all
 
 # Include target in all.
@@ -81,7 +82,7 @@ all: CMakeFiles/hans_ii_midi.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/hans_ii_midi.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 8
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/hans_ii_midi.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
 .PHONY : CMakeFiles/hans_ii_midi.dir/rule
@@ -102,58 +103,1316 @@ clean: CMakeFiles/hans_ii_midi.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Directory level rules for directory rtmidi
+
+# Convenience name for "all" pass in the directory.
+rtmidi/all: rtmidi/CMakeFiles/rtmidi.dir/all
+rtmidi/all: rtmidi/CMakeFiles/midiprobe.dir/all
+rtmidi/all: rtmidi/CMakeFiles/midiclock.dir/all
+rtmidi/all: rtmidi/CMakeFiles/sysextest.dir/all
+rtmidi/all: rtmidi/CMakeFiles/cmidiin.dir/all
+rtmidi/all: rtmidi/CMakeFiles/midiout.dir/all
+rtmidi/all: rtmidi/CMakeFiles/qmidiin.dir/all
+rtmidi/all: rtmidi/CMakeFiles/apinames.dir/all
+
+.PHONY : rtmidi/all
+
+# Convenience name for "clean" pass in the directory.
+rtmidi/clean: rtmidi/CMakeFiles/ExperimentalConfigure.dir/clean
+rtmidi/clean: rtmidi/CMakeFiles/NightlySubmit.dir/clean
+rtmidi/clean: rtmidi/CMakeFiles/NightlyMemCheck.dir/clean
+rtmidi/clean: rtmidi/CMakeFiles/ContinuousConfigure.dir/clean
+rtmidi/clean: rtmidi/CMakeFiles/ContinuousTest.dir/clean
+rtmidi/clean: rtmidi/CMakeFiles/ExperimentalStart.dir/clean
+rtmidi/clean: rtmidi/CMakeFiles/NightlyTest.dir/clean
+rtmidi/clean: rtmidi/CMakeFiles/NightlyUpdate.dir/clean
+rtmidi/clean: rtmidi/CMakeFiles/ExperimentalBuild.dir/clean
+rtmidi/clean: rtmidi/CMakeFiles/ContinuousMemCheck.dir/clean
+rtmidi/clean: rtmidi/CMakeFiles/rtmidi.dir/clean
+rtmidi/clean: rtmidi/CMakeFiles/NightlyBuild.dir/clean
+rtmidi/clean: rtmidi/CMakeFiles/Continuous.dir/clean
+rtmidi/clean: rtmidi/CMakeFiles/ContinuousUpdate.dir/clean
+rtmidi/clean: rtmidi/CMakeFiles/NightlyStart.dir/clean
+rtmidi/clean: rtmidi/CMakeFiles/midiprobe.dir/clean
+rtmidi/clean: rtmidi/CMakeFiles/ExperimentalTest.dir/clean
+rtmidi/clean: rtmidi/CMakeFiles/NightlyCoverage.dir/clean
+rtmidi/clean: rtmidi/CMakeFiles/NightlyMemoryCheck.dir/clean
+rtmidi/clean: rtmidi/CMakeFiles/ExperimentalUpdate.dir/clean
+rtmidi/clean: rtmidi/CMakeFiles/Nightly.dir/clean
+rtmidi/clean: rtmidi/CMakeFiles/Experimental.dir/clean
+rtmidi/clean: rtmidi/CMakeFiles/ExperimentalCoverage.dir/clean
+rtmidi/clean: rtmidi/CMakeFiles/ExperimentalMemCheck.dir/clean
+rtmidi/clean: rtmidi/CMakeFiles/ContinuousStart.dir/clean
+rtmidi/clean: rtmidi/CMakeFiles/ContinuousCoverage.dir/clean
+rtmidi/clean: rtmidi/CMakeFiles/ExperimentalSubmit.dir/clean
+rtmidi/clean: rtmidi/CMakeFiles/midiclock.dir/clean
+rtmidi/clean: rtmidi/CMakeFiles/sysextest.dir/clean
+rtmidi/clean: rtmidi/CMakeFiles/ContinuousBuild.dir/clean
+rtmidi/clean: rtmidi/CMakeFiles/ContinuousSubmit.dir/clean
+rtmidi/clean: rtmidi/CMakeFiles/cmidiin.dir/clean
+rtmidi/clean: rtmidi/CMakeFiles/uninstall.dir/clean
+rtmidi/clean: rtmidi/CMakeFiles/midiout.dir/clean
+rtmidi/clean: rtmidi/CMakeFiles/NightlyConfigure.dir/clean
+rtmidi/clean: rtmidi/CMakeFiles/qmidiin.dir/clean
+rtmidi/clean: rtmidi/CMakeFiles/apinames.dir/clean
+
+.PHONY : rtmidi/clean
+
+# Convenience name for "preinstall" pass in the directory.
+rtmidi/preinstall:
+
+.PHONY : rtmidi/preinstall
+
+#=============================================================================
+# Target rules for target rtmidi/CMakeFiles/ExperimentalConfigure.dir
+
+# All Build rule for target.
+rtmidi/CMakeFiles/ExperimentalConfigure.dir/all:
+	$(MAKE) -f rtmidi/CMakeFiles/ExperimentalConfigure.dir/build.make rtmidi/CMakeFiles/ExperimentalConfigure.dir/depend
+	$(MAKE) -f rtmidi/CMakeFiles/ExperimentalConfigure.dir/build.make rtmidi/CMakeFiles/ExperimentalConfigure.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num= "Built target ExperimentalConfigure"
+.PHONY : rtmidi/CMakeFiles/ExperimentalConfigure.dir/all
+
+# Build rule for subdir invocation for target.
+rtmidi/CMakeFiles/ExperimentalConfigure.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 rtmidi/CMakeFiles/ExperimentalConfigure.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
+.PHONY : rtmidi/CMakeFiles/ExperimentalConfigure.dir/rule
+
+# Convenience name for target.
+ExperimentalConfigure: rtmidi/CMakeFiles/ExperimentalConfigure.dir/rule
+
+.PHONY : ExperimentalConfigure
+
+# clean rule for target.
+rtmidi/CMakeFiles/ExperimentalConfigure.dir/clean:
+	$(MAKE) -f rtmidi/CMakeFiles/ExperimentalConfigure.dir/build.make rtmidi/CMakeFiles/ExperimentalConfigure.dir/clean
+.PHONY : rtmidi/CMakeFiles/ExperimentalConfigure.dir/clean
+
+# clean rule for target.
+clean: rtmidi/CMakeFiles/ExperimentalConfigure.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target rtmidi/CMakeFiles/NightlySubmit.dir
+
+# All Build rule for target.
+rtmidi/CMakeFiles/NightlySubmit.dir/all:
+	$(MAKE) -f rtmidi/CMakeFiles/NightlySubmit.dir/build.make rtmidi/CMakeFiles/NightlySubmit.dir/depend
+	$(MAKE) -f rtmidi/CMakeFiles/NightlySubmit.dir/build.make rtmidi/CMakeFiles/NightlySubmit.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num= "Built target NightlySubmit"
+.PHONY : rtmidi/CMakeFiles/NightlySubmit.dir/all
+
+# Build rule for subdir invocation for target.
+rtmidi/CMakeFiles/NightlySubmit.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 rtmidi/CMakeFiles/NightlySubmit.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
+.PHONY : rtmidi/CMakeFiles/NightlySubmit.dir/rule
+
+# Convenience name for target.
+NightlySubmit: rtmidi/CMakeFiles/NightlySubmit.dir/rule
+
+.PHONY : NightlySubmit
+
+# clean rule for target.
+rtmidi/CMakeFiles/NightlySubmit.dir/clean:
+	$(MAKE) -f rtmidi/CMakeFiles/NightlySubmit.dir/build.make rtmidi/CMakeFiles/NightlySubmit.dir/clean
+.PHONY : rtmidi/CMakeFiles/NightlySubmit.dir/clean
+
+# clean rule for target.
+clean: rtmidi/CMakeFiles/NightlySubmit.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target rtmidi/CMakeFiles/NightlyMemCheck.dir
+
+# All Build rule for target.
+rtmidi/CMakeFiles/NightlyMemCheck.dir/all:
+	$(MAKE) -f rtmidi/CMakeFiles/NightlyMemCheck.dir/build.make rtmidi/CMakeFiles/NightlyMemCheck.dir/depend
+	$(MAKE) -f rtmidi/CMakeFiles/NightlyMemCheck.dir/build.make rtmidi/CMakeFiles/NightlyMemCheck.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num= "Built target NightlyMemCheck"
+.PHONY : rtmidi/CMakeFiles/NightlyMemCheck.dir/all
+
+# Build rule for subdir invocation for target.
+rtmidi/CMakeFiles/NightlyMemCheck.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 rtmidi/CMakeFiles/NightlyMemCheck.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
+.PHONY : rtmidi/CMakeFiles/NightlyMemCheck.dir/rule
+
+# Convenience name for target.
+NightlyMemCheck: rtmidi/CMakeFiles/NightlyMemCheck.dir/rule
+
+.PHONY : NightlyMemCheck
+
+# clean rule for target.
+rtmidi/CMakeFiles/NightlyMemCheck.dir/clean:
+	$(MAKE) -f rtmidi/CMakeFiles/NightlyMemCheck.dir/build.make rtmidi/CMakeFiles/NightlyMemCheck.dir/clean
+.PHONY : rtmidi/CMakeFiles/NightlyMemCheck.dir/clean
+
+# clean rule for target.
+clean: rtmidi/CMakeFiles/NightlyMemCheck.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target rtmidi/CMakeFiles/ContinuousConfigure.dir
+
+# All Build rule for target.
+rtmidi/CMakeFiles/ContinuousConfigure.dir/all:
+	$(MAKE) -f rtmidi/CMakeFiles/ContinuousConfigure.dir/build.make rtmidi/CMakeFiles/ContinuousConfigure.dir/depend
+	$(MAKE) -f rtmidi/CMakeFiles/ContinuousConfigure.dir/build.make rtmidi/CMakeFiles/ContinuousConfigure.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num= "Built target ContinuousConfigure"
+.PHONY : rtmidi/CMakeFiles/ContinuousConfigure.dir/all
+
+# Build rule for subdir invocation for target.
+rtmidi/CMakeFiles/ContinuousConfigure.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 rtmidi/CMakeFiles/ContinuousConfigure.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
+.PHONY : rtmidi/CMakeFiles/ContinuousConfigure.dir/rule
+
+# Convenience name for target.
+ContinuousConfigure: rtmidi/CMakeFiles/ContinuousConfigure.dir/rule
+
+.PHONY : ContinuousConfigure
+
+# clean rule for target.
+rtmidi/CMakeFiles/ContinuousConfigure.dir/clean:
+	$(MAKE) -f rtmidi/CMakeFiles/ContinuousConfigure.dir/build.make rtmidi/CMakeFiles/ContinuousConfigure.dir/clean
+.PHONY : rtmidi/CMakeFiles/ContinuousConfigure.dir/clean
+
+# clean rule for target.
+clean: rtmidi/CMakeFiles/ContinuousConfigure.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target rtmidi/CMakeFiles/ContinuousTest.dir
+
+# All Build rule for target.
+rtmidi/CMakeFiles/ContinuousTest.dir/all:
+	$(MAKE) -f rtmidi/CMakeFiles/ContinuousTest.dir/build.make rtmidi/CMakeFiles/ContinuousTest.dir/depend
+	$(MAKE) -f rtmidi/CMakeFiles/ContinuousTest.dir/build.make rtmidi/CMakeFiles/ContinuousTest.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num= "Built target ContinuousTest"
+.PHONY : rtmidi/CMakeFiles/ContinuousTest.dir/all
+
+# Build rule for subdir invocation for target.
+rtmidi/CMakeFiles/ContinuousTest.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 rtmidi/CMakeFiles/ContinuousTest.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
+.PHONY : rtmidi/CMakeFiles/ContinuousTest.dir/rule
+
+# Convenience name for target.
+ContinuousTest: rtmidi/CMakeFiles/ContinuousTest.dir/rule
+
+.PHONY : ContinuousTest
+
+# clean rule for target.
+rtmidi/CMakeFiles/ContinuousTest.dir/clean:
+	$(MAKE) -f rtmidi/CMakeFiles/ContinuousTest.dir/build.make rtmidi/CMakeFiles/ContinuousTest.dir/clean
+.PHONY : rtmidi/CMakeFiles/ContinuousTest.dir/clean
+
+# clean rule for target.
+clean: rtmidi/CMakeFiles/ContinuousTest.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target rtmidi/CMakeFiles/ExperimentalStart.dir
+
+# All Build rule for target.
+rtmidi/CMakeFiles/ExperimentalStart.dir/all:
+	$(MAKE) -f rtmidi/CMakeFiles/ExperimentalStart.dir/build.make rtmidi/CMakeFiles/ExperimentalStart.dir/depend
+	$(MAKE) -f rtmidi/CMakeFiles/ExperimentalStart.dir/build.make rtmidi/CMakeFiles/ExperimentalStart.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num= "Built target ExperimentalStart"
+.PHONY : rtmidi/CMakeFiles/ExperimentalStart.dir/all
+
+# Build rule for subdir invocation for target.
+rtmidi/CMakeFiles/ExperimentalStart.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 rtmidi/CMakeFiles/ExperimentalStart.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
+.PHONY : rtmidi/CMakeFiles/ExperimentalStart.dir/rule
+
+# Convenience name for target.
+ExperimentalStart: rtmidi/CMakeFiles/ExperimentalStart.dir/rule
+
+.PHONY : ExperimentalStart
+
+# clean rule for target.
+rtmidi/CMakeFiles/ExperimentalStart.dir/clean:
+	$(MAKE) -f rtmidi/CMakeFiles/ExperimentalStart.dir/build.make rtmidi/CMakeFiles/ExperimentalStart.dir/clean
+.PHONY : rtmidi/CMakeFiles/ExperimentalStart.dir/clean
+
+# clean rule for target.
+clean: rtmidi/CMakeFiles/ExperimentalStart.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target rtmidi/CMakeFiles/NightlyTest.dir
+
+# All Build rule for target.
+rtmidi/CMakeFiles/NightlyTest.dir/all:
+	$(MAKE) -f rtmidi/CMakeFiles/NightlyTest.dir/build.make rtmidi/CMakeFiles/NightlyTest.dir/depend
+	$(MAKE) -f rtmidi/CMakeFiles/NightlyTest.dir/build.make rtmidi/CMakeFiles/NightlyTest.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num= "Built target NightlyTest"
+.PHONY : rtmidi/CMakeFiles/NightlyTest.dir/all
+
+# Build rule for subdir invocation for target.
+rtmidi/CMakeFiles/NightlyTest.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 rtmidi/CMakeFiles/NightlyTest.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
+.PHONY : rtmidi/CMakeFiles/NightlyTest.dir/rule
+
+# Convenience name for target.
+NightlyTest: rtmidi/CMakeFiles/NightlyTest.dir/rule
+
+.PHONY : NightlyTest
+
+# clean rule for target.
+rtmidi/CMakeFiles/NightlyTest.dir/clean:
+	$(MAKE) -f rtmidi/CMakeFiles/NightlyTest.dir/build.make rtmidi/CMakeFiles/NightlyTest.dir/clean
+.PHONY : rtmidi/CMakeFiles/NightlyTest.dir/clean
+
+# clean rule for target.
+clean: rtmidi/CMakeFiles/NightlyTest.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target rtmidi/CMakeFiles/NightlyUpdate.dir
+
+# All Build rule for target.
+rtmidi/CMakeFiles/NightlyUpdate.dir/all:
+	$(MAKE) -f rtmidi/CMakeFiles/NightlyUpdate.dir/build.make rtmidi/CMakeFiles/NightlyUpdate.dir/depend
+	$(MAKE) -f rtmidi/CMakeFiles/NightlyUpdate.dir/build.make rtmidi/CMakeFiles/NightlyUpdate.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num= "Built target NightlyUpdate"
+.PHONY : rtmidi/CMakeFiles/NightlyUpdate.dir/all
+
+# Build rule for subdir invocation for target.
+rtmidi/CMakeFiles/NightlyUpdate.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 rtmidi/CMakeFiles/NightlyUpdate.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
+.PHONY : rtmidi/CMakeFiles/NightlyUpdate.dir/rule
+
+# Convenience name for target.
+NightlyUpdate: rtmidi/CMakeFiles/NightlyUpdate.dir/rule
+
+.PHONY : NightlyUpdate
+
+# clean rule for target.
+rtmidi/CMakeFiles/NightlyUpdate.dir/clean:
+	$(MAKE) -f rtmidi/CMakeFiles/NightlyUpdate.dir/build.make rtmidi/CMakeFiles/NightlyUpdate.dir/clean
+.PHONY : rtmidi/CMakeFiles/NightlyUpdate.dir/clean
+
+# clean rule for target.
+clean: rtmidi/CMakeFiles/NightlyUpdate.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target rtmidi/CMakeFiles/ExperimentalBuild.dir
+
+# All Build rule for target.
+rtmidi/CMakeFiles/ExperimentalBuild.dir/all:
+	$(MAKE) -f rtmidi/CMakeFiles/ExperimentalBuild.dir/build.make rtmidi/CMakeFiles/ExperimentalBuild.dir/depend
+	$(MAKE) -f rtmidi/CMakeFiles/ExperimentalBuild.dir/build.make rtmidi/CMakeFiles/ExperimentalBuild.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num= "Built target ExperimentalBuild"
+.PHONY : rtmidi/CMakeFiles/ExperimentalBuild.dir/all
+
+# Build rule for subdir invocation for target.
+rtmidi/CMakeFiles/ExperimentalBuild.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 rtmidi/CMakeFiles/ExperimentalBuild.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
+.PHONY : rtmidi/CMakeFiles/ExperimentalBuild.dir/rule
+
+# Convenience name for target.
+ExperimentalBuild: rtmidi/CMakeFiles/ExperimentalBuild.dir/rule
+
+.PHONY : ExperimentalBuild
+
+# clean rule for target.
+rtmidi/CMakeFiles/ExperimentalBuild.dir/clean:
+	$(MAKE) -f rtmidi/CMakeFiles/ExperimentalBuild.dir/build.make rtmidi/CMakeFiles/ExperimentalBuild.dir/clean
+.PHONY : rtmidi/CMakeFiles/ExperimentalBuild.dir/clean
+
+# clean rule for target.
+clean: rtmidi/CMakeFiles/ExperimentalBuild.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target rtmidi/CMakeFiles/ContinuousMemCheck.dir
+
+# All Build rule for target.
+rtmidi/CMakeFiles/ContinuousMemCheck.dir/all:
+	$(MAKE) -f rtmidi/CMakeFiles/ContinuousMemCheck.dir/build.make rtmidi/CMakeFiles/ContinuousMemCheck.dir/depend
+	$(MAKE) -f rtmidi/CMakeFiles/ContinuousMemCheck.dir/build.make rtmidi/CMakeFiles/ContinuousMemCheck.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num= "Built target ContinuousMemCheck"
+.PHONY : rtmidi/CMakeFiles/ContinuousMemCheck.dir/all
+
+# Build rule for subdir invocation for target.
+rtmidi/CMakeFiles/ContinuousMemCheck.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 rtmidi/CMakeFiles/ContinuousMemCheck.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
+.PHONY : rtmidi/CMakeFiles/ContinuousMemCheck.dir/rule
+
+# Convenience name for target.
+ContinuousMemCheck: rtmidi/CMakeFiles/ContinuousMemCheck.dir/rule
+
+.PHONY : ContinuousMemCheck
+
+# clean rule for target.
+rtmidi/CMakeFiles/ContinuousMemCheck.dir/clean:
+	$(MAKE) -f rtmidi/CMakeFiles/ContinuousMemCheck.dir/build.make rtmidi/CMakeFiles/ContinuousMemCheck.dir/clean
+.PHONY : rtmidi/CMakeFiles/ContinuousMemCheck.dir/clean
+
+# clean rule for target.
+clean: rtmidi/CMakeFiles/ContinuousMemCheck.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target rtmidi/CMakeFiles/rtmidi.dir
+
+# All Build rule for target.
+rtmidi/CMakeFiles/rtmidi.dir/all:
+	$(MAKE) -f rtmidi/CMakeFiles/rtmidi.dir/build.make rtmidi/CMakeFiles/rtmidi.dir/depend
+	$(MAKE) -f rtmidi/CMakeFiles/rtmidi.dir/build.make rtmidi/CMakeFiles/rtmidi.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num=32,33,34 "Built target rtmidi"
+.PHONY : rtmidi/CMakeFiles/rtmidi.dir/all
+
+# Include target in all.
+all: rtmidi/CMakeFiles/rtmidi.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+rtmidi/CMakeFiles/rtmidi.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 3
+	$(MAKE) -f CMakeFiles/Makefile2 rtmidi/CMakeFiles/rtmidi.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
+.PHONY : rtmidi/CMakeFiles/rtmidi.dir/rule
+
+# Convenience name for target.
+rtmidi: rtmidi/CMakeFiles/rtmidi.dir/rule
+
+.PHONY : rtmidi
+
+# clean rule for target.
+rtmidi/CMakeFiles/rtmidi.dir/clean:
+	$(MAKE) -f rtmidi/CMakeFiles/rtmidi.dir/build.make rtmidi/CMakeFiles/rtmidi.dir/clean
+.PHONY : rtmidi/CMakeFiles/rtmidi.dir/clean
+
+# clean rule for target.
+clean: rtmidi/CMakeFiles/rtmidi.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target rtmidi/CMakeFiles/NightlyBuild.dir
+
+# All Build rule for target.
+rtmidi/CMakeFiles/NightlyBuild.dir/all:
+	$(MAKE) -f rtmidi/CMakeFiles/NightlyBuild.dir/build.make rtmidi/CMakeFiles/NightlyBuild.dir/depend
+	$(MAKE) -f rtmidi/CMakeFiles/NightlyBuild.dir/build.make rtmidi/CMakeFiles/NightlyBuild.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num= "Built target NightlyBuild"
+.PHONY : rtmidi/CMakeFiles/NightlyBuild.dir/all
+
+# Build rule for subdir invocation for target.
+rtmidi/CMakeFiles/NightlyBuild.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 rtmidi/CMakeFiles/NightlyBuild.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
+.PHONY : rtmidi/CMakeFiles/NightlyBuild.dir/rule
+
+# Convenience name for target.
+NightlyBuild: rtmidi/CMakeFiles/NightlyBuild.dir/rule
+
+.PHONY : NightlyBuild
+
+# clean rule for target.
+rtmidi/CMakeFiles/NightlyBuild.dir/clean:
+	$(MAKE) -f rtmidi/CMakeFiles/NightlyBuild.dir/build.make rtmidi/CMakeFiles/NightlyBuild.dir/clean
+.PHONY : rtmidi/CMakeFiles/NightlyBuild.dir/clean
+
+# clean rule for target.
+clean: rtmidi/CMakeFiles/NightlyBuild.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target rtmidi/CMakeFiles/Continuous.dir
+
+# All Build rule for target.
+rtmidi/CMakeFiles/Continuous.dir/all:
+	$(MAKE) -f rtmidi/CMakeFiles/Continuous.dir/build.make rtmidi/CMakeFiles/Continuous.dir/depend
+	$(MAKE) -f rtmidi/CMakeFiles/Continuous.dir/build.make rtmidi/CMakeFiles/Continuous.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num= "Built target Continuous"
+.PHONY : rtmidi/CMakeFiles/Continuous.dir/all
+
+# Build rule for subdir invocation for target.
+rtmidi/CMakeFiles/Continuous.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 rtmidi/CMakeFiles/Continuous.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
+.PHONY : rtmidi/CMakeFiles/Continuous.dir/rule
+
+# Convenience name for target.
+Continuous: rtmidi/CMakeFiles/Continuous.dir/rule
+
+.PHONY : Continuous
+
+# clean rule for target.
+rtmidi/CMakeFiles/Continuous.dir/clean:
+	$(MAKE) -f rtmidi/CMakeFiles/Continuous.dir/build.make rtmidi/CMakeFiles/Continuous.dir/clean
+.PHONY : rtmidi/CMakeFiles/Continuous.dir/clean
+
+# clean rule for target.
+clean: rtmidi/CMakeFiles/Continuous.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target rtmidi/CMakeFiles/ContinuousUpdate.dir
+
+# All Build rule for target.
+rtmidi/CMakeFiles/ContinuousUpdate.dir/all:
+	$(MAKE) -f rtmidi/CMakeFiles/ContinuousUpdate.dir/build.make rtmidi/CMakeFiles/ContinuousUpdate.dir/depend
+	$(MAKE) -f rtmidi/CMakeFiles/ContinuousUpdate.dir/build.make rtmidi/CMakeFiles/ContinuousUpdate.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num= "Built target ContinuousUpdate"
+.PHONY : rtmidi/CMakeFiles/ContinuousUpdate.dir/all
+
+# Build rule for subdir invocation for target.
+rtmidi/CMakeFiles/ContinuousUpdate.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 rtmidi/CMakeFiles/ContinuousUpdate.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
+.PHONY : rtmidi/CMakeFiles/ContinuousUpdate.dir/rule
+
+# Convenience name for target.
+ContinuousUpdate: rtmidi/CMakeFiles/ContinuousUpdate.dir/rule
+
+.PHONY : ContinuousUpdate
+
+# clean rule for target.
+rtmidi/CMakeFiles/ContinuousUpdate.dir/clean:
+	$(MAKE) -f rtmidi/CMakeFiles/ContinuousUpdate.dir/build.make rtmidi/CMakeFiles/ContinuousUpdate.dir/clean
+.PHONY : rtmidi/CMakeFiles/ContinuousUpdate.dir/clean
+
+# clean rule for target.
+clean: rtmidi/CMakeFiles/ContinuousUpdate.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target rtmidi/CMakeFiles/NightlyStart.dir
+
+# All Build rule for target.
+rtmidi/CMakeFiles/NightlyStart.dir/all:
+	$(MAKE) -f rtmidi/CMakeFiles/NightlyStart.dir/build.make rtmidi/CMakeFiles/NightlyStart.dir/depend
+	$(MAKE) -f rtmidi/CMakeFiles/NightlyStart.dir/build.make rtmidi/CMakeFiles/NightlyStart.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num= "Built target NightlyStart"
+.PHONY : rtmidi/CMakeFiles/NightlyStart.dir/all
+
+# Build rule for subdir invocation for target.
+rtmidi/CMakeFiles/NightlyStart.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 rtmidi/CMakeFiles/NightlyStart.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
+.PHONY : rtmidi/CMakeFiles/NightlyStart.dir/rule
+
+# Convenience name for target.
+NightlyStart: rtmidi/CMakeFiles/NightlyStart.dir/rule
+
+.PHONY : NightlyStart
+
+# clean rule for target.
+rtmidi/CMakeFiles/NightlyStart.dir/clean:
+	$(MAKE) -f rtmidi/CMakeFiles/NightlyStart.dir/build.make rtmidi/CMakeFiles/NightlyStart.dir/clean
+.PHONY : rtmidi/CMakeFiles/NightlyStart.dir/clean
+
+# clean rule for target.
+clean: rtmidi/CMakeFiles/NightlyStart.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target rtmidi/CMakeFiles/midiprobe.dir
+
+# All Build rule for target.
+rtmidi/CMakeFiles/midiprobe.dir/all: rtmidi/CMakeFiles/rtmidi.dir/all
+	$(MAKE) -f rtmidi/CMakeFiles/midiprobe.dir/build.make rtmidi/CMakeFiles/midiprobe.dir/depend
+	$(MAKE) -f rtmidi/CMakeFiles/midiprobe.dir/build.make rtmidi/CMakeFiles/midiprobe.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num=11,12 "Built target midiprobe"
+.PHONY : rtmidi/CMakeFiles/midiprobe.dir/all
+
+# Include target in all.
+all: rtmidi/CMakeFiles/midiprobe.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+rtmidi/CMakeFiles/midiprobe.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 5
+	$(MAKE) -f CMakeFiles/Makefile2 rtmidi/CMakeFiles/midiprobe.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
+.PHONY : rtmidi/CMakeFiles/midiprobe.dir/rule
+
+# Convenience name for target.
+midiprobe: rtmidi/CMakeFiles/midiprobe.dir/rule
+
+.PHONY : midiprobe
+
+# clean rule for target.
+rtmidi/CMakeFiles/midiprobe.dir/clean:
+	$(MAKE) -f rtmidi/CMakeFiles/midiprobe.dir/build.make rtmidi/CMakeFiles/midiprobe.dir/clean
+.PHONY : rtmidi/CMakeFiles/midiprobe.dir/clean
+
+# clean rule for target.
+clean: rtmidi/CMakeFiles/midiprobe.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target rtmidi/CMakeFiles/ExperimentalTest.dir
+
+# All Build rule for target.
+rtmidi/CMakeFiles/ExperimentalTest.dir/all:
+	$(MAKE) -f rtmidi/CMakeFiles/ExperimentalTest.dir/build.make rtmidi/CMakeFiles/ExperimentalTest.dir/depend
+	$(MAKE) -f rtmidi/CMakeFiles/ExperimentalTest.dir/build.make rtmidi/CMakeFiles/ExperimentalTest.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num= "Built target ExperimentalTest"
+.PHONY : rtmidi/CMakeFiles/ExperimentalTest.dir/all
+
+# Build rule for subdir invocation for target.
+rtmidi/CMakeFiles/ExperimentalTest.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 rtmidi/CMakeFiles/ExperimentalTest.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
+.PHONY : rtmidi/CMakeFiles/ExperimentalTest.dir/rule
+
+# Convenience name for target.
+ExperimentalTest: rtmidi/CMakeFiles/ExperimentalTest.dir/rule
+
+.PHONY : ExperimentalTest
+
+# clean rule for target.
+rtmidi/CMakeFiles/ExperimentalTest.dir/clean:
+	$(MAKE) -f rtmidi/CMakeFiles/ExperimentalTest.dir/build.make rtmidi/CMakeFiles/ExperimentalTest.dir/clean
+.PHONY : rtmidi/CMakeFiles/ExperimentalTest.dir/clean
+
+# clean rule for target.
+clean: rtmidi/CMakeFiles/ExperimentalTest.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target rtmidi/CMakeFiles/NightlyCoverage.dir
+
+# All Build rule for target.
+rtmidi/CMakeFiles/NightlyCoverage.dir/all:
+	$(MAKE) -f rtmidi/CMakeFiles/NightlyCoverage.dir/build.make rtmidi/CMakeFiles/NightlyCoverage.dir/depend
+	$(MAKE) -f rtmidi/CMakeFiles/NightlyCoverage.dir/build.make rtmidi/CMakeFiles/NightlyCoverage.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num= "Built target NightlyCoverage"
+.PHONY : rtmidi/CMakeFiles/NightlyCoverage.dir/all
+
+# Build rule for subdir invocation for target.
+rtmidi/CMakeFiles/NightlyCoverage.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 rtmidi/CMakeFiles/NightlyCoverage.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
+.PHONY : rtmidi/CMakeFiles/NightlyCoverage.dir/rule
+
+# Convenience name for target.
+NightlyCoverage: rtmidi/CMakeFiles/NightlyCoverage.dir/rule
+
+.PHONY : NightlyCoverage
+
+# clean rule for target.
+rtmidi/CMakeFiles/NightlyCoverage.dir/clean:
+	$(MAKE) -f rtmidi/CMakeFiles/NightlyCoverage.dir/build.make rtmidi/CMakeFiles/NightlyCoverage.dir/clean
+.PHONY : rtmidi/CMakeFiles/NightlyCoverage.dir/clean
+
+# clean rule for target.
+clean: rtmidi/CMakeFiles/NightlyCoverage.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target rtmidi/CMakeFiles/NightlyMemoryCheck.dir
+
+# All Build rule for target.
+rtmidi/CMakeFiles/NightlyMemoryCheck.dir/all:
+	$(MAKE) -f rtmidi/CMakeFiles/NightlyMemoryCheck.dir/build.make rtmidi/CMakeFiles/NightlyMemoryCheck.dir/depend
+	$(MAKE) -f rtmidi/CMakeFiles/NightlyMemoryCheck.dir/build.make rtmidi/CMakeFiles/NightlyMemoryCheck.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num= "Built target NightlyMemoryCheck"
+.PHONY : rtmidi/CMakeFiles/NightlyMemoryCheck.dir/all
+
+# Build rule for subdir invocation for target.
+rtmidi/CMakeFiles/NightlyMemoryCheck.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 rtmidi/CMakeFiles/NightlyMemoryCheck.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
+.PHONY : rtmidi/CMakeFiles/NightlyMemoryCheck.dir/rule
+
+# Convenience name for target.
+NightlyMemoryCheck: rtmidi/CMakeFiles/NightlyMemoryCheck.dir/rule
+
+.PHONY : NightlyMemoryCheck
+
+# clean rule for target.
+rtmidi/CMakeFiles/NightlyMemoryCheck.dir/clean:
+	$(MAKE) -f rtmidi/CMakeFiles/NightlyMemoryCheck.dir/build.make rtmidi/CMakeFiles/NightlyMemoryCheck.dir/clean
+.PHONY : rtmidi/CMakeFiles/NightlyMemoryCheck.dir/clean
+
+# clean rule for target.
+clean: rtmidi/CMakeFiles/NightlyMemoryCheck.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target rtmidi/CMakeFiles/ExperimentalUpdate.dir
+
+# All Build rule for target.
+rtmidi/CMakeFiles/ExperimentalUpdate.dir/all:
+	$(MAKE) -f rtmidi/CMakeFiles/ExperimentalUpdate.dir/build.make rtmidi/CMakeFiles/ExperimentalUpdate.dir/depend
+	$(MAKE) -f rtmidi/CMakeFiles/ExperimentalUpdate.dir/build.make rtmidi/CMakeFiles/ExperimentalUpdate.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num= "Built target ExperimentalUpdate"
+.PHONY : rtmidi/CMakeFiles/ExperimentalUpdate.dir/all
+
+# Build rule for subdir invocation for target.
+rtmidi/CMakeFiles/ExperimentalUpdate.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 rtmidi/CMakeFiles/ExperimentalUpdate.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
+.PHONY : rtmidi/CMakeFiles/ExperimentalUpdate.dir/rule
+
+# Convenience name for target.
+ExperimentalUpdate: rtmidi/CMakeFiles/ExperimentalUpdate.dir/rule
+
+.PHONY : ExperimentalUpdate
+
+# clean rule for target.
+rtmidi/CMakeFiles/ExperimentalUpdate.dir/clean:
+	$(MAKE) -f rtmidi/CMakeFiles/ExperimentalUpdate.dir/build.make rtmidi/CMakeFiles/ExperimentalUpdate.dir/clean
+.PHONY : rtmidi/CMakeFiles/ExperimentalUpdate.dir/clean
+
+# clean rule for target.
+clean: rtmidi/CMakeFiles/ExperimentalUpdate.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target rtmidi/CMakeFiles/Nightly.dir
+
+# All Build rule for target.
+rtmidi/CMakeFiles/Nightly.dir/all:
+	$(MAKE) -f rtmidi/CMakeFiles/Nightly.dir/build.make rtmidi/CMakeFiles/Nightly.dir/depend
+	$(MAKE) -f rtmidi/CMakeFiles/Nightly.dir/build.make rtmidi/CMakeFiles/Nightly.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num= "Built target Nightly"
+.PHONY : rtmidi/CMakeFiles/Nightly.dir/all
+
+# Build rule for subdir invocation for target.
+rtmidi/CMakeFiles/Nightly.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 rtmidi/CMakeFiles/Nightly.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
+.PHONY : rtmidi/CMakeFiles/Nightly.dir/rule
+
+# Convenience name for target.
+Nightly: rtmidi/CMakeFiles/Nightly.dir/rule
+
+.PHONY : Nightly
+
+# clean rule for target.
+rtmidi/CMakeFiles/Nightly.dir/clean:
+	$(MAKE) -f rtmidi/CMakeFiles/Nightly.dir/build.make rtmidi/CMakeFiles/Nightly.dir/clean
+.PHONY : rtmidi/CMakeFiles/Nightly.dir/clean
+
+# clean rule for target.
+clean: rtmidi/CMakeFiles/Nightly.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target rtmidi/CMakeFiles/Experimental.dir
+
+# All Build rule for target.
+rtmidi/CMakeFiles/Experimental.dir/all:
+	$(MAKE) -f rtmidi/CMakeFiles/Experimental.dir/build.make rtmidi/CMakeFiles/Experimental.dir/depend
+	$(MAKE) -f rtmidi/CMakeFiles/Experimental.dir/build.make rtmidi/CMakeFiles/Experimental.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num= "Built target Experimental"
+.PHONY : rtmidi/CMakeFiles/Experimental.dir/all
+
+# Build rule for subdir invocation for target.
+rtmidi/CMakeFiles/Experimental.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 rtmidi/CMakeFiles/Experimental.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
+.PHONY : rtmidi/CMakeFiles/Experimental.dir/rule
+
+# Convenience name for target.
+Experimental: rtmidi/CMakeFiles/Experimental.dir/rule
+
+.PHONY : Experimental
+
+# clean rule for target.
+rtmidi/CMakeFiles/Experimental.dir/clean:
+	$(MAKE) -f rtmidi/CMakeFiles/Experimental.dir/build.make rtmidi/CMakeFiles/Experimental.dir/clean
+.PHONY : rtmidi/CMakeFiles/Experimental.dir/clean
+
+# clean rule for target.
+clean: rtmidi/CMakeFiles/Experimental.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target rtmidi/CMakeFiles/ExperimentalCoverage.dir
+
+# All Build rule for target.
+rtmidi/CMakeFiles/ExperimentalCoverage.dir/all:
+	$(MAKE) -f rtmidi/CMakeFiles/ExperimentalCoverage.dir/build.make rtmidi/CMakeFiles/ExperimentalCoverage.dir/depend
+	$(MAKE) -f rtmidi/CMakeFiles/ExperimentalCoverage.dir/build.make rtmidi/CMakeFiles/ExperimentalCoverage.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num= "Built target ExperimentalCoverage"
+.PHONY : rtmidi/CMakeFiles/ExperimentalCoverage.dir/all
+
+# Build rule for subdir invocation for target.
+rtmidi/CMakeFiles/ExperimentalCoverage.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 rtmidi/CMakeFiles/ExperimentalCoverage.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
+.PHONY : rtmidi/CMakeFiles/ExperimentalCoverage.dir/rule
+
+# Convenience name for target.
+ExperimentalCoverage: rtmidi/CMakeFiles/ExperimentalCoverage.dir/rule
+
+.PHONY : ExperimentalCoverage
+
+# clean rule for target.
+rtmidi/CMakeFiles/ExperimentalCoverage.dir/clean:
+	$(MAKE) -f rtmidi/CMakeFiles/ExperimentalCoverage.dir/build.make rtmidi/CMakeFiles/ExperimentalCoverage.dir/clean
+.PHONY : rtmidi/CMakeFiles/ExperimentalCoverage.dir/clean
+
+# clean rule for target.
+clean: rtmidi/CMakeFiles/ExperimentalCoverage.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target rtmidi/CMakeFiles/ExperimentalMemCheck.dir
+
+# All Build rule for target.
+rtmidi/CMakeFiles/ExperimentalMemCheck.dir/all:
+	$(MAKE) -f rtmidi/CMakeFiles/ExperimentalMemCheck.dir/build.make rtmidi/CMakeFiles/ExperimentalMemCheck.dir/depend
+	$(MAKE) -f rtmidi/CMakeFiles/ExperimentalMemCheck.dir/build.make rtmidi/CMakeFiles/ExperimentalMemCheck.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num= "Built target ExperimentalMemCheck"
+.PHONY : rtmidi/CMakeFiles/ExperimentalMemCheck.dir/all
+
+# Build rule for subdir invocation for target.
+rtmidi/CMakeFiles/ExperimentalMemCheck.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 rtmidi/CMakeFiles/ExperimentalMemCheck.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
+.PHONY : rtmidi/CMakeFiles/ExperimentalMemCheck.dir/rule
+
+# Convenience name for target.
+ExperimentalMemCheck: rtmidi/CMakeFiles/ExperimentalMemCheck.dir/rule
+
+.PHONY : ExperimentalMemCheck
+
+# clean rule for target.
+rtmidi/CMakeFiles/ExperimentalMemCheck.dir/clean:
+	$(MAKE) -f rtmidi/CMakeFiles/ExperimentalMemCheck.dir/build.make rtmidi/CMakeFiles/ExperimentalMemCheck.dir/clean
+.PHONY : rtmidi/CMakeFiles/ExperimentalMemCheck.dir/clean
+
+# clean rule for target.
+clean: rtmidi/CMakeFiles/ExperimentalMemCheck.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target rtmidi/CMakeFiles/ContinuousStart.dir
+
+# All Build rule for target.
+rtmidi/CMakeFiles/ContinuousStart.dir/all:
+	$(MAKE) -f rtmidi/CMakeFiles/ContinuousStart.dir/build.make rtmidi/CMakeFiles/ContinuousStart.dir/depend
+	$(MAKE) -f rtmidi/CMakeFiles/ContinuousStart.dir/build.make rtmidi/CMakeFiles/ContinuousStart.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num= "Built target ContinuousStart"
+.PHONY : rtmidi/CMakeFiles/ContinuousStart.dir/all
+
+# Build rule for subdir invocation for target.
+rtmidi/CMakeFiles/ContinuousStart.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 rtmidi/CMakeFiles/ContinuousStart.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
+.PHONY : rtmidi/CMakeFiles/ContinuousStart.dir/rule
+
+# Convenience name for target.
+ContinuousStart: rtmidi/CMakeFiles/ContinuousStart.dir/rule
+
+.PHONY : ContinuousStart
+
+# clean rule for target.
+rtmidi/CMakeFiles/ContinuousStart.dir/clean:
+	$(MAKE) -f rtmidi/CMakeFiles/ContinuousStart.dir/build.make rtmidi/CMakeFiles/ContinuousStart.dir/clean
+.PHONY : rtmidi/CMakeFiles/ContinuousStart.dir/clean
+
+# clean rule for target.
+clean: rtmidi/CMakeFiles/ContinuousStart.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target rtmidi/CMakeFiles/ContinuousCoverage.dir
+
+# All Build rule for target.
+rtmidi/CMakeFiles/ContinuousCoverage.dir/all:
+	$(MAKE) -f rtmidi/CMakeFiles/ContinuousCoverage.dir/build.make rtmidi/CMakeFiles/ContinuousCoverage.dir/depend
+	$(MAKE) -f rtmidi/CMakeFiles/ContinuousCoverage.dir/build.make rtmidi/CMakeFiles/ContinuousCoverage.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num= "Built target ContinuousCoverage"
+.PHONY : rtmidi/CMakeFiles/ContinuousCoverage.dir/all
+
+# Build rule for subdir invocation for target.
+rtmidi/CMakeFiles/ContinuousCoverage.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 rtmidi/CMakeFiles/ContinuousCoverage.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
+.PHONY : rtmidi/CMakeFiles/ContinuousCoverage.dir/rule
+
+# Convenience name for target.
+ContinuousCoverage: rtmidi/CMakeFiles/ContinuousCoverage.dir/rule
+
+.PHONY : ContinuousCoverage
+
+# clean rule for target.
+rtmidi/CMakeFiles/ContinuousCoverage.dir/clean:
+	$(MAKE) -f rtmidi/CMakeFiles/ContinuousCoverage.dir/build.make rtmidi/CMakeFiles/ContinuousCoverage.dir/clean
+.PHONY : rtmidi/CMakeFiles/ContinuousCoverage.dir/clean
+
+# clean rule for target.
+clean: rtmidi/CMakeFiles/ContinuousCoverage.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target rtmidi/CMakeFiles/ExperimentalSubmit.dir
+
+# All Build rule for target.
+rtmidi/CMakeFiles/ExperimentalSubmit.dir/all:
+	$(MAKE) -f rtmidi/CMakeFiles/ExperimentalSubmit.dir/build.make rtmidi/CMakeFiles/ExperimentalSubmit.dir/depend
+	$(MAKE) -f rtmidi/CMakeFiles/ExperimentalSubmit.dir/build.make rtmidi/CMakeFiles/ExperimentalSubmit.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num= "Built target ExperimentalSubmit"
+.PHONY : rtmidi/CMakeFiles/ExperimentalSubmit.dir/all
+
+# Build rule for subdir invocation for target.
+rtmidi/CMakeFiles/ExperimentalSubmit.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 rtmidi/CMakeFiles/ExperimentalSubmit.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
+.PHONY : rtmidi/CMakeFiles/ExperimentalSubmit.dir/rule
+
+# Convenience name for target.
+ExperimentalSubmit: rtmidi/CMakeFiles/ExperimentalSubmit.dir/rule
+
+.PHONY : ExperimentalSubmit
+
+# clean rule for target.
+rtmidi/CMakeFiles/ExperimentalSubmit.dir/clean:
+	$(MAKE) -f rtmidi/CMakeFiles/ExperimentalSubmit.dir/build.make rtmidi/CMakeFiles/ExperimentalSubmit.dir/clean
+.PHONY : rtmidi/CMakeFiles/ExperimentalSubmit.dir/clean
+
+# clean rule for target.
+clean: rtmidi/CMakeFiles/ExperimentalSubmit.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target rtmidi/CMakeFiles/midiclock.dir
+
+# All Build rule for target.
+rtmidi/CMakeFiles/midiclock.dir/all: rtmidi/CMakeFiles/rtmidi.dir/all
+	$(MAKE) -f rtmidi/CMakeFiles/midiclock.dir/build.make rtmidi/CMakeFiles/midiclock.dir/depend
+	$(MAKE) -f rtmidi/CMakeFiles/midiclock.dir/build.make rtmidi/CMakeFiles/midiclock.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num=7,8 "Built target midiclock"
+.PHONY : rtmidi/CMakeFiles/midiclock.dir/all
+
+# Include target in all.
+all: rtmidi/CMakeFiles/midiclock.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+rtmidi/CMakeFiles/midiclock.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 5
+	$(MAKE) -f CMakeFiles/Makefile2 rtmidi/CMakeFiles/midiclock.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
+.PHONY : rtmidi/CMakeFiles/midiclock.dir/rule
+
+# Convenience name for target.
+midiclock: rtmidi/CMakeFiles/midiclock.dir/rule
+
+.PHONY : midiclock
+
+# clean rule for target.
+rtmidi/CMakeFiles/midiclock.dir/clean:
+	$(MAKE) -f rtmidi/CMakeFiles/midiclock.dir/build.make rtmidi/CMakeFiles/midiclock.dir/clean
+.PHONY : rtmidi/CMakeFiles/midiclock.dir/clean
+
+# clean rule for target.
+clean: rtmidi/CMakeFiles/midiclock.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target rtmidi/CMakeFiles/sysextest.dir
+
+# All Build rule for target.
+rtmidi/CMakeFiles/sysextest.dir/all: rtmidi/CMakeFiles/rtmidi.dir/all
+	$(MAKE) -f rtmidi/CMakeFiles/sysextest.dir/build.make rtmidi/CMakeFiles/sysextest.dir/depend
+	$(MAKE) -f rtmidi/CMakeFiles/sysextest.dir/build.make rtmidi/CMakeFiles/sysextest.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num=35,36 "Built target sysextest"
+.PHONY : rtmidi/CMakeFiles/sysextest.dir/all
+
+# Include target in all.
+all: rtmidi/CMakeFiles/sysextest.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+rtmidi/CMakeFiles/sysextest.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 5
+	$(MAKE) -f CMakeFiles/Makefile2 rtmidi/CMakeFiles/sysextest.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
+.PHONY : rtmidi/CMakeFiles/sysextest.dir/rule
+
+# Convenience name for target.
+sysextest: rtmidi/CMakeFiles/sysextest.dir/rule
+
+.PHONY : sysextest
+
+# clean rule for target.
+rtmidi/CMakeFiles/sysextest.dir/clean:
+	$(MAKE) -f rtmidi/CMakeFiles/sysextest.dir/build.make rtmidi/CMakeFiles/sysextest.dir/clean
+.PHONY : rtmidi/CMakeFiles/sysextest.dir/clean
+
+# clean rule for target.
+clean: rtmidi/CMakeFiles/sysextest.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target rtmidi/CMakeFiles/ContinuousBuild.dir
+
+# All Build rule for target.
+rtmidi/CMakeFiles/ContinuousBuild.dir/all:
+	$(MAKE) -f rtmidi/CMakeFiles/ContinuousBuild.dir/build.make rtmidi/CMakeFiles/ContinuousBuild.dir/depend
+	$(MAKE) -f rtmidi/CMakeFiles/ContinuousBuild.dir/build.make rtmidi/CMakeFiles/ContinuousBuild.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num= "Built target ContinuousBuild"
+.PHONY : rtmidi/CMakeFiles/ContinuousBuild.dir/all
+
+# Build rule for subdir invocation for target.
+rtmidi/CMakeFiles/ContinuousBuild.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 rtmidi/CMakeFiles/ContinuousBuild.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
+.PHONY : rtmidi/CMakeFiles/ContinuousBuild.dir/rule
+
+# Convenience name for target.
+ContinuousBuild: rtmidi/CMakeFiles/ContinuousBuild.dir/rule
+
+.PHONY : ContinuousBuild
+
+# clean rule for target.
+rtmidi/CMakeFiles/ContinuousBuild.dir/clean:
+	$(MAKE) -f rtmidi/CMakeFiles/ContinuousBuild.dir/build.make rtmidi/CMakeFiles/ContinuousBuild.dir/clean
+.PHONY : rtmidi/CMakeFiles/ContinuousBuild.dir/clean
+
+# clean rule for target.
+clean: rtmidi/CMakeFiles/ContinuousBuild.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target rtmidi/CMakeFiles/ContinuousSubmit.dir
+
+# All Build rule for target.
+rtmidi/CMakeFiles/ContinuousSubmit.dir/all:
+	$(MAKE) -f rtmidi/CMakeFiles/ContinuousSubmit.dir/build.make rtmidi/CMakeFiles/ContinuousSubmit.dir/depend
+	$(MAKE) -f rtmidi/CMakeFiles/ContinuousSubmit.dir/build.make rtmidi/CMakeFiles/ContinuousSubmit.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num= "Built target ContinuousSubmit"
+.PHONY : rtmidi/CMakeFiles/ContinuousSubmit.dir/all
+
+# Build rule for subdir invocation for target.
+rtmidi/CMakeFiles/ContinuousSubmit.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 rtmidi/CMakeFiles/ContinuousSubmit.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
+.PHONY : rtmidi/CMakeFiles/ContinuousSubmit.dir/rule
+
+# Convenience name for target.
+ContinuousSubmit: rtmidi/CMakeFiles/ContinuousSubmit.dir/rule
+
+.PHONY : ContinuousSubmit
+
+# clean rule for target.
+rtmidi/CMakeFiles/ContinuousSubmit.dir/clean:
+	$(MAKE) -f rtmidi/CMakeFiles/ContinuousSubmit.dir/build.make rtmidi/CMakeFiles/ContinuousSubmit.dir/clean
+.PHONY : rtmidi/CMakeFiles/ContinuousSubmit.dir/clean
+
+# clean rule for target.
+clean: rtmidi/CMakeFiles/ContinuousSubmit.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target rtmidi/CMakeFiles/cmidiin.dir
+
+# All Build rule for target.
+rtmidi/CMakeFiles/cmidiin.dir/all: rtmidi/CMakeFiles/rtmidi.dir/all
+	$(MAKE) -f rtmidi/CMakeFiles/cmidiin.dir/build.make rtmidi/CMakeFiles/cmidiin.dir/depend
+	$(MAKE) -f rtmidi/CMakeFiles/cmidiin.dir/build.make rtmidi/CMakeFiles/cmidiin.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num=3,4 "Built target cmidiin"
+.PHONY : rtmidi/CMakeFiles/cmidiin.dir/all
+
+# Include target in all.
+all: rtmidi/CMakeFiles/cmidiin.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+rtmidi/CMakeFiles/cmidiin.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 5
+	$(MAKE) -f CMakeFiles/Makefile2 rtmidi/CMakeFiles/cmidiin.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
+.PHONY : rtmidi/CMakeFiles/cmidiin.dir/rule
+
+# Convenience name for target.
+cmidiin: rtmidi/CMakeFiles/cmidiin.dir/rule
+
+.PHONY : cmidiin
+
+# clean rule for target.
+rtmidi/CMakeFiles/cmidiin.dir/clean:
+	$(MAKE) -f rtmidi/CMakeFiles/cmidiin.dir/build.make rtmidi/CMakeFiles/cmidiin.dir/clean
+.PHONY : rtmidi/CMakeFiles/cmidiin.dir/clean
+
+# clean rule for target.
+clean: rtmidi/CMakeFiles/cmidiin.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target rtmidi/CMakeFiles/uninstall.dir
+
+# All Build rule for target.
+rtmidi/CMakeFiles/uninstall.dir/all:
+	$(MAKE) -f rtmidi/CMakeFiles/uninstall.dir/build.make rtmidi/CMakeFiles/uninstall.dir/depend
+	$(MAKE) -f rtmidi/CMakeFiles/uninstall.dir/build.make rtmidi/CMakeFiles/uninstall.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num= "Built target uninstall"
+.PHONY : rtmidi/CMakeFiles/uninstall.dir/all
+
+# Build rule for subdir invocation for target.
+rtmidi/CMakeFiles/uninstall.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 rtmidi/CMakeFiles/uninstall.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
+.PHONY : rtmidi/CMakeFiles/uninstall.dir/rule
+
+# Convenience name for target.
+uninstall: rtmidi/CMakeFiles/uninstall.dir/rule
+
+.PHONY : uninstall
+
+# clean rule for target.
+rtmidi/CMakeFiles/uninstall.dir/clean:
+	$(MAKE) -f rtmidi/CMakeFiles/uninstall.dir/build.make rtmidi/CMakeFiles/uninstall.dir/clean
+.PHONY : rtmidi/CMakeFiles/uninstall.dir/clean
+
+# clean rule for target.
+clean: rtmidi/CMakeFiles/uninstall.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target rtmidi/CMakeFiles/midiout.dir
+
+# All Build rule for target.
+rtmidi/CMakeFiles/midiout.dir/all: rtmidi/CMakeFiles/rtmidi.dir/all
+	$(MAKE) -f rtmidi/CMakeFiles/midiout.dir/build.make rtmidi/CMakeFiles/midiout.dir/depend
+	$(MAKE) -f rtmidi/CMakeFiles/midiout.dir/build.make rtmidi/CMakeFiles/midiout.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num=9,10 "Built target midiout"
+.PHONY : rtmidi/CMakeFiles/midiout.dir/all
+
+# Include target in all.
+all: rtmidi/CMakeFiles/midiout.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+rtmidi/CMakeFiles/midiout.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 5
+	$(MAKE) -f CMakeFiles/Makefile2 rtmidi/CMakeFiles/midiout.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
+.PHONY : rtmidi/CMakeFiles/midiout.dir/rule
+
+# Convenience name for target.
+midiout: rtmidi/CMakeFiles/midiout.dir/rule
+
+.PHONY : midiout
+
+# clean rule for target.
+rtmidi/CMakeFiles/midiout.dir/clean:
+	$(MAKE) -f rtmidi/CMakeFiles/midiout.dir/build.make rtmidi/CMakeFiles/midiout.dir/clean
+.PHONY : rtmidi/CMakeFiles/midiout.dir/clean
+
+# clean rule for target.
+clean: rtmidi/CMakeFiles/midiout.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target rtmidi/CMakeFiles/NightlyConfigure.dir
+
+# All Build rule for target.
+rtmidi/CMakeFiles/NightlyConfigure.dir/all:
+	$(MAKE) -f rtmidi/CMakeFiles/NightlyConfigure.dir/build.make rtmidi/CMakeFiles/NightlyConfigure.dir/depend
+	$(MAKE) -f rtmidi/CMakeFiles/NightlyConfigure.dir/build.make rtmidi/CMakeFiles/NightlyConfigure.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num= "Built target NightlyConfigure"
+.PHONY : rtmidi/CMakeFiles/NightlyConfigure.dir/all
+
+# Build rule for subdir invocation for target.
+rtmidi/CMakeFiles/NightlyConfigure.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 rtmidi/CMakeFiles/NightlyConfigure.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
+.PHONY : rtmidi/CMakeFiles/NightlyConfigure.dir/rule
+
+# Convenience name for target.
+NightlyConfigure: rtmidi/CMakeFiles/NightlyConfigure.dir/rule
+
+.PHONY : NightlyConfigure
+
+# clean rule for target.
+rtmidi/CMakeFiles/NightlyConfigure.dir/clean:
+	$(MAKE) -f rtmidi/CMakeFiles/NightlyConfigure.dir/build.make rtmidi/CMakeFiles/NightlyConfigure.dir/clean
+.PHONY : rtmidi/CMakeFiles/NightlyConfigure.dir/clean
+
+# clean rule for target.
+clean: rtmidi/CMakeFiles/NightlyConfigure.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target rtmidi/CMakeFiles/qmidiin.dir
+
+# All Build rule for target.
+rtmidi/CMakeFiles/qmidiin.dir/all: rtmidi/CMakeFiles/rtmidi.dir/all
+	$(MAKE) -f rtmidi/CMakeFiles/qmidiin.dir/build.make rtmidi/CMakeFiles/qmidiin.dir/depend
+	$(MAKE) -f rtmidi/CMakeFiles/qmidiin.dir/build.make rtmidi/CMakeFiles/qmidiin.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num=30,31 "Built target qmidiin"
+.PHONY : rtmidi/CMakeFiles/qmidiin.dir/all
+
+# Include target in all.
+all: rtmidi/CMakeFiles/qmidiin.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+rtmidi/CMakeFiles/qmidiin.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 5
+	$(MAKE) -f CMakeFiles/Makefile2 rtmidi/CMakeFiles/qmidiin.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
+.PHONY : rtmidi/CMakeFiles/qmidiin.dir/rule
+
+# Convenience name for target.
+qmidiin: rtmidi/CMakeFiles/qmidiin.dir/rule
+
+.PHONY : qmidiin
+
+# clean rule for target.
+rtmidi/CMakeFiles/qmidiin.dir/clean:
+	$(MAKE) -f rtmidi/CMakeFiles/qmidiin.dir/build.make rtmidi/CMakeFiles/qmidiin.dir/clean
+.PHONY : rtmidi/CMakeFiles/qmidiin.dir/clean
+
+# clean rule for target.
+clean: rtmidi/CMakeFiles/qmidiin.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target rtmidi/CMakeFiles/apinames.dir
+
+# All Build rule for target.
+rtmidi/CMakeFiles/apinames.dir/all: rtmidi/CMakeFiles/rtmidi.dir/all
+	$(MAKE) -f rtmidi/CMakeFiles/apinames.dir/build.make rtmidi/CMakeFiles/apinames.dir/depend
+	$(MAKE) -f rtmidi/CMakeFiles/apinames.dir/build.make rtmidi/CMakeFiles/apinames.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num=1,2 "Built target apinames"
+.PHONY : rtmidi/CMakeFiles/apinames.dir/all
+
+# Include target in all.
+all: rtmidi/CMakeFiles/apinames.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+rtmidi/CMakeFiles/apinames.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 5
+	$(MAKE) -f CMakeFiles/Makefile2 rtmidi/CMakeFiles/apinames.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
+.PHONY : rtmidi/CMakeFiles/apinames.dir/rule
+
+# Convenience name for target.
+apinames: rtmidi/CMakeFiles/apinames.dir/rule
+
+.PHONY : apinames
+
+# clean rule for target.
+rtmidi/CMakeFiles/apinames.dir/clean:
+	$(MAKE) -f rtmidi/CMakeFiles/apinames.dir/build.make rtmidi/CMakeFiles/apinames.dir/clean
+.PHONY : rtmidi/CMakeFiles/apinames.dir/clean
+
+# clean rule for target.
+clean: rtmidi/CMakeFiles/apinames.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
 # Directory level rules for directory pigpio
 
 # Convenience name for "all" pass in the directory.
-pigpio/all: pigpio/CMakeFiles/rtmidi.dir/all
-pigpio/all: pigpio/CMakeFiles/midiprobe.dir/all
-pigpio/all: pigpio/CMakeFiles/midiclock.dir/all
-pigpio/all: pigpio/CMakeFiles/sysextest.dir/all
-pigpio/all: pigpio/CMakeFiles/cmidiin.dir/all
-pigpio/all: pigpio/CMakeFiles/midiout.dir/all
-pigpio/all: pigpio/CMakeFiles/qmidiin.dir/all
-pigpio/all: pigpio/CMakeFiles/apinames.dir/all
+pigpio/all: pigpio/CMakeFiles/x_pigpiod_if.dir/all
+pigpio/all: pigpio/CMakeFiles/pigpiod_if.dir/all
+pigpio/all: pigpio/CMakeFiles/pigpio.dir/all
+pigpio/all: pigpio/CMakeFiles/pigpiod_if2.dir/all
+pigpio/all: pigpio/CMakeFiles/pig2vcd.dir/all
+pigpio/all: pigpio/CMakeFiles/pigpiod.dir/all
+pigpio/all: pigpio/CMakeFiles/x_pigpiod_if2.dir/all
+pigpio/all: pigpio/CMakeFiles/pigs.dir/all
+pigpio/all: pigpio/CMakeFiles/x_pigpio.dir/all
 
 .PHONY : pigpio/all
 
 # Convenience name for "clean" pass in the directory.
-pigpio/clean: pigpio/CMakeFiles/ExperimentalConfigure.dir/clean
-pigpio/clean: pigpio/CMakeFiles/NightlySubmit.dir/clean
-pigpio/clean: pigpio/CMakeFiles/NightlyMemCheck.dir/clean
-pigpio/clean: pigpio/CMakeFiles/ContinuousConfigure.dir/clean
-pigpio/clean: pigpio/CMakeFiles/ContinuousTest.dir/clean
-pigpio/clean: pigpio/CMakeFiles/ExperimentalStart.dir/clean
-pigpio/clean: pigpio/CMakeFiles/NightlyTest.dir/clean
-pigpio/clean: pigpio/CMakeFiles/NightlyUpdate.dir/clean
-pigpio/clean: pigpio/CMakeFiles/ExperimentalBuild.dir/clean
-pigpio/clean: pigpio/CMakeFiles/ContinuousMemCheck.dir/clean
-pigpio/clean: pigpio/CMakeFiles/rtmidi.dir/clean
-pigpio/clean: pigpio/CMakeFiles/NightlyBuild.dir/clean
-pigpio/clean: pigpio/CMakeFiles/Continuous.dir/clean
-pigpio/clean: pigpio/CMakeFiles/ContinuousUpdate.dir/clean
-pigpio/clean: pigpio/CMakeFiles/NightlyStart.dir/clean
-pigpio/clean: pigpio/CMakeFiles/midiprobe.dir/clean
-pigpio/clean: pigpio/CMakeFiles/ExperimentalTest.dir/clean
-pigpio/clean: pigpio/CMakeFiles/NightlyCoverage.dir/clean
-pigpio/clean: pigpio/CMakeFiles/NightlyMemoryCheck.dir/clean
-pigpio/clean: pigpio/CMakeFiles/ExperimentalUpdate.dir/clean
-pigpio/clean: pigpio/CMakeFiles/Nightly.dir/clean
-pigpio/clean: pigpio/CMakeFiles/Experimental.dir/clean
-pigpio/clean: pigpio/CMakeFiles/ExperimentalCoverage.dir/clean
-pigpio/clean: pigpio/CMakeFiles/ExperimentalMemCheck.dir/clean
-pigpio/clean: pigpio/CMakeFiles/ContinuousStart.dir/clean
-pigpio/clean: pigpio/CMakeFiles/ContinuousCoverage.dir/clean
-pigpio/clean: pigpio/CMakeFiles/ExperimentalSubmit.dir/clean
-pigpio/clean: pigpio/CMakeFiles/midiclock.dir/clean
-pigpio/clean: pigpio/CMakeFiles/sysextest.dir/clean
-pigpio/clean: pigpio/CMakeFiles/ContinuousBuild.dir/clean
-pigpio/clean: pigpio/CMakeFiles/ContinuousSubmit.dir/clean
-pigpio/clean: pigpio/CMakeFiles/cmidiin.dir/clean
-pigpio/clean: pigpio/CMakeFiles/uninstall.dir/clean
-pigpio/clean: pigpio/CMakeFiles/midiout.dir/clean
-pigpio/clean: pigpio/CMakeFiles/NightlyConfigure.dir/clean
-pigpio/clean: pigpio/CMakeFiles/qmidiin.dir/clean
-pigpio/clean: pigpio/CMakeFiles/apinames.dir/clean
+pigpio/clean: pigpio/CMakeFiles/x_pigpiod_if.dir/clean
+pigpio/clean: pigpio/CMakeFiles/pigpiod_if.dir/clean
+pigpio/clean: pigpio/CMakeFiles/pigpio.dir/clean
+pigpio/clean: pigpio/CMakeFiles/pigpiod_if2.dir/clean
+pigpio/clean: pigpio/CMakeFiles/pig2vcd.dir/clean
+pigpio/clean: pigpio/CMakeFiles/pigpiod.dir/clean
+pigpio/clean: pigpio/CMakeFiles/x_pigpiod_if2.dir/clean
+pigpio/clean: pigpio/CMakeFiles/pigs.dir/clean
+pigpio/clean: pigpio/CMakeFiles/x_pigpio.dir/clean
 
 .PHONY : pigpio/clean
 
@@ -163,1226 +1422,335 @@ pigpio/preinstall:
 .PHONY : pigpio/preinstall
 
 #=============================================================================
-# Target rules for target pigpio/CMakeFiles/ExperimentalConfigure.dir
+# Target rules for target pigpio/CMakeFiles/x_pigpiod_if.dir
 
 # All Build rule for target.
-pigpio/CMakeFiles/ExperimentalConfigure.dir/all:
-	$(MAKE) -f pigpio/CMakeFiles/ExperimentalConfigure.dir/build.make pigpio/CMakeFiles/ExperimentalConfigure.dir/depend
-	$(MAKE) -f pigpio/CMakeFiles/ExperimentalConfigure.dir/build.make pigpio/CMakeFiles/ExperimentalConfigure.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num= "Built target ExperimentalConfigure"
-.PHONY : pigpio/CMakeFiles/ExperimentalConfigure.dir/all
-
-# Build rule for subdir invocation for target.
-pigpio/CMakeFiles/ExperimentalConfigure.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/ExperimentalConfigure.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
-.PHONY : pigpio/CMakeFiles/ExperimentalConfigure.dir/rule
-
-# Convenience name for target.
-ExperimentalConfigure: pigpio/CMakeFiles/ExperimentalConfigure.dir/rule
-
-.PHONY : ExperimentalConfigure
-
-# clean rule for target.
-pigpio/CMakeFiles/ExperimentalConfigure.dir/clean:
-	$(MAKE) -f pigpio/CMakeFiles/ExperimentalConfigure.dir/build.make pigpio/CMakeFiles/ExperimentalConfigure.dir/clean
-.PHONY : pigpio/CMakeFiles/ExperimentalConfigure.dir/clean
-
-# clean rule for target.
-clean: pigpio/CMakeFiles/ExperimentalConfigure.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target pigpio/CMakeFiles/NightlySubmit.dir
-
-# All Build rule for target.
-pigpio/CMakeFiles/NightlySubmit.dir/all:
-	$(MAKE) -f pigpio/CMakeFiles/NightlySubmit.dir/build.make pigpio/CMakeFiles/NightlySubmit.dir/depend
-	$(MAKE) -f pigpio/CMakeFiles/NightlySubmit.dir/build.make pigpio/CMakeFiles/NightlySubmit.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num= "Built target NightlySubmit"
-.PHONY : pigpio/CMakeFiles/NightlySubmit.dir/all
-
-# Build rule for subdir invocation for target.
-pigpio/CMakeFiles/NightlySubmit.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/NightlySubmit.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
-.PHONY : pigpio/CMakeFiles/NightlySubmit.dir/rule
-
-# Convenience name for target.
-NightlySubmit: pigpio/CMakeFiles/NightlySubmit.dir/rule
-
-.PHONY : NightlySubmit
-
-# clean rule for target.
-pigpio/CMakeFiles/NightlySubmit.dir/clean:
-	$(MAKE) -f pigpio/CMakeFiles/NightlySubmit.dir/build.make pigpio/CMakeFiles/NightlySubmit.dir/clean
-.PHONY : pigpio/CMakeFiles/NightlySubmit.dir/clean
-
-# clean rule for target.
-clean: pigpio/CMakeFiles/NightlySubmit.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target pigpio/CMakeFiles/NightlyMemCheck.dir
-
-# All Build rule for target.
-pigpio/CMakeFiles/NightlyMemCheck.dir/all:
-	$(MAKE) -f pigpio/CMakeFiles/NightlyMemCheck.dir/build.make pigpio/CMakeFiles/NightlyMemCheck.dir/depend
-	$(MAKE) -f pigpio/CMakeFiles/NightlyMemCheck.dir/build.make pigpio/CMakeFiles/NightlyMemCheck.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num= "Built target NightlyMemCheck"
-.PHONY : pigpio/CMakeFiles/NightlyMemCheck.dir/all
-
-# Build rule for subdir invocation for target.
-pigpio/CMakeFiles/NightlyMemCheck.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/NightlyMemCheck.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
-.PHONY : pigpio/CMakeFiles/NightlyMemCheck.dir/rule
-
-# Convenience name for target.
-NightlyMemCheck: pigpio/CMakeFiles/NightlyMemCheck.dir/rule
-
-.PHONY : NightlyMemCheck
-
-# clean rule for target.
-pigpio/CMakeFiles/NightlyMemCheck.dir/clean:
-	$(MAKE) -f pigpio/CMakeFiles/NightlyMemCheck.dir/build.make pigpio/CMakeFiles/NightlyMemCheck.dir/clean
-.PHONY : pigpio/CMakeFiles/NightlyMemCheck.dir/clean
-
-# clean rule for target.
-clean: pigpio/CMakeFiles/NightlyMemCheck.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target pigpio/CMakeFiles/ContinuousConfigure.dir
-
-# All Build rule for target.
-pigpio/CMakeFiles/ContinuousConfigure.dir/all:
-	$(MAKE) -f pigpio/CMakeFiles/ContinuousConfigure.dir/build.make pigpio/CMakeFiles/ContinuousConfigure.dir/depend
-	$(MAKE) -f pigpio/CMakeFiles/ContinuousConfigure.dir/build.make pigpio/CMakeFiles/ContinuousConfigure.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num= "Built target ContinuousConfigure"
-.PHONY : pigpio/CMakeFiles/ContinuousConfigure.dir/all
-
-# Build rule for subdir invocation for target.
-pigpio/CMakeFiles/ContinuousConfigure.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/ContinuousConfigure.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
-.PHONY : pigpio/CMakeFiles/ContinuousConfigure.dir/rule
-
-# Convenience name for target.
-ContinuousConfigure: pigpio/CMakeFiles/ContinuousConfigure.dir/rule
-
-.PHONY : ContinuousConfigure
-
-# clean rule for target.
-pigpio/CMakeFiles/ContinuousConfigure.dir/clean:
-	$(MAKE) -f pigpio/CMakeFiles/ContinuousConfigure.dir/build.make pigpio/CMakeFiles/ContinuousConfigure.dir/clean
-.PHONY : pigpio/CMakeFiles/ContinuousConfigure.dir/clean
-
-# clean rule for target.
-clean: pigpio/CMakeFiles/ContinuousConfigure.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target pigpio/CMakeFiles/ContinuousTest.dir
-
-# All Build rule for target.
-pigpio/CMakeFiles/ContinuousTest.dir/all:
-	$(MAKE) -f pigpio/CMakeFiles/ContinuousTest.dir/build.make pigpio/CMakeFiles/ContinuousTest.dir/depend
-	$(MAKE) -f pigpio/CMakeFiles/ContinuousTest.dir/build.make pigpio/CMakeFiles/ContinuousTest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num= "Built target ContinuousTest"
-.PHONY : pigpio/CMakeFiles/ContinuousTest.dir/all
-
-# Build rule for subdir invocation for target.
-pigpio/CMakeFiles/ContinuousTest.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/ContinuousTest.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
-.PHONY : pigpio/CMakeFiles/ContinuousTest.dir/rule
-
-# Convenience name for target.
-ContinuousTest: pigpio/CMakeFiles/ContinuousTest.dir/rule
-
-.PHONY : ContinuousTest
-
-# clean rule for target.
-pigpio/CMakeFiles/ContinuousTest.dir/clean:
-	$(MAKE) -f pigpio/CMakeFiles/ContinuousTest.dir/build.make pigpio/CMakeFiles/ContinuousTest.dir/clean
-.PHONY : pigpio/CMakeFiles/ContinuousTest.dir/clean
-
-# clean rule for target.
-clean: pigpio/CMakeFiles/ContinuousTest.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target pigpio/CMakeFiles/ExperimentalStart.dir
-
-# All Build rule for target.
-pigpio/CMakeFiles/ExperimentalStart.dir/all:
-	$(MAKE) -f pigpio/CMakeFiles/ExperimentalStart.dir/build.make pigpio/CMakeFiles/ExperimentalStart.dir/depend
-	$(MAKE) -f pigpio/CMakeFiles/ExperimentalStart.dir/build.make pigpio/CMakeFiles/ExperimentalStart.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num= "Built target ExperimentalStart"
-.PHONY : pigpio/CMakeFiles/ExperimentalStart.dir/all
-
-# Build rule for subdir invocation for target.
-pigpio/CMakeFiles/ExperimentalStart.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/ExperimentalStart.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
-.PHONY : pigpio/CMakeFiles/ExperimentalStart.dir/rule
-
-# Convenience name for target.
-ExperimentalStart: pigpio/CMakeFiles/ExperimentalStart.dir/rule
-
-.PHONY : ExperimentalStart
-
-# clean rule for target.
-pigpio/CMakeFiles/ExperimentalStart.dir/clean:
-	$(MAKE) -f pigpio/CMakeFiles/ExperimentalStart.dir/build.make pigpio/CMakeFiles/ExperimentalStart.dir/clean
-.PHONY : pigpio/CMakeFiles/ExperimentalStart.dir/clean
-
-# clean rule for target.
-clean: pigpio/CMakeFiles/ExperimentalStart.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target pigpio/CMakeFiles/NightlyTest.dir
-
-# All Build rule for target.
-pigpio/CMakeFiles/NightlyTest.dir/all:
-	$(MAKE) -f pigpio/CMakeFiles/NightlyTest.dir/build.make pigpio/CMakeFiles/NightlyTest.dir/depend
-	$(MAKE) -f pigpio/CMakeFiles/NightlyTest.dir/build.make pigpio/CMakeFiles/NightlyTest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num= "Built target NightlyTest"
-.PHONY : pigpio/CMakeFiles/NightlyTest.dir/all
-
-# Build rule for subdir invocation for target.
-pigpio/CMakeFiles/NightlyTest.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/NightlyTest.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
-.PHONY : pigpio/CMakeFiles/NightlyTest.dir/rule
-
-# Convenience name for target.
-NightlyTest: pigpio/CMakeFiles/NightlyTest.dir/rule
-
-.PHONY : NightlyTest
-
-# clean rule for target.
-pigpio/CMakeFiles/NightlyTest.dir/clean:
-	$(MAKE) -f pigpio/CMakeFiles/NightlyTest.dir/build.make pigpio/CMakeFiles/NightlyTest.dir/clean
-.PHONY : pigpio/CMakeFiles/NightlyTest.dir/clean
-
-# clean rule for target.
-clean: pigpio/CMakeFiles/NightlyTest.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target pigpio/CMakeFiles/NightlyUpdate.dir
-
-# All Build rule for target.
-pigpio/CMakeFiles/NightlyUpdate.dir/all:
-	$(MAKE) -f pigpio/CMakeFiles/NightlyUpdate.dir/build.make pigpio/CMakeFiles/NightlyUpdate.dir/depend
-	$(MAKE) -f pigpio/CMakeFiles/NightlyUpdate.dir/build.make pigpio/CMakeFiles/NightlyUpdate.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num= "Built target NightlyUpdate"
-.PHONY : pigpio/CMakeFiles/NightlyUpdate.dir/all
-
-# Build rule for subdir invocation for target.
-pigpio/CMakeFiles/NightlyUpdate.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/NightlyUpdate.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
-.PHONY : pigpio/CMakeFiles/NightlyUpdate.dir/rule
-
-# Convenience name for target.
-NightlyUpdate: pigpio/CMakeFiles/NightlyUpdate.dir/rule
-
-.PHONY : NightlyUpdate
-
-# clean rule for target.
-pigpio/CMakeFiles/NightlyUpdate.dir/clean:
-	$(MAKE) -f pigpio/CMakeFiles/NightlyUpdate.dir/build.make pigpio/CMakeFiles/NightlyUpdate.dir/clean
-.PHONY : pigpio/CMakeFiles/NightlyUpdate.dir/clean
-
-# clean rule for target.
-clean: pigpio/CMakeFiles/NightlyUpdate.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target pigpio/CMakeFiles/ExperimentalBuild.dir
-
-# All Build rule for target.
-pigpio/CMakeFiles/ExperimentalBuild.dir/all:
-	$(MAKE) -f pigpio/CMakeFiles/ExperimentalBuild.dir/build.make pigpio/CMakeFiles/ExperimentalBuild.dir/depend
-	$(MAKE) -f pigpio/CMakeFiles/ExperimentalBuild.dir/build.make pigpio/CMakeFiles/ExperimentalBuild.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num= "Built target ExperimentalBuild"
-.PHONY : pigpio/CMakeFiles/ExperimentalBuild.dir/all
-
-# Build rule for subdir invocation for target.
-pigpio/CMakeFiles/ExperimentalBuild.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/ExperimentalBuild.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
-.PHONY : pigpio/CMakeFiles/ExperimentalBuild.dir/rule
-
-# Convenience name for target.
-ExperimentalBuild: pigpio/CMakeFiles/ExperimentalBuild.dir/rule
-
-.PHONY : ExperimentalBuild
-
-# clean rule for target.
-pigpio/CMakeFiles/ExperimentalBuild.dir/clean:
-	$(MAKE) -f pigpio/CMakeFiles/ExperimentalBuild.dir/build.make pigpio/CMakeFiles/ExperimentalBuild.dir/clean
-.PHONY : pigpio/CMakeFiles/ExperimentalBuild.dir/clean
-
-# clean rule for target.
-clean: pigpio/CMakeFiles/ExperimentalBuild.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target pigpio/CMakeFiles/ContinuousMemCheck.dir
-
-# All Build rule for target.
-pigpio/CMakeFiles/ContinuousMemCheck.dir/all:
-	$(MAKE) -f pigpio/CMakeFiles/ContinuousMemCheck.dir/build.make pigpio/CMakeFiles/ContinuousMemCheck.dir/depend
-	$(MAKE) -f pigpio/CMakeFiles/ContinuousMemCheck.dir/build.make pigpio/CMakeFiles/ContinuousMemCheck.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num= "Built target ContinuousMemCheck"
-.PHONY : pigpio/CMakeFiles/ContinuousMemCheck.dir/all
-
-# Build rule for subdir invocation for target.
-pigpio/CMakeFiles/ContinuousMemCheck.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/ContinuousMemCheck.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
-.PHONY : pigpio/CMakeFiles/ContinuousMemCheck.dir/rule
-
-# Convenience name for target.
-ContinuousMemCheck: pigpio/CMakeFiles/ContinuousMemCheck.dir/rule
-
-.PHONY : ContinuousMemCheck
-
-# clean rule for target.
-pigpio/CMakeFiles/ContinuousMemCheck.dir/clean:
-	$(MAKE) -f pigpio/CMakeFiles/ContinuousMemCheck.dir/build.make pigpio/CMakeFiles/ContinuousMemCheck.dir/clean
-.PHONY : pigpio/CMakeFiles/ContinuousMemCheck.dir/clean
-
-# clean rule for target.
-clean: pigpio/CMakeFiles/ContinuousMemCheck.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target pigpio/CMakeFiles/rtmidi.dir
-
-# All Build rule for target.
-pigpio/CMakeFiles/rtmidi.dir/all:
-	$(MAKE) -f pigpio/CMakeFiles/rtmidi.dir/build.make pigpio/CMakeFiles/rtmidi.dir/depend
-	$(MAKE) -f pigpio/CMakeFiles/rtmidi.dir/build.make pigpio/CMakeFiles/rtmidi.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num=16,17,18 "Built target rtmidi"
-.PHONY : pigpio/CMakeFiles/rtmidi.dir/all
+pigpio/CMakeFiles/x_pigpiod_if.dir/all: pigpio/CMakeFiles/pigpiod_if.dir/all
+	$(MAKE) -f pigpio/CMakeFiles/x_pigpiod_if.dir/build.make pigpio/CMakeFiles/x_pigpiod_if.dir/depend
+	$(MAKE) -f pigpio/CMakeFiles/x_pigpiod_if.dir/build.make pigpio/CMakeFiles/x_pigpiod_if.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num=39,40 "Built target x_pigpiod_if"
+.PHONY : pigpio/CMakeFiles/x_pigpiod_if.dir/all
 
 # Include target in all.
-all: pigpio/CMakeFiles/rtmidi.dir/all
+all: pigpio/CMakeFiles/x_pigpiod_if.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-pigpio/CMakeFiles/rtmidi.dir/rule: cmake_check_build_system
+pigpio/CMakeFiles/x_pigpiod_if.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 5
+	$(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/x_pigpiod_if.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
+.PHONY : pigpio/CMakeFiles/x_pigpiod_if.dir/rule
+
+# Convenience name for target.
+x_pigpiod_if: pigpio/CMakeFiles/x_pigpiod_if.dir/rule
+
+.PHONY : x_pigpiod_if
+
+# clean rule for target.
+pigpio/CMakeFiles/x_pigpiod_if.dir/clean:
+	$(MAKE) -f pigpio/CMakeFiles/x_pigpiod_if.dir/build.make pigpio/CMakeFiles/x_pigpiod_if.dir/clean
+.PHONY : pigpio/CMakeFiles/x_pigpiod_if.dir/clean
+
+# clean rule for target.
+clean: pigpio/CMakeFiles/x_pigpiod_if.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target pigpio/CMakeFiles/pigpiod_if.dir
+
+# All Build rule for target.
+pigpio/CMakeFiles/pigpiod_if.dir/all:
+	$(MAKE) -f pigpio/CMakeFiles/pigpiod_if.dir/build.make pigpio/CMakeFiles/pigpiod_if.dir/depend
+	$(MAKE) -f pigpio/CMakeFiles/pigpiod_if.dir/build.make pigpio/CMakeFiles/pigpiod_if.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num=21,22,23 "Built target pigpiod_if"
+.PHONY : pigpio/CMakeFiles/pigpiod_if.dir/all
+
+# Include target in all.
+all: pigpio/CMakeFiles/pigpiod_if.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+pigpio/CMakeFiles/pigpiod_if.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 3
-	$(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/rtmidi.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/pigpiod_if.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
-.PHONY : pigpio/CMakeFiles/rtmidi.dir/rule
+.PHONY : pigpio/CMakeFiles/pigpiod_if.dir/rule
 
 # Convenience name for target.
-rtmidi: pigpio/CMakeFiles/rtmidi.dir/rule
+pigpiod_if: pigpio/CMakeFiles/pigpiod_if.dir/rule
 
-.PHONY : rtmidi
-
-# clean rule for target.
-pigpio/CMakeFiles/rtmidi.dir/clean:
-	$(MAKE) -f pigpio/CMakeFiles/rtmidi.dir/build.make pigpio/CMakeFiles/rtmidi.dir/clean
-.PHONY : pigpio/CMakeFiles/rtmidi.dir/clean
+.PHONY : pigpiod_if
 
 # clean rule for target.
-clean: pigpio/CMakeFiles/rtmidi.dir/clean
+pigpio/CMakeFiles/pigpiod_if.dir/clean:
+	$(MAKE) -f pigpio/CMakeFiles/pigpiod_if.dir/build.make pigpio/CMakeFiles/pigpiod_if.dir/clean
+.PHONY : pigpio/CMakeFiles/pigpiod_if.dir/clean
+
+# clean rule for target.
+clean: pigpio/CMakeFiles/pigpiod_if.dir/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target pigpio/CMakeFiles/NightlyBuild.dir
+# Target rules for target pigpio/CMakeFiles/pigpio.dir
 
 # All Build rule for target.
-pigpio/CMakeFiles/NightlyBuild.dir/all:
-	$(MAKE) -f pigpio/CMakeFiles/NightlyBuild.dir/build.make pigpio/CMakeFiles/NightlyBuild.dir/depend
-	$(MAKE) -f pigpio/CMakeFiles/NightlyBuild.dir/build.make pigpio/CMakeFiles/NightlyBuild.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num= "Built target NightlyBuild"
-.PHONY : pigpio/CMakeFiles/NightlyBuild.dir/all
-
-# Build rule for subdir invocation for target.
-pigpio/CMakeFiles/NightlyBuild.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/NightlyBuild.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
-.PHONY : pigpio/CMakeFiles/NightlyBuild.dir/rule
-
-# Convenience name for target.
-NightlyBuild: pigpio/CMakeFiles/NightlyBuild.dir/rule
-
-.PHONY : NightlyBuild
-
-# clean rule for target.
-pigpio/CMakeFiles/NightlyBuild.dir/clean:
-	$(MAKE) -f pigpio/CMakeFiles/NightlyBuild.dir/build.make pigpio/CMakeFiles/NightlyBuild.dir/clean
-.PHONY : pigpio/CMakeFiles/NightlyBuild.dir/clean
-
-# clean rule for target.
-clean: pigpio/CMakeFiles/NightlyBuild.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target pigpio/CMakeFiles/Continuous.dir
-
-# All Build rule for target.
-pigpio/CMakeFiles/Continuous.dir/all:
-	$(MAKE) -f pigpio/CMakeFiles/Continuous.dir/build.make pigpio/CMakeFiles/Continuous.dir/depend
-	$(MAKE) -f pigpio/CMakeFiles/Continuous.dir/build.make pigpio/CMakeFiles/Continuous.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num= "Built target Continuous"
-.PHONY : pigpio/CMakeFiles/Continuous.dir/all
-
-# Build rule for subdir invocation for target.
-pigpio/CMakeFiles/Continuous.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/Continuous.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
-.PHONY : pigpio/CMakeFiles/Continuous.dir/rule
-
-# Convenience name for target.
-Continuous: pigpio/CMakeFiles/Continuous.dir/rule
-
-.PHONY : Continuous
-
-# clean rule for target.
-pigpio/CMakeFiles/Continuous.dir/clean:
-	$(MAKE) -f pigpio/CMakeFiles/Continuous.dir/build.make pigpio/CMakeFiles/Continuous.dir/clean
-.PHONY : pigpio/CMakeFiles/Continuous.dir/clean
-
-# clean rule for target.
-clean: pigpio/CMakeFiles/Continuous.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target pigpio/CMakeFiles/ContinuousUpdate.dir
-
-# All Build rule for target.
-pigpio/CMakeFiles/ContinuousUpdate.dir/all:
-	$(MAKE) -f pigpio/CMakeFiles/ContinuousUpdate.dir/build.make pigpio/CMakeFiles/ContinuousUpdate.dir/depend
-	$(MAKE) -f pigpio/CMakeFiles/ContinuousUpdate.dir/build.make pigpio/CMakeFiles/ContinuousUpdate.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num= "Built target ContinuousUpdate"
-.PHONY : pigpio/CMakeFiles/ContinuousUpdate.dir/all
-
-# Build rule for subdir invocation for target.
-pigpio/CMakeFiles/ContinuousUpdate.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/ContinuousUpdate.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
-.PHONY : pigpio/CMakeFiles/ContinuousUpdate.dir/rule
-
-# Convenience name for target.
-ContinuousUpdate: pigpio/CMakeFiles/ContinuousUpdate.dir/rule
-
-.PHONY : ContinuousUpdate
-
-# clean rule for target.
-pigpio/CMakeFiles/ContinuousUpdate.dir/clean:
-	$(MAKE) -f pigpio/CMakeFiles/ContinuousUpdate.dir/build.make pigpio/CMakeFiles/ContinuousUpdate.dir/clean
-.PHONY : pigpio/CMakeFiles/ContinuousUpdate.dir/clean
-
-# clean rule for target.
-clean: pigpio/CMakeFiles/ContinuousUpdate.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target pigpio/CMakeFiles/NightlyStart.dir
-
-# All Build rule for target.
-pigpio/CMakeFiles/NightlyStart.dir/all:
-	$(MAKE) -f pigpio/CMakeFiles/NightlyStart.dir/build.make pigpio/CMakeFiles/NightlyStart.dir/depend
-	$(MAKE) -f pigpio/CMakeFiles/NightlyStart.dir/build.make pigpio/CMakeFiles/NightlyStart.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num= "Built target NightlyStart"
-.PHONY : pigpio/CMakeFiles/NightlyStart.dir/all
-
-# Build rule for subdir invocation for target.
-pigpio/CMakeFiles/NightlyStart.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/NightlyStart.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
-.PHONY : pigpio/CMakeFiles/NightlyStart.dir/rule
-
-# Convenience name for target.
-NightlyStart: pigpio/CMakeFiles/NightlyStart.dir/rule
-
-.PHONY : NightlyStart
-
-# clean rule for target.
-pigpio/CMakeFiles/NightlyStart.dir/clean:
-	$(MAKE) -f pigpio/CMakeFiles/NightlyStart.dir/build.make pigpio/CMakeFiles/NightlyStart.dir/clean
-.PHONY : pigpio/CMakeFiles/NightlyStart.dir/clean
-
-# clean rule for target.
-clean: pigpio/CMakeFiles/NightlyStart.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target pigpio/CMakeFiles/midiprobe.dir
-
-# All Build rule for target.
-pigpio/CMakeFiles/midiprobe.dir/all: pigpio/CMakeFiles/rtmidi.dir/all
-	$(MAKE) -f pigpio/CMakeFiles/midiprobe.dir/build.make pigpio/CMakeFiles/midiprobe.dir/depend
-	$(MAKE) -f pigpio/CMakeFiles/midiprobe.dir/build.make pigpio/CMakeFiles/midiprobe.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num=12,13 "Built target midiprobe"
-.PHONY : pigpio/CMakeFiles/midiprobe.dir/all
+pigpio/CMakeFiles/pigpio.dir/all:
+	$(MAKE) -f pigpio/CMakeFiles/pigpio.dir/build.make pigpio/CMakeFiles/pigpio.dir/depend
+	$(MAKE) -f pigpio/CMakeFiles/pigpio.dir/build.make pigpio/CMakeFiles/pigpio.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num=16,17,18 "Built target pigpio"
+.PHONY : pigpio/CMakeFiles/pigpio.dir/all
 
 # Include target in all.
-all: pigpio/CMakeFiles/midiprobe.dir/all
+all: pigpio/CMakeFiles/pigpio.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-pigpio/CMakeFiles/midiprobe.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 5
-	$(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/midiprobe.dir/all
+pigpio/CMakeFiles/pigpio.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 3
+	$(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/pigpio.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
-.PHONY : pigpio/CMakeFiles/midiprobe.dir/rule
+.PHONY : pigpio/CMakeFiles/pigpio.dir/rule
 
 # Convenience name for target.
-midiprobe: pigpio/CMakeFiles/midiprobe.dir/rule
+pigpio: pigpio/CMakeFiles/pigpio.dir/rule
 
-.PHONY : midiprobe
-
-# clean rule for target.
-pigpio/CMakeFiles/midiprobe.dir/clean:
-	$(MAKE) -f pigpio/CMakeFiles/midiprobe.dir/build.make pigpio/CMakeFiles/midiprobe.dir/clean
-.PHONY : pigpio/CMakeFiles/midiprobe.dir/clean
+.PHONY : pigpio
 
 # clean rule for target.
-clean: pigpio/CMakeFiles/midiprobe.dir/clean
+pigpio/CMakeFiles/pigpio.dir/clean:
+	$(MAKE) -f pigpio/CMakeFiles/pigpio.dir/build.make pigpio/CMakeFiles/pigpio.dir/clean
+.PHONY : pigpio/CMakeFiles/pigpio.dir/clean
+
+# clean rule for target.
+clean: pigpio/CMakeFiles/pigpio.dir/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target pigpio/CMakeFiles/ExperimentalTest.dir
+# Target rules for target pigpio/CMakeFiles/pigpiod_if2.dir
 
 # All Build rule for target.
-pigpio/CMakeFiles/ExperimentalTest.dir/all:
-	$(MAKE) -f pigpio/CMakeFiles/ExperimentalTest.dir/build.make pigpio/CMakeFiles/ExperimentalTest.dir/depend
-	$(MAKE) -f pigpio/CMakeFiles/ExperimentalTest.dir/build.make pigpio/CMakeFiles/ExperimentalTest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num= "Built target ExperimentalTest"
-.PHONY : pigpio/CMakeFiles/ExperimentalTest.dir/all
-
-# Build rule for subdir invocation for target.
-pigpio/CMakeFiles/ExperimentalTest.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/ExperimentalTest.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
-.PHONY : pigpio/CMakeFiles/ExperimentalTest.dir/rule
-
-# Convenience name for target.
-ExperimentalTest: pigpio/CMakeFiles/ExperimentalTest.dir/rule
-
-.PHONY : ExperimentalTest
-
-# clean rule for target.
-pigpio/CMakeFiles/ExperimentalTest.dir/clean:
-	$(MAKE) -f pigpio/CMakeFiles/ExperimentalTest.dir/build.make pigpio/CMakeFiles/ExperimentalTest.dir/clean
-.PHONY : pigpio/CMakeFiles/ExperimentalTest.dir/clean
-
-# clean rule for target.
-clean: pigpio/CMakeFiles/ExperimentalTest.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target pigpio/CMakeFiles/NightlyCoverage.dir
-
-# All Build rule for target.
-pigpio/CMakeFiles/NightlyCoverage.dir/all:
-	$(MAKE) -f pigpio/CMakeFiles/NightlyCoverage.dir/build.make pigpio/CMakeFiles/NightlyCoverage.dir/depend
-	$(MAKE) -f pigpio/CMakeFiles/NightlyCoverage.dir/build.make pigpio/CMakeFiles/NightlyCoverage.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num= "Built target NightlyCoverage"
-.PHONY : pigpio/CMakeFiles/NightlyCoverage.dir/all
-
-# Build rule for subdir invocation for target.
-pigpio/CMakeFiles/NightlyCoverage.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/NightlyCoverage.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
-.PHONY : pigpio/CMakeFiles/NightlyCoverage.dir/rule
-
-# Convenience name for target.
-NightlyCoverage: pigpio/CMakeFiles/NightlyCoverage.dir/rule
-
-.PHONY : NightlyCoverage
-
-# clean rule for target.
-pigpio/CMakeFiles/NightlyCoverage.dir/clean:
-	$(MAKE) -f pigpio/CMakeFiles/NightlyCoverage.dir/build.make pigpio/CMakeFiles/NightlyCoverage.dir/clean
-.PHONY : pigpio/CMakeFiles/NightlyCoverage.dir/clean
-
-# clean rule for target.
-clean: pigpio/CMakeFiles/NightlyCoverage.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target pigpio/CMakeFiles/NightlyMemoryCheck.dir
-
-# All Build rule for target.
-pigpio/CMakeFiles/NightlyMemoryCheck.dir/all:
-	$(MAKE) -f pigpio/CMakeFiles/NightlyMemoryCheck.dir/build.make pigpio/CMakeFiles/NightlyMemoryCheck.dir/depend
-	$(MAKE) -f pigpio/CMakeFiles/NightlyMemoryCheck.dir/build.make pigpio/CMakeFiles/NightlyMemoryCheck.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num= "Built target NightlyMemoryCheck"
-.PHONY : pigpio/CMakeFiles/NightlyMemoryCheck.dir/all
-
-# Build rule for subdir invocation for target.
-pigpio/CMakeFiles/NightlyMemoryCheck.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/NightlyMemoryCheck.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
-.PHONY : pigpio/CMakeFiles/NightlyMemoryCheck.dir/rule
-
-# Convenience name for target.
-NightlyMemoryCheck: pigpio/CMakeFiles/NightlyMemoryCheck.dir/rule
-
-.PHONY : NightlyMemoryCheck
-
-# clean rule for target.
-pigpio/CMakeFiles/NightlyMemoryCheck.dir/clean:
-	$(MAKE) -f pigpio/CMakeFiles/NightlyMemoryCheck.dir/build.make pigpio/CMakeFiles/NightlyMemoryCheck.dir/clean
-.PHONY : pigpio/CMakeFiles/NightlyMemoryCheck.dir/clean
-
-# clean rule for target.
-clean: pigpio/CMakeFiles/NightlyMemoryCheck.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target pigpio/CMakeFiles/ExperimentalUpdate.dir
-
-# All Build rule for target.
-pigpio/CMakeFiles/ExperimentalUpdate.dir/all:
-	$(MAKE) -f pigpio/CMakeFiles/ExperimentalUpdate.dir/build.make pigpio/CMakeFiles/ExperimentalUpdate.dir/depend
-	$(MAKE) -f pigpio/CMakeFiles/ExperimentalUpdate.dir/build.make pigpio/CMakeFiles/ExperimentalUpdate.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num= "Built target ExperimentalUpdate"
-.PHONY : pigpio/CMakeFiles/ExperimentalUpdate.dir/all
-
-# Build rule for subdir invocation for target.
-pigpio/CMakeFiles/ExperimentalUpdate.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/ExperimentalUpdate.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
-.PHONY : pigpio/CMakeFiles/ExperimentalUpdate.dir/rule
-
-# Convenience name for target.
-ExperimentalUpdate: pigpio/CMakeFiles/ExperimentalUpdate.dir/rule
-
-.PHONY : ExperimentalUpdate
-
-# clean rule for target.
-pigpio/CMakeFiles/ExperimentalUpdate.dir/clean:
-	$(MAKE) -f pigpio/CMakeFiles/ExperimentalUpdate.dir/build.make pigpio/CMakeFiles/ExperimentalUpdate.dir/clean
-.PHONY : pigpio/CMakeFiles/ExperimentalUpdate.dir/clean
-
-# clean rule for target.
-clean: pigpio/CMakeFiles/ExperimentalUpdate.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target pigpio/CMakeFiles/Nightly.dir
-
-# All Build rule for target.
-pigpio/CMakeFiles/Nightly.dir/all:
-	$(MAKE) -f pigpio/CMakeFiles/Nightly.dir/build.make pigpio/CMakeFiles/Nightly.dir/depend
-	$(MAKE) -f pigpio/CMakeFiles/Nightly.dir/build.make pigpio/CMakeFiles/Nightly.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num= "Built target Nightly"
-.PHONY : pigpio/CMakeFiles/Nightly.dir/all
-
-# Build rule for subdir invocation for target.
-pigpio/CMakeFiles/Nightly.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/Nightly.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
-.PHONY : pigpio/CMakeFiles/Nightly.dir/rule
-
-# Convenience name for target.
-Nightly: pigpio/CMakeFiles/Nightly.dir/rule
-
-.PHONY : Nightly
-
-# clean rule for target.
-pigpio/CMakeFiles/Nightly.dir/clean:
-	$(MAKE) -f pigpio/CMakeFiles/Nightly.dir/build.make pigpio/CMakeFiles/Nightly.dir/clean
-.PHONY : pigpio/CMakeFiles/Nightly.dir/clean
-
-# clean rule for target.
-clean: pigpio/CMakeFiles/Nightly.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target pigpio/CMakeFiles/Experimental.dir
-
-# All Build rule for target.
-pigpio/CMakeFiles/Experimental.dir/all:
-	$(MAKE) -f pigpio/CMakeFiles/Experimental.dir/build.make pigpio/CMakeFiles/Experimental.dir/depend
-	$(MAKE) -f pigpio/CMakeFiles/Experimental.dir/build.make pigpio/CMakeFiles/Experimental.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num= "Built target Experimental"
-.PHONY : pigpio/CMakeFiles/Experimental.dir/all
-
-# Build rule for subdir invocation for target.
-pigpio/CMakeFiles/Experimental.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/Experimental.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
-.PHONY : pigpio/CMakeFiles/Experimental.dir/rule
-
-# Convenience name for target.
-Experimental: pigpio/CMakeFiles/Experimental.dir/rule
-
-.PHONY : Experimental
-
-# clean rule for target.
-pigpio/CMakeFiles/Experimental.dir/clean:
-	$(MAKE) -f pigpio/CMakeFiles/Experimental.dir/build.make pigpio/CMakeFiles/Experimental.dir/clean
-.PHONY : pigpio/CMakeFiles/Experimental.dir/clean
-
-# clean rule for target.
-clean: pigpio/CMakeFiles/Experimental.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target pigpio/CMakeFiles/ExperimentalCoverage.dir
-
-# All Build rule for target.
-pigpio/CMakeFiles/ExperimentalCoverage.dir/all:
-	$(MAKE) -f pigpio/CMakeFiles/ExperimentalCoverage.dir/build.make pigpio/CMakeFiles/ExperimentalCoverage.dir/depend
-	$(MAKE) -f pigpio/CMakeFiles/ExperimentalCoverage.dir/build.make pigpio/CMakeFiles/ExperimentalCoverage.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num= "Built target ExperimentalCoverage"
-.PHONY : pigpio/CMakeFiles/ExperimentalCoverage.dir/all
-
-# Build rule for subdir invocation for target.
-pigpio/CMakeFiles/ExperimentalCoverage.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/ExperimentalCoverage.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
-.PHONY : pigpio/CMakeFiles/ExperimentalCoverage.dir/rule
-
-# Convenience name for target.
-ExperimentalCoverage: pigpio/CMakeFiles/ExperimentalCoverage.dir/rule
-
-.PHONY : ExperimentalCoverage
-
-# clean rule for target.
-pigpio/CMakeFiles/ExperimentalCoverage.dir/clean:
-	$(MAKE) -f pigpio/CMakeFiles/ExperimentalCoverage.dir/build.make pigpio/CMakeFiles/ExperimentalCoverage.dir/clean
-.PHONY : pigpio/CMakeFiles/ExperimentalCoverage.dir/clean
-
-# clean rule for target.
-clean: pigpio/CMakeFiles/ExperimentalCoverage.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target pigpio/CMakeFiles/ExperimentalMemCheck.dir
-
-# All Build rule for target.
-pigpio/CMakeFiles/ExperimentalMemCheck.dir/all:
-	$(MAKE) -f pigpio/CMakeFiles/ExperimentalMemCheck.dir/build.make pigpio/CMakeFiles/ExperimentalMemCheck.dir/depend
-	$(MAKE) -f pigpio/CMakeFiles/ExperimentalMemCheck.dir/build.make pigpio/CMakeFiles/ExperimentalMemCheck.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num= "Built target ExperimentalMemCheck"
-.PHONY : pigpio/CMakeFiles/ExperimentalMemCheck.dir/all
-
-# Build rule for subdir invocation for target.
-pigpio/CMakeFiles/ExperimentalMemCheck.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/ExperimentalMemCheck.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
-.PHONY : pigpio/CMakeFiles/ExperimentalMemCheck.dir/rule
-
-# Convenience name for target.
-ExperimentalMemCheck: pigpio/CMakeFiles/ExperimentalMemCheck.dir/rule
-
-.PHONY : ExperimentalMemCheck
-
-# clean rule for target.
-pigpio/CMakeFiles/ExperimentalMemCheck.dir/clean:
-	$(MAKE) -f pigpio/CMakeFiles/ExperimentalMemCheck.dir/build.make pigpio/CMakeFiles/ExperimentalMemCheck.dir/clean
-.PHONY : pigpio/CMakeFiles/ExperimentalMemCheck.dir/clean
-
-# clean rule for target.
-clean: pigpio/CMakeFiles/ExperimentalMemCheck.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target pigpio/CMakeFiles/ContinuousStart.dir
-
-# All Build rule for target.
-pigpio/CMakeFiles/ContinuousStart.dir/all:
-	$(MAKE) -f pigpio/CMakeFiles/ContinuousStart.dir/build.make pigpio/CMakeFiles/ContinuousStart.dir/depend
-	$(MAKE) -f pigpio/CMakeFiles/ContinuousStart.dir/build.make pigpio/CMakeFiles/ContinuousStart.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num= "Built target ContinuousStart"
-.PHONY : pigpio/CMakeFiles/ContinuousStart.dir/all
-
-# Build rule for subdir invocation for target.
-pigpio/CMakeFiles/ContinuousStart.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/ContinuousStart.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
-.PHONY : pigpio/CMakeFiles/ContinuousStart.dir/rule
-
-# Convenience name for target.
-ContinuousStart: pigpio/CMakeFiles/ContinuousStart.dir/rule
-
-.PHONY : ContinuousStart
-
-# clean rule for target.
-pigpio/CMakeFiles/ContinuousStart.dir/clean:
-	$(MAKE) -f pigpio/CMakeFiles/ContinuousStart.dir/build.make pigpio/CMakeFiles/ContinuousStart.dir/clean
-.PHONY : pigpio/CMakeFiles/ContinuousStart.dir/clean
-
-# clean rule for target.
-clean: pigpio/CMakeFiles/ContinuousStart.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target pigpio/CMakeFiles/ContinuousCoverage.dir
-
-# All Build rule for target.
-pigpio/CMakeFiles/ContinuousCoverage.dir/all:
-	$(MAKE) -f pigpio/CMakeFiles/ContinuousCoverage.dir/build.make pigpio/CMakeFiles/ContinuousCoverage.dir/depend
-	$(MAKE) -f pigpio/CMakeFiles/ContinuousCoverage.dir/build.make pigpio/CMakeFiles/ContinuousCoverage.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num= "Built target ContinuousCoverage"
-.PHONY : pigpio/CMakeFiles/ContinuousCoverage.dir/all
-
-# Build rule for subdir invocation for target.
-pigpio/CMakeFiles/ContinuousCoverage.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/ContinuousCoverage.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
-.PHONY : pigpio/CMakeFiles/ContinuousCoverage.dir/rule
-
-# Convenience name for target.
-ContinuousCoverage: pigpio/CMakeFiles/ContinuousCoverage.dir/rule
-
-.PHONY : ContinuousCoverage
-
-# clean rule for target.
-pigpio/CMakeFiles/ContinuousCoverage.dir/clean:
-	$(MAKE) -f pigpio/CMakeFiles/ContinuousCoverage.dir/build.make pigpio/CMakeFiles/ContinuousCoverage.dir/clean
-.PHONY : pigpio/CMakeFiles/ContinuousCoverage.dir/clean
-
-# clean rule for target.
-clean: pigpio/CMakeFiles/ContinuousCoverage.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target pigpio/CMakeFiles/ExperimentalSubmit.dir
-
-# All Build rule for target.
-pigpio/CMakeFiles/ExperimentalSubmit.dir/all:
-	$(MAKE) -f pigpio/CMakeFiles/ExperimentalSubmit.dir/build.make pigpio/CMakeFiles/ExperimentalSubmit.dir/depend
-	$(MAKE) -f pigpio/CMakeFiles/ExperimentalSubmit.dir/build.make pigpio/CMakeFiles/ExperimentalSubmit.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num= "Built target ExperimentalSubmit"
-.PHONY : pigpio/CMakeFiles/ExperimentalSubmit.dir/all
-
-# Build rule for subdir invocation for target.
-pigpio/CMakeFiles/ExperimentalSubmit.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/ExperimentalSubmit.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
-.PHONY : pigpio/CMakeFiles/ExperimentalSubmit.dir/rule
-
-# Convenience name for target.
-ExperimentalSubmit: pigpio/CMakeFiles/ExperimentalSubmit.dir/rule
-
-.PHONY : ExperimentalSubmit
-
-# clean rule for target.
-pigpio/CMakeFiles/ExperimentalSubmit.dir/clean:
-	$(MAKE) -f pigpio/CMakeFiles/ExperimentalSubmit.dir/build.make pigpio/CMakeFiles/ExperimentalSubmit.dir/clean
-.PHONY : pigpio/CMakeFiles/ExperimentalSubmit.dir/clean
-
-# clean rule for target.
-clean: pigpio/CMakeFiles/ExperimentalSubmit.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target pigpio/CMakeFiles/midiclock.dir
-
-# All Build rule for target.
-pigpio/CMakeFiles/midiclock.dir/all: pigpio/CMakeFiles/rtmidi.dir/all
-	$(MAKE) -f pigpio/CMakeFiles/midiclock.dir/build.make pigpio/CMakeFiles/midiclock.dir/depend
-	$(MAKE) -f pigpio/CMakeFiles/midiclock.dir/build.make pigpio/CMakeFiles/midiclock.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num=8,9 "Built target midiclock"
-.PHONY : pigpio/CMakeFiles/midiclock.dir/all
+pigpio/CMakeFiles/pigpiod_if2.dir/all:
+	$(MAKE) -f pigpio/CMakeFiles/pigpiod_if2.dir/build.make pigpio/CMakeFiles/pigpiod_if2.dir/depend
+	$(MAKE) -f pigpio/CMakeFiles/pigpiod_if2.dir/build.make pigpio/CMakeFiles/pigpiod_if2.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num=24,25,26 "Built target pigpiod_if2"
+.PHONY : pigpio/CMakeFiles/pigpiod_if2.dir/all
 
 # Include target in all.
-all: pigpio/CMakeFiles/midiclock.dir/all
+all: pigpio/CMakeFiles/pigpiod_if2.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-pigpio/CMakeFiles/midiclock.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 5
-	$(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/midiclock.dir/all
+pigpio/CMakeFiles/pigpiod_if2.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 3
+	$(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/pigpiod_if2.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
-.PHONY : pigpio/CMakeFiles/midiclock.dir/rule
+.PHONY : pigpio/CMakeFiles/pigpiod_if2.dir/rule
 
 # Convenience name for target.
-midiclock: pigpio/CMakeFiles/midiclock.dir/rule
+pigpiod_if2: pigpio/CMakeFiles/pigpiod_if2.dir/rule
 
-.PHONY : midiclock
-
-# clean rule for target.
-pigpio/CMakeFiles/midiclock.dir/clean:
-	$(MAKE) -f pigpio/CMakeFiles/midiclock.dir/build.make pigpio/CMakeFiles/midiclock.dir/clean
-.PHONY : pigpio/CMakeFiles/midiclock.dir/clean
+.PHONY : pigpiod_if2
 
 # clean rule for target.
-clean: pigpio/CMakeFiles/midiclock.dir/clean
+pigpio/CMakeFiles/pigpiod_if2.dir/clean:
+	$(MAKE) -f pigpio/CMakeFiles/pigpiod_if2.dir/build.make pigpio/CMakeFiles/pigpiod_if2.dir/clean
+.PHONY : pigpio/CMakeFiles/pigpiod_if2.dir/clean
+
+# clean rule for target.
+clean: pigpio/CMakeFiles/pigpiod_if2.dir/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target pigpio/CMakeFiles/sysextest.dir
+# Target rules for target pigpio/CMakeFiles/pig2vcd.dir
 
 # All Build rule for target.
-pigpio/CMakeFiles/sysextest.dir/all: pigpio/CMakeFiles/rtmidi.dir/all
-	$(MAKE) -f pigpio/CMakeFiles/sysextest.dir/build.make pigpio/CMakeFiles/sysextest.dir/depend
-	$(MAKE) -f pigpio/CMakeFiles/sysextest.dir/build.make pigpio/CMakeFiles/sysextest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num=19,20 "Built target sysextest"
-.PHONY : pigpio/CMakeFiles/sysextest.dir/all
+pigpio/CMakeFiles/pig2vcd.dir/all:
+	$(MAKE) -f pigpio/CMakeFiles/pig2vcd.dir/build.make pigpio/CMakeFiles/pig2vcd.dir/depend
+	$(MAKE) -f pigpio/CMakeFiles/pig2vcd.dir/build.make pigpio/CMakeFiles/pig2vcd.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num=13,14,15 "Built target pig2vcd"
+.PHONY : pigpio/CMakeFiles/pig2vcd.dir/all
 
 # Include target in all.
-all: pigpio/CMakeFiles/sysextest.dir/all
+all: pigpio/CMakeFiles/pig2vcd.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-pigpio/CMakeFiles/sysextest.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 5
-	$(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/sysextest.dir/all
+pigpio/CMakeFiles/pig2vcd.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 3
+	$(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/pig2vcd.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
-.PHONY : pigpio/CMakeFiles/sysextest.dir/rule
+.PHONY : pigpio/CMakeFiles/pig2vcd.dir/rule
 
 # Convenience name for target.
-sysextest: pigpio/CMakeFiles/sysextest.dir/rule
+pig2vcd: pigpio/CMakeFiles/pig2vcd.dir/rule
 
-.PHONY : sysextest
-
-# clean rule for target.
-pigpio/CMakeFiles/sysextest.dir/clean:
-	$(MAKE) -f pigpio/CMakeFiles/sysextest.dir/build.make pigpio/CMakeFiles/sysextest.dir/clean
-.PHONY : pigpio/CMakeFiles/sysextest.dir/clean
+.PHONY : pig2vcd
 
 # clean rule for target.
-clean: pigpio/CMakeFiles/sysextest.dir/clean
+pigpio/CMakeFiles/pig2vcd.dir/clean:
+	$(MAKE) -f pigpio/CMakeFiles/pig2vcd.dir/build.make pigpio/CMakeFiles/pig2vcd.dir/clean
+.PHONY : pigpio/CMakeFiles/pig2vcd.dir/clean
+
+# clean rule for target.
+clean: pigpio/CMakeFiles/pig2vcd.dir/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target pigpio/CMakeFiles/ContinuousBuild.dir
+# Target rules for target pigpio/CMakeFiles/pigpiod.dir
 
 # All Build rule for target.
-pigpio/CMakeFiles/ContinuousBuild.dir/all:
-	$(MAKE) -f pigpio/CMakeFiles/ContinuousBuild.dir/build.make pigpio/CMakeFiles/ContinuousBuild.dir/depend
-	$(MAKE) -f pigpio/CMakeFiles/ContinuousBuild.dir/build.make pigpio/CMakeFiles/ContinuousBuild.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num= "Built target ContinuousBuild"
-.PHONY : pigpio/CMakeFiles/ContinuousBuild.dir/all
-
-# Build rule for subdir invocation for target.
-pigpio/CMakeFiles/ContinuousBuild.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/ContinuousBuild.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
-.PHONY : pigpio/CMakeFiles/ContinuousBuild.dir/rule
-
-# Convenience name for target.
-ContinuousBuild: pigpio/CMakeFiles/ContinuousBuild.dir/rule
-
-.PHONY : ContinuousBuild
-
-# clean rule for target.
-pigpio/CMakeFiles/ContinuousBuild.dir/clean:
-	$(MAKE) -f pigpio/CMakeFiles/ContinuousBuild.dir/build.make pigpio/CMakeFiles/ContinuousBuild.dir/clean
-.PHONY : pigpio/CMakeFiles/ContinuousBuild.dir/clean
-
-# clean rule for target.
-clean: pigpio/CMakeFiles/ContinuousBuild.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target pigpio/CMakeFiles/ContinuousSubmit.dir
-
-# All Build rule for target.
-pigpio/CMakeFiles/ContinuousSubmit.dir/all:
-	$(MAKE) -f pigpio/CMakeFiles/ContinuousSubmit.dir/build.make pigpio/CMakeFiles/ContinuousSubmit.dir/depend
-	$(MAKE) -f pigpio/CMakeFiles/ContinuousSubmit.dir/build.make pigpio/CMakeFiles/ContinuousSubmit.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num= "Built target ContinuousSubmit"
-.PHONY : pigpio/CMakeFiles/ContinuousSubmit.dir/all
-
-# Build rule for subdir invocation for target.
-pigpio/CMakeFiles/ContinuousSubmit.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/ContinuousSubmit.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
-.PHONY : pigpio/CMakeFiles/ContinuousSubmit.dir/rule
-
-# Convenience name for target.
-ContinuousSubmit: pigpio/CMakeFiles/ContinuousSubmit.dir/rule
-
-.PHONY : ContinuousSubmit
-
-# clean rule for target.
-pigpio/CMakeFiles/ContinuousSubmit.dir/clean:
-	$(MAKE) -f pigpio/CMakeFiles/ContinuousSubmit.dir/build.make pigpio/CMakeFiles/ContinuousSubmit.dir/clean
-.PHONY : pigpio/CMakeFiles/ContinuousSubmit.dir/clean
-
-# clean rule for target.
-clean: pigpio/CMakeFiles/ContinuousSubmit.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target pigpio/CMakeFiles/cmidiin.dir
-
-# All Build rule for target.
-pigpio/CMakeFiles/cmidiin.dir/all: pigpio/CMakeFiles/rtmidi.dir/all
-	$(MAKE) -f pigpio/CMakeFiles/cmidiin.dir/build.make pigpio/CMakeFiles/cmidiin.dir/depend
-	$(MAKE) -f pigpio/CMakeFiles/cmidiin.dir/build.make pigpio/CMakeFiles/cmidiin.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num=3,4 "Built target cmidiin"
-.PHONY : pigpio/CMakeFiles/cmidiin.dir/all
+pigpio/CMakeFiles/pigpiod.dir/all: pigpio/CMakeFiles/pigpio.dir/all
+	$(MAKE) -f pigpio/CMakeFiles/pigpiod.dir/build.make pigpio/CMakeFiles/pigpiod.dir/depend
+	$(MAKE) -f pigpio/CMakeFiles/pigpiod.dir/build.make pigpio/CMakeFiles/pigpiod.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num=19,20 "Built target pigpiod"
+.PHONY : pigpio/CMakeFiles/pigpiod.dir/all
 
 # Include target in all.
-all: pigpio/CMakeFiles/cmidiin.dir/all
+all: pigpio/CMakeFiles/pigpiod.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-pigpio/CMakeFiles/cmidiin.dir/rule: cmake_check_build_system
+pigpio/CMakeFiles/pigpiod.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 5
-	$(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/cmidiin.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/pigpiod.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
-.PHONY : pigpio/CMakeFiles/cmidiin.dir/rule
+.PHONY : pigpio/CMakeFiles/pigpiod.dir/rule
 
 # Convenience name for target.
-cmidiin: pigpio/CMakeFiles/cmidiin.dir/rule
+pigpiod: pigpio/CMakeFiles/pigpiod.dir/rule
 
-.PHONY : cmidiin
-
-# clean rule for target.
-pigpio/CMakeFiles/cmidiin.dir/clean:
-	$(MAKE) -f pigpio/CMakeFiles/cmidiin.dir/build.make pigpio/CMakeFiles/cmidiin.dir/clean
-.PHONY : pigpio/CMakeFiles/cmidiin.dir/clean
+.PHONY : pigpiod
 
 # clean rule for target.
-clean: pigpio/CMakeFiles/cmidiin.dir/clean
+pigpio/CMakeFiles/pigpiod.dir/clean:
+	$(MAKE) -f pigpio/CMakeFiles/pigpiod.dir/build.make pigpio/CMakeFiles/pigpiod.dir/clean
+.PHONY : pigpio/CMakeFiles/pigpiod.dir/clean
+
+# clean rule for target.
+clean: pigpio/CMakeFiles/pigpiod.dir/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target pigpio/CMakeFiles/uninstall.dir
+# Target rules for target pigpio/CMakeFiles/x_pigpiod_if2.dir
 
 # All Build rule for target.
-pigpio/CMakeFiles/uninstall.dir/all:
-	$(MAKE) -f pigpio/CMakeFiles/uninstall.dir/build.make pigpio/CMakeFiles/uninstall.dir/depend
-	$(MAKE) -f pigpio/CMakeFiles/uninstall.dir/build.make pigpio/CMakeFiles/uninstall.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num= "Built target uninstall"
-.PHONY : pigpio/CMakeFiles/uninstall.dir/all
-
-# Build rule for subdir invocation for target.
-pigpio/CMakeFiles/uninstall.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/uninstall.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
-.PHONY : pigpio/CMakeFiles/uninstall.dir/rule
-
-# Convenience name for target.
-uninstall: pigpio/CMakeFiles/uninstall.dir/rule
-
-.PHONY : uninstall
-
-# clean rule for target.
-pigpio/CMakeFiles/uninstall.dir/clean:
-	$(MAKE) -f pigpio/CMakeFiles/uninstall.dir/build.make pigpio/CMakeFiles/uninstall.dir/clean
-.PHONY : pigpio/CMakeFiles/uninstall.dir/clean
-
-# clean rule for target.
-clean: pigpio/CMakeFiles/uninstall.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target pigpio/CMakeFiles/midiout.dir
-
-# All Build rule for target.
-pigpio/CMakeFiles/midiout.dir/all: pigpio/CMakeFiles/rtmidi.dir/all
-	$(MAKE) -f pigpio/CMakeFiles/midiout.dir/build.make pigpio/CMakeFiles/midiout.dir/depend
-	$(MAKE) -f pigpio/CMakeFiles/midiout.dir/build.make pigpio/CMakeFiles/midiout.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num=10,11 "Built target midiout"
-.PHONY : pigpio/CMakeFiles/midiout.dir/all
+pigpio/CMakeFiles/x_pigpiod_if2.dir/all: pigpio/CMakeFiles/pigpiod_if2.dir/all
+	$(MAKE) -f pigpio/CMakeFiles/x_pigpiod_if2.dir/build.make pigpio/CMakeFiles/x_pigpiod_if2.dir/depend
+	$(MAKE) -f pigpio/CMakeFiles/x_pigpiod_if2.dir/build.make pigpio/CMakeFiles/x_pigpiod_if2.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num=41,42 "Built target x_pigpiod_if2"
+.PHONY : pigpio/CMakeFiles/x_pigpiod_if2.dir/all
 
 # Include target in all.
-all: pigpio/CMakeFiles/midiout.dir/all
+all: pigpio/CMakeFiles/x_pigpiod_if2.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-pigpio/CMakeFiles/midiout.dir/rule: cmake_check_build_system
+pigpio/CMakeFiles/x_pigpiod_if2.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 5
-	$(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/midiout.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/x_pigpiod_if2.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
-.PHONY : pigpio/CMakeFiles/midiout.dir/rule
+.PHONY : pigpio/CMakeFiles/x_pigpiod_if2.dir/rule
 
 # Convenience name for target.
-midiout: pigpio/CMakeFiles/midiout.dir/rule
+x_pigpiod_if2: pigpio/CMakeFiles/x_pigpiod_if2.dir/rule
 
-.PHONY : midiout
-
-# clean rule for target.
-pigpio/CMakeFiles/midiout.dir/clean:
-	$(MAKE) -f pigpio/CMakeFiles/midiout.dir/build.make pigpio/CMakeFiles/midiout.dir/clean
-.PHONY : pigpio/CMakeFiles/midiout.dir/clean
+.PHONY : x_pigpiod_if2
 
 # clean rule for target.
-clean: pigpio/CMakeFiles/midiout.dir/clean
+pigpio/CMakeFiles/x_pigpiod_if2.dir/clean:
+	$(MAKE) -f pigpio/CMakeFiles/x_pigpiod_if2.dir/build.make pigpio/CMakeFiles/x_pigpiod_if2.dir/clean
+.PHONY : pigpio/CMakeFiles/x_pigpiod_if2.dir/clean
+
+# clean rule for target.
+clean: pigpio/CMakeFiles/x_pigpiod_if2.dir/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target pigpio/CMakeFiles/NightlyConfigure.dir
+# Target rules for target pigpio/CMakeFiles/pigs.dir
 
 # All Build rule for target.
-pigpio/CMakeFiles/NightlyConfigure.dir/all:
-	$(MAKE) -f pigpio/CMakeFiles/NightlyConfigure.dir/build.make pigpio/CMakeFiles/NightlyConfigure.dir/depend
-	$(MAKE) -f pigpio/CMakeFiles/NightlyConfigure.dir/build.make pigpio/CMakeFiles/NightlyConfigure.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num= "Built target NightlyConfigure"
-.PHONY : pigpio/CMakeFiles/NightlyConfigure.dir/all
-
-# Build rule for subdir invocation for target.
-pigpio/CMakeFiles/NightlyConfigure.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/NightlyConfigure.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
-.PHONY : pigpio/CMakeFiles/NightlyConfigure.dir/rule
-
-# Convenience name for target.
-NightlyConfigure: pigpio/CMakeFiles/NightlyConfigure.dir/rule
-
-.PHONY : NightlyConfigure
-
-# clean rule for target.
-pigpio/CMakeFiles/NightlyConfigure.dir/clean:
-	$(MAKE) -f pigpio/CMakeFiles/NightlyConfigure.dir/build.make pigpio/CMakeFiles/NightlyConfigure.dir/clean
-.PHONY : pigpio/CMakeFiles/NightlyConfigure.dir/clean
-
-# clean rule for target.
-clean: pigpio/CMakeFiles/NightlyConfigure.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target pigpio/CMakeFiles/qmidiin.dir
-
-# All Build rule for target.
-pigpio/CMakeFiles/qmidiin.dir/all: pigpio/CMakeFiles/rtmidi.dir/all
-	$(MAKE) -f pigpio/CMakeFiles/qmidiin.dir/build.make pigpio/CMakeFiles/qmidiin.dir/depend
-	$(MAKE) -f pigpio/CMakeFiles/qmidiin.dir/build.make pigpio/CMakeFiles/qmidiin.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num=14,15 "Built target qmidiin"
-.PHONY : pigpio/CMakeFiles/qmidiin.dir/all
+pigpio/CMakeFiles/pigs.dir/all:
+	$(MAKE) -f pigpio/CMakeFiles/pigs.dir/build.make pigpio/CMakeFiles/pigs.dir/depend
+	$(MAKE) -f pigpio/CMakeFiles/pigs.dir/build.make pigpio/CMakeFiles/pigs.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num=27,28,29 "Built target pigs"
+.PHONY : pigpio/CMakeFiles/pigs.dir/all
 
 # Include target in all.
-all: pigpio/CMakeFiles/qmidiin.dir/all
+all: pigpio/CMakeFiles/pigs.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-pigpio/CMakeFiles/qmidiin.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 5
-	$(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/qmidiin.dir/all
+pigpio/CMakeFiles/pigs.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 3
+	$(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/pigs.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
-.PHONY : pigpio/CMakeFiles/qmidiin.dir/rule
+.PHONY : pigpio/CMakeFiles/pigs.dir/rule
 
 # Convenience name for target.
-qmidiin: pigpio/CMakeFiles/qmidiin.dir/rule
+pigs: pigpio/CMakeFiles/pigs.dir/rule
 
-.PHONY : qmidiin
-
-# clean rule for target.
-pigpio/CMakeFiles/qmidiin.dir/clean:
-	$(MAKE) -f pigpio/CMakeFiles/qmidiin.dir/build.make pigpio/CMakeFiles/qmidiin.dir/clean
-.PHONY : pigpio/CMakeFiles/qmidiin.dir/clean
+.PHONY : pigs
 
 # clean rule for target.
-clean: pigpio/CMakeFiles/qmidiin.dir/clean
+pigpio/CMakeFiles/pigs.dir/clean:
+	$(MAKE) -f pigpio/CMakeFiles/pigs.dir/build.make pigpio/CMakeFiles/pigs.dir/clean
+.PHONY : pigpio/CMakeFiles/pigs.dir/clean
+
+# clean rule for target.
+clean: pigpio/CMakeFiles/pigs.dir/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target pigpio/CMakeFiles/apinames.dir
+# Target rules for target pigpio/CMakeFiles/x_pigpio.dir
 
 # All Build rule for target.
-pigpio/CMakeFiles/apinames.dir/all: pigpio/CMakeFiles/rtmidi.dir/all
-	$(MAKE) -f pigpio/CMakeFiles/apinames.dir/build.make pigpio/CMakeFiles/apinames.dir/depend
-	$(MAKE) -f pigpio/CMakeFiles/apinames.dir/build.make pigpio/CMakeFiles/apinames.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num=1,2 "Built target apinames"
-.PHONY : pigpio/CMakeFiles/apinames.dir/all
+pigpio/CMakeFiles/x_pigpio.dir/all: pigpio/CMakeFiles/pigpio.dir/all
+	$(MAKE) -f pigpio/CMakeFiles/x_pigpio.dir/build.make pigpio/CMakeFiles/x_pigpio.dir/depend
+	$(MAKE) -f pigpio/CMakeFiles/x_pigpio.dir/build.make pigpio/CMakeFiles/x_pigpio.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/hans_ii_midi_c/build/CMakeFiles --progress-num=37,38 "Built target x_pigpio"
+.PHONY : pigpio/CMakeFiles/x_pigpio.dir/all
 
 # Include target in all.
-all: pigpio/CMakeFiles/apinames.dir/all
+all: pigpio/CMakeFiles/x_pigpio.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-pigpio/CMakeFiles/apinames.dir/rule: cmake_check_build_system
+pigpio/CMakeFiles/x_pigpio.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 5
-	$(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/apinames.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/x_pigpio.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/hans_ii_midi_c/build/CMakeFiles 0
-.PHONY : pigpio/CMakeFiles/apinames.dir/rule
+.PHONY : pigpio/CMakeFiles/x_pigpio.dir/rule
 
 # Convenience name for target.
-apinames: pigpio/CMakeFiles/apinames.dir/rule
+x_pigpio: pigpio/CMakeFiles/x_pigpio.dir/rule
 
-.PHONY : apinames
-
-# clean rule for target.
-pigpio/CMakeFiles/apinames.dir/clean:
-	$(MAKE) -f pigpio/CMakeFiles/apinames.dir/build.make pigpio/CMakeFiles/apinames.dir/clean
-.PHONY : pigpio/CMakeFiles/apinames.dir/clean
+.PHONY : x_pigpio
 
 # clean rule for target.
-clean: pigpio/CMakeFiles/apinames.dir/clean
+pigpio/CMakeFiles/x_pigpio.dir/clean:
+	$(MAKE) -f pigpio/CMakeFiles/x_pigpio.dir/build.make pigpio/CMakeFiles/x_pigpio.dir/clean
+.PHONY : pigpio/CMakeFiles/x_pigpio.dir/clean
+
+# clean rule for target.
+clean: pigpio/CMakeFiles/x_pigpio.dir/clean
 
 .PHONY : clean
 

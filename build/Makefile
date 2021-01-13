@@ -68,16 +68,28 @@ install/strip/fast: preinstall/fast
 	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
 
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
 
-.PHONY : edit_cache/fast
+# Special rule for the target package
+package: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
+	/usr/bin/cpack --config ./CPackConfig.cmake
+.PHONY : package
+
+# Special rule for the target package
+package/fast: package
+
+.PHONY : package/fast
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
@@ -100,17 +112,16 @@ list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
 
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
 
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # Special rule for the target install/local
 install/local: preinstall
@@ -123,6 +134,17 @@ install/local/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
 	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
+
+# Special rule for the target package_source
+package_source:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
+	/usr/bin/cpack --config ./CPackSourceConfig.cmake /home/pi/hans_ii_midi_c/build/CPackSourceConfig.cmake
+.PHONY : package_source
+
+# Special rule for the target package_source
+package_source/fast: package_source
+
+.PHONY : package_source/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -179,7 +201,7 @@ ExperimentalConfigure: cmake_check_build_system
 
 # fast build rule for target.
 ExperimentalConfigure/fast:
-	$(MAKE) -f pigpio/CMakeFiles/ExperimentalConfigure.dir/build.make pigpio/CMakeFiles/ExperimentalConfigure.dir/build
+	$(MAKE) -f rtmidi/CMakeFiles/ExperimentalConfigure.dir/build.make rtmidi/CMakeFiles/ExperimentalConfigure.dir/build
 .PHONY : ExperimentalConfigure/fast
 
 #=============================================================================
@@ -192,7 +214,7 @@ NightlySubmit: cmake_check_build_system
 
 # fast build rule for target.
 NightlySubmit/fast:
-	$(MAKE) -f pigpio/CMakeFiles/NightlySubmit.dir/build.make pigpio/CMakeFiles/NightlySubmit.dir/build
+	$(MAKE) -f rtmidi/CMakeFiles/NightlySubmit.dir/build.make rtmidi/CMakeFiles/NightlySubmit.dir/build
 .PHONY : NightlySubmit/fast
 
 #=============================================================================
@@ -205,7 +227,7 @@ NightlyMemCheck: cmake_check_build_system
 
 # fast build rule for target.
 NightlyMemCheck/fast:
-	$(MAKE) -f pigpio/CMakeFiles/NightlyMemCheck.dir/build.make pigpio/CMakeFiles/NightlyMemCheck.dir/build
+	$(MAKE) -f rtmidi/CMakeFiles/NightlyMemCheck.dir/build.make rtmidi/CMakeFiles/NightlyMemCheck.dir/build
 .PHONY : NightlyMemCheck/fast
 
 #=============================================================================
@@ -218,7 +240,7 @@ ContinuousConfigure: cmake_check_build_system
 
 # fast build rule for target.
 ContinuousConfigure/fast:
-	$(MAKE) -f pigpio/CMakeFiles/ContinuousConfigure.dir/build.make pigpio/CMakeFiles/ContinuousConfigure.dir/build
+	$(MAKE) -f rtmidi/CMakeFiles/ContinuousConfigure.dir/build.make rtmidi/CMakeFiles/ContinuousConfigure.dir/build
 .PHONY : ContinuousConfigure/fast
 
 #=============================================================================
@@ -231,7 +253,7 @@ ContinuousTest: cmake_check_build_system
 
 # fast build rule for target.
 ContinuousTest/fast:
-	$(MAKE) -f pigpio/CMakeFiles/ContinuousTest.dir/build.make pigpio/CMakeFiles/ContinuousTest.dir/build
+	$(MAKE) -f rtmidi/CMakeFiles/ContinuousTest.dir/build.make rtmidi/CMakeFiles/ContinuousTest.dir/build
 .PHONY : ContinuousTest/fast
 
 #=============================================================================
@@ -244,7 +266,7 @@ ExperimentalStart: cmake_check_build_system
 
 # fast build rule for target.
 ExperimentalStart/fast:
-	$(MAKE) -f pigpio/CMakeFiles/ExperimentalStart.dir/build.make pigpio/CMakeFiles/ExperimentalStart.dir/build
+	$(MAKE) -f rtmidi/CMakeFiles/ExperimentalStart.dir/build.make rtmidi/CMakeFiles/ExperimentalStart.dir/build
 .PHONY : ExperimentalStart/fast
 
 #=============================================================================
@@ -257,7 +279,7 @@ NightlyTest: cmake_check_build_system
 
 # fast build rule for target.
 NightlyTest/fast:
-	$(MAKE) -f pigpio/CMakeFiles/NightlyTest.dir/build.make pigpio/CMakeFiles/NightlyTest.dir/build
+	$(MAKE) -f rtmidi/CMakeFiles/NightlyTest.dir/build.make rtmidi/CMakeFiles/NightlyTest.dir/build
 .PHONY : NightlyTest/fast
 
 #=============================================================================
@@ -270,7 +292,7 @@ NightlyUpdate: cmake_check_build_system
 
 # fast build rule for target.
 NightlyUpdate/fast:
-	$(MAKE) -f pigpio/CMakeFiles/NightlyUpdate.dir/build.make pigpio/CMakeFiles/NightlyUpdate.dir/build
+	$(MAKE) -f rtmidi/CMakeFiles/NightlyUpdate.dir/build.make rtmidi/CMakeFiles/NightlyUpdate.dir/build
 .PHONY : NightlyUpdate/fast
 
 #=============================================================================
@@ -283,7 +305,7 @@ ExperimentalBuild: cmake_check_build_system
 
 # fast build rule for target.
 ExperimentalBuild/fast:
-	$(MAKE) -f pigpio/CMakeFiles/ExperimentalBuild.dir/build.make pigpio/CMakeFiles/ExperimentalBuild.dir/build
+	$(MAKE) -f rtmidi/CMakeFiles/ExperimentalBuild.dir/build.make rtmidi/CMakeFiles/ExperimentalBuild.dir/build
 .PHONY : ExperimentalBuild/fast
 
 #=============================================================================
@@ -296,7 +318,7 @@ ContinuousMemCheck: cmake_check_build_system
 
 # fast build rule for target.
 ContinuousMemCheck/fast:
-	$(MAKE) -f pigpio/CMakeFiles/ContinuousMemCheck.dir/build.make pigpio/CMakeFiles/ContinuousMemCheck.dir/build
+	$(MAKE) -f rtmidi/CMakeFiles/ContinuousMemCheck.dir/build.make rtmidi/CMakeFiles/ContinuousMemCheck.dir/build
 .PHONY : ContinuousMemCheck/fast
 
 #=============================================================================
@@ -309,7 +331,7 @@ rtmidi: cmake_check_build_system
 
 # fast build rule for target.
 rtmidi/fast:
-	$(MAKE) -f pigpio/CMakeFiles/rtmidi.dir/build.make pigpio/CMakeFiles/rtmidi.dir/build
+	$(MAKE) -f rtmidi/CMakeFiles/rtmidi.dir/build.make rtmidi/CMakeFiles/rtmidi.dir/build
 .PHONY : rtmidi/fast
 
 #=============================================================================
@@ -322,7 +344,7 @@ NightlyBuild: cmake_check_build_system
 
 # fast build rule for target.
 NightlyBuild/fast:
-	$(MAKE) -f pigpio/CMakeFiles/NightlyBuild.dir/build.make pigpio/CMakeFiles/NightlyBuild.dir/build
+	$(MAKE) -f rtmidi/CMakeFiles/NightlyBuild.dir/build.make rtmidi/CMakeFiles/NightlyBuild.dir/build
 .PHONY : NightlyBuild/fast
 
 #=============================================================================
@@ -335,7 +357,7 @@ Continuous: cmake_check_build_system
 
 # fast build rule for target.
 Continuous/fast:
-	$(MAKE) -f pigpio/CMakeFiles/Continuous.dir/build.make pigpio/CMakeFiles/Continuous.dir/build
+	$(MAKE) -f rtmidi/CMakeFiles/Continuous.dir/build.make rtmidi/CMakeFiles/Continuous.dir/build
 .PHONY : Continuous/fast
 
 #=============================================================================
@@ -348,7 +370,7 @@ ContinuousUpdate: cmake_check_build_system
 
 # fast build rule for target.
 ContinuousUpdate/fast:
-	$(MAKE) -f pigpio/CMakeFiles/ContinuousUpdate.dir/build.make pigpio/CMakeFiles/ContinuousUpdate.dir/build
+	$(MAKE) -f rtmidi/CMakeFiles/ContinuousUpdate.dir/build.make rtmidi/CMakeFiles/ContinuousUpdate.dir/build
 .PHONY : ContinuousUpdate/fast
 
 #=============================================================================
@@ -361,7 +383,7 @@ NightlyStart: cmake_check_build_system
 
 # fast build rule for target.
 NightlyStart/fast:
-	$(MAKE) -f pigpio/CMakeFiles/NightlyStart.dir/build.make pigpio/CMakeFiles/NightlyStart.dir/build
+	$(MAKE) -f rtmidi/CMakeFiles/NightlyStart.dir/build.make rtmidi/CMakeFiles/NightlyStart.dir/build
 .PHONY : NightlyStart/fast
 
 #=============================================================================
@@ -374,7 +396,7 @@ midiprobe: cmake_check_build_system
 
 # fast build rule for target.
 midiprobe/fast:
-	$(MAKE) -f pigpio/CMakeFiles/midiprobe.dir/build.make pigpio/CMakeFiles/midiprobe.dir/build
+	$(MAKE) -f rtmidi/CMakeFiles/midiprobe.dir/build.make rtmidi/CMakeFiles/midiprobe.dir/build
 .PHONY : midiprobe/fast
 
 #=============================================================================
@@ -387,7 +409,7 @@ ExperimentalTest: cmake_check_build_system
 
 # fast build rule for target.
 ExperimentalTest/fast:
-	$(MAKE) -f pigpio/CMakeFiles/ExperimentalTest.dir/build.make pigpio/CMakeFiles/ExperimentalTest.dir/build
+	$(MAKE) -f rtmidi/CMakeFiles/ExperimentalTest.dir/build.make rtmidi/CMakeFiles/ExperimentalTest.dir/build
 .PHONY : ExperimentalTest/fast
 
 #=============================================================================
@@ -400,7 +422,7 @@ NightlyCoverage: cmake_check_build_system
 
 # fast build rule for target.
 NightlyCoverage/fast:
-	$(MAKE) -f pigpio/CMakeFiles/NightlyCoverage.dir/build.make pigpio/CMakeFiles/NightlyCoverage.dir/build
+	$(MAKE) -f rtmidi/CMakeFiles/NightlyCoverage.dir/build.make rtmidi/CMakeFiles/NightlyCoverage.dir/build
 .PHONY : NightlyCoverage/fast
 
 #=============================================================================
@@ -413,7 +435,7 @@ NightlyMemoryCheck: cmake_check_build_system
 
 # fast build rule for target.
 NightlyMemoryCheck/fast:
-	$(MAKE) -f pigpio/CMakeFiles/NightlyMemoryCheck.dir/build.make pigpio/CMakeFiles/NightlyMemoryCheck.dir/build
+	$(MAKE) -f rtmidi/CMakeFiles/NightlyMemoryCheck.dir/build.make rtmidi/CMakeFiles/NightlyMemoryCheck.dir/build
 .PHONY : NightlyMemoryCheck/fast
 
 #=============================================================================
@@ -426,7 +448,7 @@ ExperimentalUpdate: cmake_check_build_system
 
 # fast build rule for target.
 ExperimentalUpdate/fast:
-	$(MAKE) -f pigpio/CMakeFiles/ExperimentalUpdate.dir/build.make pigpio/CMakeFiles/ExperimentalUpdate.dir/build
+	$(MAKE) -f rtmidi/CMakeFiles/ExperimentalUpdate.dir/build.make rtmidi/CMakeFiles/ExperimentalUpdate.dir/build
 .PHONY : ExperimentalUpdate/fast
 
 #=============================================================================
@@ -439,7 +461,7 @@ Nightly: cmake_check_build_system
 
 # fast build rule for target.
 Nightly/fast:
-	$(MAKE) -f pigpio/CMakeFiles/Nightly.dir/build.make pigpio/CMakeFiles/Nightly.dir/build
+	$(MAKE) -f rtmidi/CMakeFiles/Nightly.dir/build.make rtmidi/CMakeFiles/Nightly.dir/build
 .PHONY : Nightly/fast
 
 #=============================================================================
@@ -452,7 +474,7 @@ Experimental: cmake_check_build_system
 
 # fast build rule for target.
 Experimental/fast:
-	$(MAKE) -f pigpio/CMakeFiles/Experimental.dir/build.make pigpio/CMakeFiles/Experimental.dir/build
+	$(MAKE) -f rtmidi/CMakeFiles/Experimental.dir/build.make rtmidi/CMakeFiles/Experimental.dir/build
 .PHONY : Experimental/fast
 
 #=============================================================================
@@ -465,7 +487,7 @@ ExperimentalCoverage: cmake_check_build_system
 
 # fast build rule for target.
 ExperimentalCoverage/fast:
-	$(MAKE) -f pigpio/CMakeFiles/ExperimentalCoverage.dir/build.make pigpio/CMakeFiles/ExperimentalCoverage.dir/build
+	$(MAKE) -f rtmidi/CMakeFiles/ExperimentalCoverage.dir/build.make rtmidi/CMakeFiles/ExperimentalCoverage.dir/build
 .PHONY : ExperimentalCoverage/fast
 
 #=============================================================================
@@ -478,7 +500,7 @@ ExperimentalMemCheck: cmake_check_build_system
 
 # fast build rule for target.
 ExperimentalMemCheck/fast:
-	$(MAKE) -f pigpio/CMakeFiles/ExperimentalMemCheck.dir/build.make pigpio/CMakeFiles/ExperimentalMemCheck.dir/build
+	$(MAKE) -f rtmidi/CMakeFiles/ExperimentalMemCheck.dir/build.make rtmidi/CMakeFiles/ExperimentalMemCheck.dir/build
 .PHONY : ExperimentalMemCheck/fast
 
 #=============================================================================
@@ -491,7 +513,7 @@ ContinuousStart: cmake_check_build_system
 
 # fast build rule for target.
 ContinuousStart/fast:
-	$(MAKE) -f pigpio/CMakeFiles/ContinuousStart.dir/build.make pigpio/CMakeFiles/ContinuousStart.dir/build
+	$(MAKE) -f rtmidi/CMakeFiles/ContinuousStart.dir/build.make rtmidi/CMakeFiles/ContinuousStart.dir/build
 .PHONY : ContinuousStart/fast
 
 #=============================================================================
@@ -504,7 +526,7 @@ ContinuousCoverage: cmake_check_build_system
 
 # fast build rule for target.
 ContinuousCoverage/fast:
-	$(MAKE) -f pigpio/CMakeFiles/ContinuousCoverage.dir/build.make pigpio/CMakeFiles/ContinuousCoverage.dir/build
+	$(MAKE) -f rtmidi/CMakeFiles/ContinuousCoverage.dir/build.make rtmidi/CMakeFiles/ContinuousCoverage.dir/build
 .PHONY : ContinuousCoverage/fast
 
 #=============================================================================
@@ -517,7 +539,7 @@ ExperimentalSubmit: cmake_check_build_system
 
 # fast build rule for target.
 ExperimentalSubmit/fast:
-	$(MAKE) -f pigpio/CMakeFiles/ExperimentalSubmit.dir/build.make pigpio/CMakeFiles/ExperimentalSubmit.dir/build
+	$(MAKE) -f rtmidi/CMakeFiles/ExperimentalSubmit.dir/build.make rtmidi/CMakeFiles/ExperimentalSubmit.dir/build
 .PHONY : ExperimentalSubmit/fast
 
 #=============================================================================
@@ -530,7 +552,7 @@ midiclock: cmake_check_build_system
 
 # fast build rule for target.
 midiclock/fast:
-	$(MAKE) -f pigpio/CMakeFiles/midiclock.dir/build.make pigpio/CMakeFiles/midiclock.dir/build
+	$(MAKE) -f rtmidi/CMakeFiles/midiclock.dir/build.make rtmidi/CMakeFiles/midiclock.dir/build
 .PHONY : midiclock/fast
 
 #=============================================================================
@@ -543,7 +565,7 @@ sysextest: cmake_check_build_system
 
 # fast build rule for target.
 sysextest/fast:
-	$(MAKE) -f pigpio/CMakeFiles/sysextest.dir/build.make pigpio/CMakeFiles/sysextest.dir/build
+	$(MAKE) -f rtmidi/CMakeFiles/sysextest.dir/build.make rtmidi/CMakeFiles/sysextest.dir/build
 .PHONY : sysextest/fast
 
 #=============================================================================
@@ -556,7 +578,7 @@ ContinuousBuild: cmake_check_build_system
 
 # fast build rule for target.
 ContinuousBuild/fast:
-	$(MAKE) -f pigpio/CMakeFiles/ContinuousBuild.dir/build.make pigpio/CMakeFiles/ContinuousBuild.dir/build
+	$(MAKE) -f rtmidi/CMakeFiles/ContinuousBuild.dir/build.make rtmidi/CMakeFiles/ContinuousBuild.dir/build
 .PHONY : ContinuousBuild/fast
 
 #=============================================================================
@@ -569,7 +591,7 @@ ContinuousSubmit: cmake_check_build_system
 
 # fast build rule for target.
 ContinuousSubmit/fast:
-	$(MAKE) -f pigpio/CMakeFiles/ContinuousSubmit.dir/build.make pigpio/CMakeFiles/ContinuousSubmit.dir/build
+	$(MAKE) -f rtmidi/CMakeFiles/ContinuousSubmit.dir/build.make rtmidi/CMakeFiles/ContinuousSubmit.dir/build
 .PHONY : ContinuousSubmit/fast
 
 #=============================================================================
@@ -582,7 +604,7 @@ cmidiin: cmake_check_build_system
 
 # fast build rule for target.
 cmidiin/fast:
-	$(MAKE) -f pigpio/CMakeFiles/cmidiin.dir/build.make pigpio/CMakeFiles/cmidiin.dir/build
+	$(MAKE) -f rtmidi/CMakeFiles/cmidiin.dir/build.make rtmidi/CMakeFiles/cmidiin.dir/build
 .PHONY : cmidiin/fast
 
 #=============================================================================
@@ -595,7 +617,7 @@ uninstall: cmake_check_build_system
 
 # fast build rule for target.
 uninstall/fast:
-	$(MAKE) -f pigpio/CMakeFiles/uninstall.dir/build.make pigpio/CMakeFiles/uninstall.dir/build
+	$(MAKE) -f rtmidi/CMakeFiles/uninstall.dir/build.make rtmidi/CMakeFiles/uninstall.dir/build
 .PHONY : uninstall/fast
 
 #=============================================================================
@@ -608,7 +630,7 @@ midiout: cmake_check_build_system
 
 # fast build rule for target.
 midiout/fast:
-	$(MAKE) -f pigpio/CMakeFiles/midiout.dir/build.make pigpio/CMakeFiles/midiout.dir/build
+	$(MAKE) -f rtmidi/CMakeFiles/midiout.dir/build.make rtmidi/CMakeFiles/midiout.dir/build
 .PHONY : midiout/fast
 
 #=============================================================================
@@ -621,7 +643,7 @@ NightlyConfigure: cmake_check_build_system
 
 # fast build rule for target.
 NightlyConfigure/fast:
-	$(MAKE) -f pigpio/CMakeFiles/NightlyConfigure.dir/build.make pigpio/CMakeFiles/NightlyConfigure.dir/build
+	$(MAKE) -f rtmidi/CMakeFiles/NightlyConfigure.dir/build.make rtmidi/CMakeFiles/NightlyConfigure.dir/build
 .PHONY : NightlyConfigure/fast
 
 #=============================================================================
@@ -634,7 +656,7 @@ qmidiin: cmake_check_build_system
 
 # fast build rule for target.
 qmidiin/fast:
-	$(MAKE) -f pigpio/CMakeFiles/qmidiin.dir/build.make pigpio/CMakeFiles/qmidiin.dir/build
+	$(MAKE) -f rtmidi/CMakeFiles/qmidiin.dir/build.make rtmidi/CMakeFiles/qmidiin.dir/build
 .PHONY : qmidiin/fast
 
 #=============================================================================
@@ -647,35 +669,125 @@ apinames: cmake_check_build_system
 
 # fast build rule for target.
 apinames/fast:
-	$(MAKE) -f pigpio/CMakeFiles/apinames.dir/build.make pigpio/CMakeFiles/apinames.dir/build
+	$(MAKE) -f rtmidi/CMakeFiles/apinames.dir/build.make rtmidi/CMakeFiles/apinames.dir/build
 .PHONY : apinames/fast
 
-bsc.o: bsc.cpp.o
+#=============================================================================
+# Target rules for targets named x_pigpiod_if
 
-.PHONY : bsc.o
+# Build rule for target.
+x_pigpiod_if: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 x_pigpiod_if
+.PHONY : x_pigpiod_if
 
-# target to build an object file
-bsc.cpp.o:
-	$(MAKE) -f CMakeFiles/hans_ii_midi.dir/build.make CMakeFiles/hans_ii_midi.dir/bsc.cpp.o
-.PHONY : bsc.cpp.o
+# fast build rule for target.
+x_pigpiod_if/fast:
+	$(MAKE) -f pigpio/CMakeFiles/x_pigpiod_if.dir/build.make pigpio/CMakeFiles/x_pigpiod_if.dir/build
+.PHONY : x_pigpiod_if/fast
 
-bsc.i: bsc.cpp.i
+#=============================================================================
+# Target rules for targets named pigpiod_if
 
-.PHONY : bsc.i
+# Build rule for target.
+pigpiod_if: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 pigpiod_if
+.PHONY : pigpiod_if
 
-# target to preprocess a source file
-bsc.cpp.i:
-	$(MAKE) -f CMakeFiles/hans_ii_midi.dir/build.make CMakeFiles/hans_ii_midi.dir/bsc.cpp.i
-.PHONY : bsc.cpp.i
+# fast build rule for target.
+pigpiod_if/fast:
+	$(MAKE) -f pigpio/CMakeFiles/pigpiod_if.dir/build.make pigpio/CMakeFiles/pigpiod_if.dir/build
+.PHONY : pigpiod_if/fast
 
-bsc.s: bsc.cpp.s
+#=============================================================================
+# Target rules for targets named pigpio
 
-.PHONY : bsc.s
+# Build rule for target.
+pigpio: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 pigpio
+.PHONY : pigpio
 
-# target to generate assembly for a file
-bsc.cpp.s:
-	$(MAKE) -f CMakeFiles/hans_ii_midi.dir/build.make CMakeFiles/hans_ii_midi.dir/bsc.cpp.s
-.PHONY : bsc.cpp.s
+# fast build rule for target.
+pigpio/fast:
+	$(MAKE) -f pigpio/CMakeFiles/pigpio.dir/build.make pigpio/CMakeFiles/pigpio.dir/build
+.PHONY : pigpio/fast
+
+#=============================================================================
+# Target rules for targets named pigpiod_if2
+
+# Build rule for target.
+pigpiod_if2: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 pigpiod_if2
+.PHONY : pigpiod_if2
+
+# fast build rule for target.
+pigpiod_if2/fast:
+	$(MAKE) -f pigpio/CMakeFiles/pigpiod_if2.dir/build.make pigpio/CMakeFiles/pigpiod_if2.dir/build
+.PHONY : pigpiod_if2/fast
+
+#=============================================================================
+# Target rules for targets named pig2vcd
+
+# Build rule for target.
+pig2vcd: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 pig2vcd
+.PHONY : pig2vcd
+
+# fast build rule for target.
+pig2vcd/fast:
+	$(MAKE) -f pigpio/CMakeFiles/pig2vcd.dir/build.make pigpio/CMakeFiles/pig2vcd.dir/build
+.PHONY : pig2vcd/fast
+
+#=============================================================================
+# Target rules for targets named pigpiod
+
+# Build rule for target.
+pigpiod: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 pigpiod
+.PHONY : pigpiod
+
+# fast build rule for target.
+pigpiod/fast:
+	$(MAKE) -f pigpio/CMakeFiles/pigpiod.dir/build.make pigpio/CMakeFiles/pigpiod.dir/build
+.PHONY : pigpiod/fast
+
+#=============================================================================
+# Target rules for targets named x_pigpiod_if2
+
+# Build rule for target.
+x_pigpiod_if2: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 x_pigpiod_if2
+.PHONY : x_pigpiod_if2
+
+# fast build rule for target.
+x_pigpiod_if2/fast:
+	$(MAKE) -f pigpio/CMakeFiles/x_pigpiod_if2.dir/build.make pigpio/CMakeFiles/x_pigpiod_if2.dir/build
+.PHONY : x_pigpiod_if2/fast
+
+#=============================================================================
+# Target rules for targets named pigs
+
+# Build rule for target.
+pigs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 pigs
+.PHONY : pigs
+
+# fast build rule for target.
+pigs/fast:
+	$(MAKE) -f pigpio/CMakeFiles/pigs.dir/build.make pigpio/CMakeFiles/pigs.dir/build
+.PHONY : pigs/fast
+
+#=============================================================================
+# Target rules for targets named x_pigpio
+
+# Build rule for target.
+x_pigpio: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 x_pigpio
+.PHONY : x_pigpio
+
+# fast build rule for target.
+x_pigpio/fast:
+	$(MAKE) -f pigpio/CMakeFiles/x_pigpio.dir/build.make pigpio/CMakeFiles/x_pigpio.dir/build
+.PHONY : x_pigpio/fast
 
 main.o: main.cpp.o
 
@@ -711,12 +823,14 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... install/strip"
-	@echo "... edit_cache"
-	@echo "... hans_ii_midi"
+	@echo "... install"
+	@echo "... package"
 	@echo "... rebuild_cache"
 	@echo "... list_install_components"
-	@echo "... install"
+	@echo "... hans_ii_midi"
+	@echo "... edit_cache"
 	@echo "... install/local"
+	@echo "... package_source"
 	@echo "... ExperimentalConfigure"
 	@echo "... NightlySubmit"
 	@echo "... NightlyMemCheck"
@@ -754,9 +868,15 @@ help:
 	@echo "... NightlyConfigure"
 	@echo "... qmidiin"
 	@echo "... apinames"
-	@echo "... bsc.o"
-	@echo "... bsc.i"
-	@echo "... bsc.s"
+	@echo "... x_pigpiod_if"
+	@echo "... pigpiod_if"
+	@echo "... pigpio"
+	@echo "... pigpiod_if2"
+	@echo "... pig2vcd"
+	@echo "... pigpiod"
+	@echo "... x_pigpiod_if2"
+	@echo "... pigs"
+	@echo "... x_pigpio"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

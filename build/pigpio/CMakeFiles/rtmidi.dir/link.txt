@@ -1,1 +1,1 @@
-/usr/bin/c++ -fPIC -Wall -D__LINUX_ALSA__ -lpthread -Wall  -shared -Wl,-soname,librtmidi.so.5 -o librtmidi.so.5.0.0 CMakeFiles/rtmidi.dir/RtMidi.cpp.o CMakeFiles/rtmidi.dir/rtmidi_c.cpp.o -ljack /usr/lib/arm-linux-gnueabihf/libasound.so -lpthread 
+/usr/bin/c++ -fPIC  -Wall  -shared -Wl,-soname,librtmidi.so.5 -o librtmidi.so.5.0.0 CMakeFiles/rtmidi.dir/RtMidi.cpp.o CMakeFiles/rtmidi.dir/rtmidi_c.cpp.o -ljack /usr/lib/arm-linux-gnueabihf/libasound.so -lpthread 

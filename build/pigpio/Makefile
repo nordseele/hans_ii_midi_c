@@ -56,50 +56,6 @@ CMAKE_BINARY_DIR = /home/pi/hans_ii_midi_c/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
-
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
-
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target install/strip
 install/strip: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
@@ -123,6 +79,72 @@ install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
+# Special rule for the target package
+package: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
+	cd /home/pi/hans_ii_midi_c/build && /usr/bin/cpack --config ./CPackConfig.cmake
+.PHONY : package
+
+# Special rule for the target package
+package/fast: package
+
+.PHONY : package/fast
+
+# Special rule for the target package_source
+package_source:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
+	cd /home/pi/hans_ii_midi_c/build && /usr/bin/cpack --config ./CPackSourceConfig.cmake /home/pi/hans_ii_midi_c/build/CPackSourceConfig.cmake
+.PHONY : package_source
+
+# Special rule for the target package_source
+package_source/fast: package_source
+
+.PHONY : package_source/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -157,802 +179,421 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-pigpio/CMakeFiles/ExperimentalConfigure.dir/rule:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/ExperimentalConfigure.dir/rule
-.PHONY : pigpio/CMakeFiles/ExperimentalConfigure.dir/rule
+pigpio/CMakeFiles/x_pigpiod_if.dir/rule:
+	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/x_pigpiod_if.dir/rule
+.PHONY : pigpio/CMakeFiles/x_pigpiod_if.dir/rule
 
 # Convenience name for target.
-ExperimentalConfigure: pigpio/CMakeFiles/ExperimentalConfigure.dir/rule
+x_pigpiod_if: pigpio/CMakeFiles/x_pigpiod_if.dir/rule
 
-.PHONY : ExperimentalConfigure
-
-# fast build rule for target.
-ExperimentalConfigure/fast:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/ExperimentalConfigure.dir/build.make pigpio/CMakeFiles/ExperimentalConfigure.dir/build
-.PHONY : ExperimentalConfigure/fast
-
-# Convenience name for target.
-pigpio/CMakeFiles/NightlySubmit.dir/rule:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/NightlySubmit.dir/rule
-.PHONY : pigpio/CMakeFiles/NightlySubmit.dir/rule
-
-# Convenience name for target.
-NightlySubmit: pigpio/CMakeFiles/NightlySubmit.dir/rule
-
-.PHONY : NightlySubmit
+.PHONY : x_pigpiod_if
 
 # fast build rule for target.
-NightlySubmit/fast:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/NightlySubmit.dir/build.make pigpio/CMakeFiles/NightlySubmit.dir/build
-.PHONY : NightlySubmit/fast
+x_pigpiod_if/fast:
+	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/x_pigpiod_if.dir/build.make pigpio/CMakeFiles/x_pigpiod_if.dir/build
+.PHONY : x_pigpiod_if/fast
 
 # Convenience name for target.
-pigpio/CMakeFiles/NightlyMemCheck.dir/rule:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/NightlyMemCheck.dir/rule
-.PHONY : pigpio/CMakeFiles/NightlyMemCheck.dir/rule
+pigpio/CMakeFiles/pigpiod_if.dir/rule:
+	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/pigpiod_if.dir/rule
+.PHONY : pigpio/CMakeFiles/pigpiod_if.dir/rule
 
 # Convenience name for target.
-NightlyMemCheck: pigpio/CMakeFiles/NightlyMemCheck.dir/rule
+pigpiod_if: pigpio/CMakeFiles/pigpiod_if.dir/rule
 
-.PHONY : NightlyMemCheck
-
-# fast build rule for target.
-NightlyMemCheck/fast:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/NightlyMemCheck.dir/build.make pigpio/CMakeFiles/NightlyMemCheck.dir/build
-.PHONY : NightlyMemCheck/fast
-
-# Convenience name for target.
-pigpio/CMakeFiles/ContinuousConfigure.dir/rule:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/ContinuousConfigure.dir/rule
-.PHONY : pigpio/CMakeFiles/ContinuousConfigure.dir/rule
-
-# Convenience name for target.
-ContinuousConfigure: pigpio/CMakeFiles/ContinuousConfigure.dir/rule
-
-.PHONY : ContinuousConfigure
+.PHONY : pigpiod_if
 
 # fast build rule for target.
-ContinuousConfigure/fast:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/ContinuousConfigure.dir/build.make pigpio/CMakeFiles/ContinuousConfigure.dir/build
-.PHONY : ContinuousConfigure/fast
+pigpiod_if/fast:
+	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/pigpiod_if.dir/build.make pigpio/CMakeFiles/pigpiod_if.dir/build
+.PHONY : pigpiod_if/fast
 
 # Convenience name for target.
-pigpio/CMakeFiles/ContinuousTest.dir/rule:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/ContinuousTest.dir/rule
-.PHONY : pigpio/CMakeFiles/ContinuousTest.dir/rule
+pigpio/CMakeFiles/pigpio.dir/rule:
+	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/pigpio.dir/rule
+.PHONY : pigpio/CMakeFiles/pigpio.dir/rule
 
 # Convenience name for target.
-ContinuousTest: pigpio/CMakeFiles/ContinuousTest.dir/rule
+pigpio: pigpio/CMakeFiles/pigpio.dir/rule
 
-.PHONY : ContinuousTest
-
-# fast build rule for target.
-ContinuousTest/fast:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/ContinuousTest.dir/build.make pigpio/CMakeFiles/ContinuousTest.dir/build
-.PHONY : ContinuousTest/fast
-
-# Convenience name for target.
-pigpio/CMakeFiles/ExperimentalStart.dir/rule:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/ExperimentalStart.dir/rule
-.PHONY : pigpio/CMakeFiles/ExperimentalStart.dir/rule
-
-# Convenience name for target.
-ExperimentalStart: pigpio/CMakeFiles/ExperimentalStart.dir/rule
-
-.PHONY : ExperimentalStart
+.PHONY : pigpio
 
 # fast build rule for target.
-ExperimentalStart/fast:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/ExperimentalStart.dir/build.make pigpio/CMakeFiles/ExperimentalStart.dir/build
-.PHONY : ExperimentalStart/fast
+pigpio/fast:
+	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/pigpio.dir/build.make pigpio/CMakeFiles/pigpio.dir/build
+.PHONY : pigpio/fast
 
 # Convenience name for target.
-pigpio/CMakeFiles/NightlyTest.dir/rule:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/NightlyTest.dir/rule
-.PHONY : pigpio/CMakeFiles/NightlyTest.dir/rule
+pigpio/CMakeFiles/pigpiod_if2.dir/rule:
+	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/pigpiod_if2.dir/rule
+.PHONY : pigpio/CMakeFiles/pigpiod_if2.dir/rule
 
 # Convenience name for target.
-NightlyTest: pigpio/CMakeFiles/NightlyTest.dir/rule
+pigpiod_if2: pigpio/CMakeFiles/pigpiod_if2.dir/rule
 
-.PHONY : NightlyTest
+.PHONY : pigpiod_if2
 
 # fast build rule for target.
-NightlyTest/fast:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/NightlyTest.dir/build.make pigpio/CMakeFiles/NightlyTest.dir/build
-.PHONY : NightlyTest/fast
+pigpiod_if2/fast:
+	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/pigpiod_if2.dir/build.make pigpio/CMakeFiles/pigpiod_if2.dir/build
+.PHONY : pigpiod_if2/fast
 
 # Convenience name for target.
-pigpio/CMakeFiles/NightlyUpdate.dir/rule:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/NightlyUpdate.dir/rule
-.PHONY : pigpio/CMakeFiles/NightlyUpdate.dir/rule
+pigpio/CMakeFiles/pig2vcd.dir/rule:
+	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/pig2vcd.dir/rule
+.PHONY : pigpio/CMakeFiles/pig2vcd.dir/rule
 
 # Convenience name for target.
-NightlyUpdate: pigpio/CMakeFiles/NightlyUpdate.dir/rule
+pig2vcd: pigpio/CMakeFiles/pig2vcd.dir/rule
 
-.PHONY : NightlyUpdate
+.PHONY : pig2vcd
 
 # fast build rule for target.
-NightlyUpdate/fast:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/NightlyUpdate.dir/build.make pigpio/CMakeFiles/NightlyUpdate.dir/build
-.PHONY : NightlyUpdate/fast
+pig2vcd/fast:
+	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/pig2vcd.dir/build.make pigpio/CMakeFiles/pig2vcd.dir/build
+.PHONY : pig2vcd/fast
 
 # Convenience name for target.
-pigpio/CMakeFiles/ExperimentalBuild.dir/rule:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/ExperimentalBuild.dir/rule
-.PHONY : pigpio/CMakeFiles/ExperimentalBuild.dir/rule
+pigpio/CMakeFiles/pigpiod.dir/rule:
+	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/pigpiod.dir/rule
+.PHONY : pigpio/CMakeFiles/pigpiod.dir/rule
 
 # Convenience name for target.
-ExperimentalBuild: pigpio/CMakeFiles/ExperimentalBuild.dir/rule
+pigpiod: pigpio/CMakeFiles/pigpiod.dir/rule
 
-.PHONY : ExperimentalBuild
+.PHONY : pigpiod
 
 # fast build rule for target.
-ExperimentalBuild/fast:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/ExperimentalBuild.dir/build.make pigpio/CMakeFiles/ExperimentalBuild.dir/build
-.PHONY : ExperimentalBuild/fast
+pigpiod/fast:
+	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/pigpiod.dir/build.make pigpio/CMakeFiles/pigpiod.dir/build
+.PHONY : pigpiod/fast
 
 # Convenience name for target.
-pigpio/CMakeFiles/ContinuousMemCheck.dir/rule:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/ContinuousMemCheck.dir/rule
-.PHONY : pigpio/CMakeFiles/ContinuousMemCheck.dir/rule
+pigpio/CMakeFiles/x_pigpiod_if2.dir/rule:
+	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/x_pigpiod_if2.dir/rule
+.PHONY : pigpio/CMakeFiles/x_pigpiod_if2.dir/rule
 
 # Convenience name for target.
-ContinuousMemCheck: pigpio/CMakeFiles/ContinuousMemCheck.dir/rule
+x_pigpiod_if2: pigpio/CMakeFiles/x_pigpiod_if2.dir/rule
 
-.PHONY : ContinuousMemCheck
+.PHONY : x_pigpiod_if2
 
 # fast build rule for target.
-ContinuousMemCheck/fast:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/ContinuousMemCheck.dir/build.make pigpio/CMakeFiles/ContinuousMemCheck.dir/build
-.PHONY : ContinuousMemCheck/fast
+x_pigpiod_if2/fast:
+	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/x_pigpiod_if2.dir/build.make pigpio/CMakeFiles/x_pigpiod_if2.dir/build
+.PHONY : x_pigpiod_if2/fast
 
 # Convenience name for target.
-pigpio/CMakeFiles/rtmidi.dir/rule:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/rtmidi.dir/rule
-.PHONY : pigpio/CMakeFiles/rtmidi.dir/rule
+pigpio/CMakeFiles/pigs.dir/rule:
+	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/pigs.dir/rule
+.PHONY : pigpio/CMakeFiles/pigs.dir/rule
 
 # Convenience name for target.
-rtmidi: pigpio/CMakeFiles/rtmidi.dir/rule
+pigs: pigpio/CMakeFiles/pigs.dir/rule
 
-.PHONY : rtmidi
+.PHONY : pigs
 
 # fast build rule for target.
-rtmidi/fast:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/rtmidi.dir/build.make pigpio/CMakeFiles/rtmidi.dir/build
-.PHONY : rtmidi/fast
+pigs/fast:
+	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/pigs.dir/build.make pigpio/CMakeFiles/pigs.dir/build
+.PHONY : pigs/fast
 
 # Convenience name for target.
-pigpio/CMakeFiles/NightlyBuild.dir/rule:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/NightlyBuild.dir/rule
-.PHONY : pigpio/CMakeFiles/NightlyBuild.dir/rule
+pigpio/CMakeFiles/x_pigpio.dir/rule:
+	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/x_pigpio.dir/rule
+.PHONY : pigpio/CMakeFiles/x_pigpio.dir/rule
 
 # Convenience name for target.
-NightlyBuild: pigpio/CMakeFiles/NightlyBuild.dir/rule
+x_pigpio: pigpio/CMakeFiles/x_pigpio.dir/rule
 
-.PHONY : NightlyBuild
+.PHONY : x_pigpio
 
 # fast build rule for target.
-NightlyBuild/fast:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/NightlyBuild.dir/build.make pigpio/CMakeFiles/NightlyBuild.dir/build
-.PHONY : NightlyBuild/fast
+x_pigpio/fast:
+	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/x_pigpio.dir/build.make pigpio/CMakeFiles/x_pigpio.dir/build
+.PHONY : x_pigpio/fast
 
-# Convenience name for target.
-pigpio/CMakeFiles/Continuous.dir/rule:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/Continuous.dir/rule
-.PHONY : pigpio/CMakeFiles/Continuous.dir/rule
+command.o: command.c.o
 
-# Convenience name for target.
-Continuous: pigpio/CMakeFiles/Continuous.dir/rule
-
-.PHONY : Continuous
-
-# fast build rule for target.
-Continuous/fast:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/Continuous.dir/build.make pigpio/CMakeFiles/Continuous.dir/build
-.PHONY : Continuous/fast
-
-# Convenience name for target.
-pigpio/CMakeFiles/ContinuousUpdate.dir/rule:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/ContinuousUpdate.dir/rule
-.PHONY : pigpio/CMakeFiles/ContinuousUpdate.dir/rule
-
-# Convenience name for target.
-ContinuousUpdate: pigpio/CMakeFiles/ContinuousUpdate.dir/rule
-
-.PHONY : ContinuousUpdate
-
-# fast build rule for target.
-ContinuousUpdate/fast:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/ContinuousUpdate.dir/build.make pigpio/CMakeFiles/ContinuousUpdate.dir/build
-.PHONY : ContinuousUpdate/fast
-
-# Convenience name for target.
-pigpio/CMakeFiles/NightlyStart.dir/rule:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/NightlyStart.dir/rule
-.PHONY : pigpio/CMakeFiles/NightlyStart.dir/rule
-
-# Convenience name for target.
-NightlyStart: pigpio/CMakeFiles/NightlyStart.dir/rule
-
-.PHONY : NightlyStart
-
-# fast build rule for target.
-NightlyStart/fast:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/NightlyStart.dir/build.make pigpio/CMakeFiles/NightlyStart.dir/build
-.PHONY : NightlyStart/fast
-
-# Convenience name for target.
-pigpio/CMakeFiles/midiprobe.dir/rule:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/midiprobe.dir/rule
-.PHONY : pigpio/CMakeFiles/midiprobe.dir/rule
-
-# Convenience name for target.
-midiprobe: pigpio/CMakeFiles/midiprobe.dir/rule
-
-.PHONY : midiprobe
-
-# fast build rule for target.
-midiprobe/fast:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/midiprobe.dir/build.make pigpio/CMakeFiles/midiprobe.dir/build
-.PHONY : midiprobe/fast
-
-# Convenience name for target.
-pigpio/CMakeFiles/ExperimentalTest.dir/rule:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/ExperimentalTest.dir/rule
-.PHONY : pigpio/CMakeFiles/ExperimentalTest.dir/rule
-
-# Convenience name for target.
-ExperimentalTest: pigpio/CMakeFiles/ExperimentalTest.dir/rule
-
-.PHONY : ExperimentalTest
-
-# fast build rule for target.
-ExperimentalTest/fast:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/ExperimentalTest.dir/build.make pigpio/CMakeFiles/ExperimentalTest.dir/build
-.PHONY : ExperimentalTest/fast
-
-# Convenience name for target.
-pigpio/CMakeFiles/NightlyCoverage.dir/rule:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/NightlyCoverage.dir/rule
-.PHONY : pigpio/CMakeFiles/NightlyCoverage.dir/rule
-
-# Convenience name for target.
-NightlyCoverage: pigpio/CMakeFiles/NightlyCoverage.dir/rule
-
-.PHONY : NightlyCoverage
-
-# fast build rule for target.
-NightlyCoverage/fast:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/NightlyCoverage.dir/build.make pigpio/CMakeFiles/NightlyCoverage.dir/build
-.PHONY : NightlyCoverage/fast
-
-# Convenience name for target.
-pigpio/CMakeFiles/NightlyMemoryCheck.dir/rule:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/NightlyMemoryCheck.dir/rule
-.PHONY : pigpio/CMakeFiles/NightlyMemoryCheck.dir/rule
-
-# Convenience name for target.
-NightlyMemoryCheck: pigpio/CMakeFiles/NightlyMemoryCheck.dir/rule
-
-.PHONY : NightlyMemoryCheck
-
-# fast build rule for target.
-NightlyMemoryCheck/fast:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/NightlyMemoryCheck.dir/build.make pigpio/CMakeFiles/NightlyMemoryCheck.dir/build
-.PHONY : NightlyMemoryCheck/fast
-
-# Convenience name for target.
-pigpio/CMakeFiles/ExperimentalUpdate.dir/rule:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/ExperimentalUpdate.dir/rule
-.PHONY : pigpio/CMakeFiles/ExperimentalUpdate.dir/rule
-
-# Convenience name for target.
-ExperimentalUpdate: pigpio/CMakeFiles/ExperimentalUpdate.dir/rule
-
-.PHONY : ExperimentalUpdate
-
-# fast build rule for target.
-ExperimentalUpdate/fast:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/ExperimentalUpdate.dir/build.make pigpio/CMakeFiles/ExperimentalUpdate.dir/build
-.PHONY : ExperimentalUpdate/fast
-
-# Convenience name for target.
-pigpio/CMakeFiles/Nightly.dir/rule:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/Nightly.dir/rule
-.PHONY : pigpio/CMakeFiles/Nightly.dir/rule
-
-# Convenience name for target.
-Nightly: pigpio/CMakeFiles/Nightly.dir/rule
-
-.PHONY : Nightly
-
-# fast build rule for target.
-Nightly/fast:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/Nightly.dir/build.make pigpio/CMakeFiles/Nightly.dir/build
-.PHONY : Nightly/fast
-
-# Convenience name for target.
-pigpio/CMakeFiles/Experimental.dir/rule:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/Experimental.dir/rule
-.PHONY : pigpio/CMakeFiles/Experimental.dir/rule
-
-# Convenience name for target.
-Experimental: pigpio/CMakeFiles/Experimental.dir/rule
-
-.PHONY : Experimental
-
-# fast build rule for target.
-Experimental/fast:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/Experimental.dir/build.make pigpio/CMakeFiles/Experimental.dir/build
-.PHONY : Experimental/fast
-
-# Convenience name for target.
-pigpio/CMakeFiles/ExperimentalCoverage.dir/rule:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/ExperimentalCoverage.dir/rule
-.PHONY : pigpio/CMakeFiles/ExperimentalCoverage.dir/rule
-
-# Convenience name for target.
-ExperimentalCoverage: pigpio/CMakeFiles/ExperimentalCoverage.dir/rule
-
-.PHONY : ExperimentalCoverage
-
-# fast build rule for target.
-ExperimentalCoverage/fast:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/ExperimentalCoverage.dir/build.make pigpio/CMakeFiles/ExperimentalCoverage.dir/build
-.PHONY : ExperimentalCoverage/fast
-
-# Convenience name for target.
-pigpio/CMakeFiles/ExperimentalMemCheck.dir/rule:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/ExperimentalMemCheck.dir/rule
-.PHONY : pigpio/CMakeFiles/ExperimentalMemCheck.dir/rule
-
-# Convenience name for target.
-ExperimentalMemCheck: pigpio/CMakeFiles/ExperimentalMemCheck.dir/rule
-
-.PHONY : ExperimentalMemCheck
-
-# fast build rule for target.
-ExperimentalMemCheck/fast:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/ExperimentalMemCheck.dir/build.make pigpio/CMakeFiles/ExperimentalMemCheck.dir/build
-.PHONY : ExperimentalMemCheck/fast
-
-# Convenience name for target.
-pigpio/CMakeFiles/ContinuousStart.dir/rule:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/ContinuousStart.dir/rule
-.PHONY : pigpio/CMakeFiles/ContinuousStart.dir/rule
-
-# Convenience name for target.
-ContinuousStart: pigpio/CMakeFiles/ContinuousStart.dir/rule
-
-.PHONY : ContinuousStart
-
-# fast build rule for target.
-ContinuousStart/fast:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/ContinuousStart.dir/build.make pigpio/CMakeFiles/ContinuousStart.dir/build
-.PHONY : ContinuousStart/fast
-
-# Convenience name for target.
-pigpio/CMakeFiles/ContinuousCoverage.dir/rule:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/ContinuousCoverage.dir/rule
-.PHONY : pigpio/CMakeFiles/ContinuousCoverage.dir/rule
-
-# Convenience name for target.
-ContinuousCoverage: pigpio/CMakeFiles/ContinuousCoverage.dir/rule
-
-.PHONY : ContinuousCoverage
-
-# fast build rule for target.
-ContinuousCoverage/fast:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/ContinuousCoverage.dir/build.make pigpio/CMakeFiles/ContinuousCoverage.dir/build
-.PHONY : ContinuousCoverage/fast
-
-# Convenience name for target.
-pigpio/CMakeFiles/ExperimentalSubmit.dir/rule:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/ExperimentalSubmit.dir/rule
-.PHONY : pigpio/CMakeFiles/ExperimentalSubmit.dir/rule
-
-# Convenience name for target.
-ExperimentalSubmit: pigpio/CMakeFiles/ExperimentalSubmit.dir/rule
-
-.PHONY : ExperimentalSubmit
-
-# fast build rule for target.
-ExperimentalSubmit/fast:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/ExperimentalSubmit.dir/build.make pigpio/CMakeFiles/ExperimentalSubmit.dir/build
-.PHONY : ExperimentalSubmit/fast
-
-# Convenience name for target.
-pigpio/CMakeFiles/midiclock.dir/rule:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/midiclock.dir/rule
-.PHONY : pigpio/CMakeFiles/midiclock.dir/rule
-
-# Convenience name for target.
-midiclock: pigpio/CMakeFiles/midiclock.dir/rule
-
-.PHONY : midiclock
-
-# fast build rule for target.
-midiclock/fast:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/midiclock.dir/build.make pigpio/CMakeFiles/midiclock.dir/build
-.PHONY : midiclock/fast
-
-# Convenience name for target.
-pigpio/CMakeFiles/sysextest.dir/rule:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/sysextest.dir/rule
-.PHONY : pigpio/CMakeFiles/sysextest.dir/rule
-
-# Convenience name for target.
-sysextest: pigpio/CMakeFiles/sysextest.dir/rule
-
-.PHONY : sysextest
-
-# fast build rule for target.
-sysextest/fast:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/sysextest.dir/build.make pigpio/CMakeFiles/sysextest.dir/build
-.PHONY : sysextest/fast
-
-# Convenience name for target.
-pigpio/CMakeFiles/ContinuousBuild.dir/rule:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/ContinuousBuild.dir/rule
-.PHONY : pigpio/CMakeFiles/ContinuousBuild.dir/rule
-
-# Convenience name for target.
-ContinuousBuild: pigpio/CMakeFiles/ContinuousBuild.dir/rule
-
-.PHONY : ContinuousBuild
-
-# fast build rule for target.
-ContinuousBuild/fast:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/ContinuousBuild.dir/build.make pigpio/CMakeFiles/ContinuousBuild.dir/build
-.PHONY : ContinuousBuild/fast
-
-# Convenience name for target.
-pigpio/CMakeFiles/ContinuousSubmit.dir/rule:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/ContinuousSubmit.dir/rule
-.PHONY : pigpio/CMakeFiles/ContinuousSubmit.dir/rule
-
-# Convenience name for target.
-ContinuousSubmit: pigpio/CMakeFiles/ContinuousSubmit.dir/rule
-
-.PHONY : ContinuousSubmit
-
-# fast build rule for target.
-ContinuousSubmit/fast:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/ContinuousSubmit.dir/build.make pigpio/CMakeFiles/ContinuousSubmit.dir/build
-.PHONY : ContinuousSubmit/fast
-
-# Convenience name for target.
-pigpio/CMakeFiles/cmidiin.dir/rule:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/cmidiin.dir/rule
-.PHONY : pigpio/CMakeFiles/cmidiin.dir/rule
-
-# Convenience name for target.
-cmidiin: pigpio/CMakeFiles/cmidiin.dir/rule
-
-.PHONY : cmidiin
-
-# fast build rule for target.
-cmidiin/fast:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/cmidiin.dir/build.make pigpio/CMakeFiles/cmidiin.dir/build
-.PHONY : cmidiin/fast
-
-# Convenience name for target.
-pigpio/CMakeFiles/uninstall.dir/rule:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/uninstall.dir/rule
-.PHONY : pigpio/CMakeFiles/uninstall.dir/rule
-
-# Convenience name for target.
-uninstall: pigpio/CMakeFiles/uninstall.dir/rule
-
-.PHONY : uninstall
-
-# fast build rule for target.
-uninstall/fast:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/uninstall.dir/build.make pigpio/CMakeFiles/uninstall.dir/build
-.PHONY : uninstall/fast
-
-# Convenience name for target.
-pigpio/CMakeFiles/midiout.dir/rule:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/midiout.dir/rule
-.PHONY : pigpio/CMakeFiles/midiout.dir/rule
-
-# Convenience name for target.
-midiout: pigpio/CMakeFiles/midiout.dir/rule
-
-.PHONY : midiout
-
-# fast build rule for target.
-midiout/fast:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/midiout.dir/build.make pigpio/CMakeFiles/midiout.dir/build
-.PHONY : midiout/fast
-
-# Convenience name for target.
-pigpio/CMakeFiles/NightlyConfigure.dir/rule:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/NightlyConfigure.dir/rule
-.PHONY : pigpio/CMakeFiles/NightlyConfigure.dir/rule
-
-# Convenience name for target.
-NightlyConfigure: pigpio/CMakeFiles/NightlyConfigure.dir/rule
-
-.PHONY : NightlyConfigure
-
-# fast build rule for target.
-NightlyConfigure/fast:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/NightlyConfigure.dir/build.make pigpio/CMakeFiles/NightlyConfigure.dir/build
-.PHONY : NightlyConfigure/fast
-
-# Convenience name for target.
-pigpio/CMakeFiles/qmidiin.dir/rule:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/qmidiin.dir/rule
-.PHONY : pigpio/CMakeFiles/qmidiin.dir/rule
-
-# Convenience name for target.
-qmidiin: pigpio/CMakeFiles/qmidiin.dir/rule
-
-.PHONY : qmidiin
-
-# fast build rule for target.
-qmidiin/fast:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/qmidiin.dir/build.make pigpio/CMakeFiles/qmidiin.dir/build
-.PHONY : qmidiin/fast
-
-# Convenience name for target.
-pigpio/CMakeFiles/apinames.dir/rule:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f CMakeFiles/Makefile2 pigpio/CMakeFiles/apinames.dir/rule
-.PHONY : pigpio/CMakeFiles/apinames.dir/rule
-
-# Convenience name for target.
-apinames: pigpio/CMakeFiles/apinames.dir/rule
-
-.PHONY : apinames
-
-# fast build rule for target.
-apinames/fast:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/apinames.dir/build.make pigpio/CMakeFiles/apinames.dir/build
-.PHONY : apinames/fast
-
-RtMidi.o: RtMidi.cpp.o
-
-.PHONY : RtMidi.o
+.PHONY : command.o
 
 # target to build an object file
-RtMidi.cpp.o:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/rtmidi.dir/build.make pigpio/CMakeFiles/rtmidi.dir/RtMidi.cpp.o
-.PHONY : RtMidi.cpp.o
+command.c.o:
+	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/pigpiod_if.dir/build.make pigpio/CMakeFiles/pigpiod_if.dir/command.c.o
+	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/pigpio.dir/build.make pigpio/CMakeFiles/pigpio.dir/command.c.o
+	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/pigpiod_if2.dir/build.make pigpio/CMakeFiles/pigpiod_if2.dir/command.c.o
+	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/pig2vcd.dir/build.make pigpio/CMakeFiles/pig2vcd.dir/command.c.o
+	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/pigs.dir/build.make pigpio/CMakeFiles/pigs.dir/command.c.o
+.PHONY : command.c.o
 
-RtMidi.i: RtMidi.cpp.i
+command.i: command.c.i
 
-.PHONY : RtMidi.i
+.PHONY : command.i
 
 # target to preprocess a source file
-RtMidi.cpp.i:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/rtmidi.dir/build.make pigpio/CMakeFiles/rtmidi.dir/RtMidi.cpp.i
-.PHONY : RtMidi.cpp.i
+command.c.i:
+	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/pigpiod_if.dir/build.make pigpio/CMakeFiles/pigpiod_if.dir/command.c.i
+	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/pigpio.dir/build.make pigpio/CMakeFiles/pigpio.dir/command.c.i
+	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/pigpiod_if2.dir/build.make pigpio/CMakeFiles/pigpiod_if2.dir/command.c.i
+	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/pig2vcd.dir/build.make pigpio/CMakeFiles/pig2vcd.dir/command.c.i
+	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/pigs.dir/build.make pigpio/CMakeFiles/pigs.dir/command.c.i
+.PHONY : command.c.i
 
-RtMidi.s: RtMidi.cpp.s
+command.s: command.c.s
 
-.PHONY : RtMidi.s
+.PHONY : command.s
 
 # target to generate assembly for a file
-RtMidi.cpp.s:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/rtmidi.dir/build.make pigpio/CMakeFiles/rtmidi.dir/RtMidi.cpp.s
-.PHONY : RtMidi.cpp.s
+command.c.s:
+	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/pigpiod_if.dir/build.make pigpio/CMakeFiles/pigpiod_if.dir/command.c.s
+	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/pigpio.dir/build.make pigpio/CMakeFiles/pigpio.dir/command.c.s
+	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/pigpiod_if2.dir/build.make pigpio/CMakeFiles/pigpiod_if2.dir/command.c.s
+	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/pig2vcd.dir/build.make pigpio/CMakeFiles/pig2vcd.dir/command.c.s
+	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/pigs.dir/build.make pigpio/CMakeFiles/pigs.dir/command.c.s
+.PHONY : command.c.s
 
-rtmidi_c.o: rtmidi_c.cpp.o
+pig2vcd.o: pig2vcd.c.o
 
-.PHONY : rtmidi_c.o
+.PHONY : pig2vcd.o
 
 # target to build an object file
-rtmidi_c.cpp.o:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/rtmidi.dir/build.make pigpio/CMakeFiles/rtmidi.dir/rtmidi_c.cpp.o
-.PHONY : rtmidi_c.cpp.o
+pig2vcd.c.o:
+	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/pig2vcd.dir/build.make pigpio/CMakeFiles/pig2vcd.dir/pig2vcd.c.o
+.PHONY : pig2vcd.c.o
 
-rtmidi_c.i: rtmidi_c.cpp.i
+pig2vcd.i: pig2vcd.c.i
 
-.PHONY : rtmidi_c.i
+.PHONY : pig2vcd.i
 
 # target to preprocess a source file
-rtmidi_c.cpp.i:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/rtmidi.dir/build.make pigpio/CMakeFiles/rtmidi.dir/rtmidi_c.cpp.i
-.PHONY : rtmidi_c.cpp.i
+pig2vcd.c.i:
+	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/pig2vcd.dir/build.make pigpio/CMakeFiles/pig2vcd.dir/pig2vcd.c.i
+.PHONY : pig2vcd.c.i
 
-rtmidi_c.s: rtmidi_c.cpp.s
+pig2vcd.s: pig2vcd.c.s
 
-.PHONY : rtmidi_c.s
+.PHONY : pig2vcd.s
 
 # target to generate assembly for a file
-rtmidi_c.cpp.s:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/rtmidi.dir/build.make pigpio/CMakeFiles/rtmidi.dir/rtmidi_c.cpp.s
-.PHONY : rtmidi_c.cpp.s
+pig2vcd.c.s:
+	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/pig2vcd.dir/build.make pigpio/CMakeFiles/pig2vcd.dir/pig2vcd.c.s
+.PHONY : pig2vcd.c.s
 
-tests/apinames.o: tests/apinames.cpp.o
+pigpio.o: pigpio.c.o
 
-.PHONY : tests/apinames.o
+.PHONY : pigpio.o
 
 # target to build an object file
-tests/apinames.cpp.o:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/apinames.dir/build.make pigpio/CMakeFiles/apinames.dir/tests/apinames.cpp.o
-.PHONY : tests/apinames.cpp.o
+pigpio.c.o:
+	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/pigpio.dir/build.make pigpio/CMakeFiles/pigpio.dir/pigpio.c.o
+.PHONY : pigpio.c.o
 
-tests/apinames.i: tests/apinames.cpp.i
+pigpio.i: pigpio.c.i
 
-.PHONY : tests/apinames.i
+.PHONY : pigpio.i
 
 # target to preprocess a source file
-tests/apinames.cpp.i:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/apinames.dir/build.make pigpio/CMakeFiles/apinames.dir/tests/apinames.cpp.i
-.PHONY : tests/apinames.cpp.i
+pigpio.c.i:
+	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/pigpio.dir/build.make pigpio/CMakeFiles/pigpio.dir/pigpio.c.i
+.PHONY : pigpio.c.i
 
-tests/apinames.s: tests/apinames.cpp.s
+pigpio.s: pigpio.c.s
 
-.PHONY : tests/apinames.s
+.PHONY : pigpio.s
 
 # target to generate assembly for a file
-tests/apinames.cpp.s:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/apinames.dir/build.make pigpio/CMakeFiles/apinames.dir/tests/apinames.cpp.s
-.PHONY : tests/apinames.cpp.s
+pigpio.c.s:
+	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/pigpio.dir/build.make pigpio/CMakeFiles/pigpio.dir/pigpio.c.s
+.PHONY : pigpio.c.s
 
-tests/cmidiin.o: tests/cmidiin.cpp.o
+pigpiod.o: pigpiod.c.o
 
-.PHONY : tests/cmidiin.o
+.PHONY : pigpiod.o
 
 # target to build an object file
-tests/cmidiin.cpp.o:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/cmidiin.dir/build.make pigpio/CMakeFiles/cmidiin.dir/tests/cmidiin.cpp.o
-.PHONY : tests/cmidiin.cpp.o
+pigpiod.c.o:
+	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/pigpiod.dir/build.make pigpio/CMakeFiles/pigpiod.dir/pigpiod.c.o
+.PHONY : pigpiod.c.o
 
-tests/cmidiin.i: tests/cmidiin.cpp.i
+pigpiod.i: pigpiod.c.i
 
-.PHONY : tests/cmidiin.i
+.PHONY : pigpiod.i
 
 # target to preprocess a source file
-tests/cmidiin.cpp.i:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/cmidiin.dir/build.make pigpio/CMakeFiles/cmidiin.dir/tests/cmidiin.cpp.i
-.PHONY : tests/cmidiin.cpp.i
+pigpiod.c.i:
+	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/pigpiod.dir/build.make pigpio/CMakeFiles/pigpiod.dir/pigpiod.c.i
+.PHONY : pigpiod.c.i
 
-tests/cmidiin.s: tests/cmidiin.cpp.s
+pigpiod.s: pigpiod.c.s
 
-.PHONY : tests/cmidiin.s
+.PHONY : pigpiod.s
 
 # target to generate assembly for a file
-tests/cmidiin.cpp.s:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/cmidiin.dir/build.make pigpio/CMakeFiles/cmidiin.dir/tests/cmidiin.cpp.s
-.PHONY : tests/cmidiin.cpp.s
+pigpiod.c.s:
+	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/pigpiod.dir/build.make pigpio/CMakeFiles/pigpiod.dir/pigpiod.c.s
+.PHONY : pigpiod.c.s
 
-tests/midiclock.o: tests/midiclock.cpp.o
+pigpiod_if.o: pigpiod_if.c.o
 
-.PHONY : tests/midiclock.o
+.PHONY : pigpiod_if.o
 
 # target to build an object file
-tests/midiclock.cpp.o:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/midiclock.dir/build.make pigpio/CMakeFiles/midiclock.dir/tests/midiclock.cpp.o
-.PHONY : tests/midiclock.cpp.o
+pigpiod_if.c.o:
+	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/pigpiod_if.dir/build.make pigpio/CMakeFiles/pigpiod_if.dir/pigpiod_if.c.o
+.PHONY : pigpiod_if.c.o
 
-tests/midiclock.i: tests/midiclock.cpp.i
+pigpiod_if.i: pigpiod_if.c.i
 
-.PHONY : tests/midiclock.i
+.PHONY : pigpiod_if.i
 
 # target to preprocess a source file
-tests/midiclock.cpp.i:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/midiclock.dir/build.make pigpio/CMakeFiles/midiclock.dir/tests/midiclock.cpp.i
-.PHONY : tests/midiclock.cpp.i
+pigpiod_if.c.i:
+	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/pigpiod_if.dir/build.make pigpio/CMakeFiles/pigpiod_if.dir/pigpiod_if.c.i
+.PHONY : pigpiod_if.c.i
 
-tests/midiclock.s: tests/midiclock.cpp.s
+pigpiod_if.s: pigpiod_if.c.s
 
-.PHONY : tests/midiclock.s
+.PHONY : pigpiod_if.s
 
 # target to generate assembly for a file
-tests/midiclock.cpp.s:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/midiclock.dir/build.make pigpio/CMakeFiles/midiclock.dir/tests/midiclock.cpp.s
-.PHONY : tests/midiclock.cpp.s
+pigpiod_if.c.s:
+	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/pigpiod_if.dir/build.make pigpio/CMakeFiles/pigpiod_if.dir/pigpiod_if.c.s
+.PHONY : pigpiod_if.c.s
 
-tests/midiout.o: tests/midiout.cpp.o
+pigpiod_if2.o: pigpiod_if2.c.o
 
-.PHONY : tests/midiout.o
+.PHONY : pigpiod_if2.o
 
 # target to build an object file
-tests/midiout.cpp.o:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/midiout.dir/build.make pigpio/CMakeFiles/midiout.dir/tests/midiout.cpp.o
-.PHONY : tests/midiout.cpp.o
+pigpiod_if2.c.o:
+	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/pigpiod_if2.dir/build.make pigpio/CMakeFiles/pigpiod_if2.dir/pigpiod_if2.c.o
+.PHONY : pigpiod_if2.c.o
 
-tests/midiout.i: tests/midiout.cpp.i
+pigpiod_if2.i: pigpiod_if2.c.i
 
-.PHONY : tests/midiout.i
+.PHONY : pigpiod_if2.i
 
 # target to preprocess a source file
-tests/midiout.cpp.i:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/midiout.dir/build.make pigpio/CMakeFiles/midiout.dir/tests/midiout.cpp.i
-.PHONY : tests/midiout.cpp.i
+pigpiod_if2.c.i:
+	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/pigpiod_if2.dir/build.make pigpio/CMakeFiles/pigpiod_if2.dir/pigpiod_if2.c.i
+.PHONY : pigpiod_if2.c.i
 
-tests/midiout.s: tests/midiout.cpp.s
+pigpiod_if2.s: pigpiod_if2.c.s
 
-.PHONY : tests/midiout.s
+.PHONY : pigpiod_if2.s
 
 # target to generate assembly for a file
-tests/midiout.cpp.s:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/midiout.dir/build.make pigpio/CMakeFiles/midiout.dir/tests/midiout.cpp.s
-.PHONY : tests/midiout.cpp.s
+pigpiod_if2.c.s:
+	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/pigpiod_if2.dir/build.make pigpio/CMakeFiles/pigpiod_if2.dir/pigpiod_if2.c.s
+.PHONY : pigpiod_if2.c.s
 
-tests/midiprobe.o: tests/midiprobe.cpp.o
+pigs.o: pigs.c.o
 
-.PHONY : tests/midiprobe.o
+.PHONY : pigs.o
 
 # target to build an object file
-tests/midiprobe.cpp.o:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/midiprobe.dir/build.make pigpio/CMakeFiles/midiprobe.dir/tests/midiprobe.cpp.o
-.PHONY : tests/midiprobe.cpp.o
+pigs.c.o:
+	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/pigs.dir/build.make pigpio/CMakeFiles/pigs.dir/pigs.c.o
+.PHONY : pigs.c.o
 
-tests/midiprobe.i: tests/midiprobe.cpp.i
+pigs.i: pigs.c.i
 
-.PHONY : tests/midiprobe.i
+.PHONY : pigs.i
 
 # target to preprocess a source file
-tests/midiprobe.cpp.i:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/midiprobe.dir/build.make pigpio/CMakeFiles/midiprobe.dir/tests/midiprobe.cpp.i
-.PHONY : tests/midiprobe.cpp.i
+pigs.c.i:
+	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/pigs.dir/build.make pigpio/CMakeFiles/pigs.dir/pigs.c.i
+.PHONY : pigs.c.i
 
-tests/midiprobe.s: tests/midiprobe.cpp.s
+pigs.s: pigs.c.s
 
-.PHONY : tests/midiprobe.s
+.PHONY : pigs.s
 
 # target to generate assembly for a file
-tests/midiprobe.cpp.s:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/midiprobe.dir/build.make pigpio/CMakeFiles/midiprobe.dir/tests/midiprobe.cpp.s
-.PHONY : tests/midiprobe.cpp.s
+pigs.c.s:
+	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/pigs.dir/build.make pigpio/CMakeFiles/pigs.dir/pigs.c.s
+.PHONY : pigs.c.s
 
-tests/qmidiin.o: tests/qmidiin.cpp.o
+x_pigpio.o: x_pigpio.c.o
 
-.PHONY : tests/qmidiin.o
+.PHONY : x_pigpio.o
 
 # target to build an object file
-tests/qmidiin.cpp.o:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/qmidiin.dir/build.make pigpio/CMakeFiles/qmidiin.dir/tests/qmidiin.cpp.o
-.PHONY : tests/qmidiin.cpp.o
+x_pigpio.c.o:
+	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/x_pigpio.dir/build.make pigpio/CMakeFiles/x_pigpio.dir/x_pigpio.c.o
+.PHONY : x_pigpio.c.o
 
-tests/qmidiin.i: tests/qmidiin.cpp.i
+x_pigpio.i: x_pigpio.c.i
 
-.PHONY : tests/qmidiin.i
+.PHONY : x_pigpio.i
 
 # target to preprocess a source file
-tests/qmidiin.cpp.i:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/qmidiin.dir/build.make pigpio/CMakeFiles/qmidiin.dir/tests/qmidiin.cpp.i
-.PHONY : tests/qmidiin.cpp.i
+x_pigpio.c.i:
+	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/x_pigpio.dir/build.make pigpio/CMakeFiles/x_pigpio.dir/x_pigpio.c.i
+.PHONY : x_pigpio.c.i
 
-tests/qmidiin.s: tests/qmidiin.cpp.s
+x_pigpio.s: x_pigpio.c.s
 
-.PHONY : tests/qmidiin.s
+.PHONY : x_pigpio.s
 
 # target to generate assembly for a file
-tests/qmidiin.cpp.s:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/qmidiin.dir/build.make pigpio/CMakeFiles/qmidiin.dir/tests/qmidiin.cpp.s
-.PHONY : tests/qmidiin.cpp.s
+x_pigpio.c.s:
+	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/x_pigpio.dir/build.make pigpio/CMakeFiles/x_pigpio.dir/x_pigpio.c.s
+.PHONY : x_pigpio.c.s
 
-tests/sysextest.o: tests/sysextest.cpp.o
+x_pigpiod_if.o: x_pigpiod_if.c.o
 
-.PHONY : tests/sysextest.o
+.PHONY : x_pigpiod_if.o
 
 # target to build an object file
-tests/sysextest.cpp.o:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/sysextest.dir/build.make pigpio/CMakeFiles/sysextest.dir/tests/sysextest.cpp.o
-.PHONY : tests/sysextest.cpp.o
+x_pigpiod_if.c.o:
+	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/x_pigpiod_if.dir/build.make pigpio/CMakeFiles/x_pigpiod_if.dir/x_pigpiod_if.c.o
+.PHONY : x_pigpiod_if.c.o
 
-tests/sysextest.i: tests/sysextest.cpp.i
+x_pigpiod_if.i: x_pigpiod_if.c.i
 
-.PHONY : tests/sysextest.i
+.PHONY : x_pigpiod_if.i
 
 # target to preprocess a source file
-tests/sysextest.cpp.i:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/sysextest.dir/build.make pigpio/CMakeFiles/sysextest.dir/tests/sysextest.cpp.i
-.PHONY : tests/sysextest.cpp.i
+x_pigpiod_if.c.i:
+	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/x_pigpiod_if.dir/build.make pigpio/CMakeFiles/x_pigpiod_if.dir/x_pigpiod_if.c.i
+.PHONY : x_pigpiod_if.c.i
 
-tests/sysextest.s: tests/sysextest.cpp.s
+x_pigpiod_if.s: x_pigpiod_if.c.s
 
-.PHONY : tests/sysextest.s
+.PHONY : x_pigpiod_if.s
 
 # target to generate assembly for a file
-tests/sysextest.cpp.s:
-	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/sysextest.dir/build.make pigpio/CMakeFiles/sysextest.dir/tests/sysextest.cpp.s
-.PHONY : tests/sysextest.cpp.s
+x_pigpiod_if.c.s:
+	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/x_pigpiod_if.dir/build.make pigpio/CMakeFiles/x_pigpiod_if.dir/x_pigpiod_if.c.s
+.PHONY : x_pigpiod_if.c.s
+
+x_pigpiod_if2.o: x_pigpiod_if2.c.o
+
+.PHONY : x_pigpiod_if2.o
+
+# target to build an object file
+x_pigpiod_if2.c.o:
+	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/x_pigpiod_if2.dir/build.make pigpio/CMakeFiles/x_pigpiod_if2.dir/x_pigpiod_if2.c.o
+.PHONY : x_pigpiod_if2.c.o
+
+x_pigpiod_if2.i: x_pigpiod_if2.c.i
+
+.PHONY : x_pigpiod_if2.i
+
+# target to preprocess a source file
+x_pigpiod_if2.c.i:
+	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/x_pigpiod_if2.dir/build.make pigpio/CMakeFiles/x_pigpiod_if2.dir/x_pigpiod_if2.c.i
+.PHONY : x_pigpiod_if2.c.i
+
+x_pigpiod_if2.s: x_pigpiod_if2.c.s
+
+.PHONY : x_pigpiod_if2.s
+
+# target to generate assembly for a file
+x_pigpiod_if2.c.s:
+	cd /home/pi/hans_ii_midi_c/build && $(MAKE) -f pigpio/CMakeFiles/x_pigpiod_if2.dir/build.make pigpio/CMakeFiles/x_pigpiod_if2.dir/x_pigpiod_if2.c.s
+.PHONY : x_pigpiod_if2.c.s
 
 # Help Target
 help:
@@ -960,76 +601,53 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... install/local"
-	@echo "... list_install_components"
-	@echo "... rebuild_cache"
-	@echo "... ExperimentalConfigure"
-	@echo "... NightlySubmit"
-	@echo "... NightlyMemCheck"
-	@echo "... edit_cache"
-	@echo "... ContinuousConfigure"
-	@echo "... ContinuousTest"
-	@echo "... ExperimentalStart"
-	@echo "... NightlyTest"
-	@echo "... NightlyUpdate"
-	@echo "... ExperimentalBuild"
-	@echo "... ContinuousMemCheck"
-	@echo "... rtmidi"
-	@echo "... NightlyBuild"
-	@echo "... Continuous"
-	@echo "... ContinuousUpdate"
-	@echo "... NightlyStart"
-	@echo "... midiprobe"
-	@echo "... ExperimentalTest"
-	@echo "... NightlyCoverage"
-	@echo "... NightlyMemoryCheck"
-	@echo "... ExperimentalUpdate"
-	@echo "... Nightly"
-	@echo "... Experimental"
-	@echo "... ExperimentalCoverage"
 	@echo "... install/strip"
-	@echo "... ExperimentalMemCheck"
+	@echo "... x_pigpiod_if"
+	@echo "... pigpiod_if"
 	@echo "... install"
-	@echo "... ContinuousStart"
-	@echo "... ContinuousCoverage"
-	@echo "... ExperimentalSubmit"
-	@echo "... midiclock"
-	@echo "... sysextest"
-	@echo "... ContinuousBuild"
-	@echo "... ContinuousSubmit"
-	@echo "... cmidiin"
-	@echo "... uninstall"
-	@echo "... midiout"
-	@echo "... NightlyConfigure"
-	@echo "... qmidiin"
-	@echo "... apinames"
-	@echo "... RtMidi.o"
-	@echo "... RtMidi.i"
-	@echo "... RtMidi.s"
-	@echo "... rtmidi_c.o"
-	@echo "... rtmidi_c.i"
-	@echo "... rtmidi_c.s"
-	@echo "... tests/apinames.o"
-	@echo "... tests/apinames.i"
-	@echo "... tests/apinames.s"
-	@echo "... tests/cmidiin.o"
-	@echo "... tests/cmidiin.i"
-	@echo "... tests/cmidiin.s"
-	@echo "... tests/midiclock.o"
-	@echo "... tests/midiclock.i"
-	@echo "... tests/midiclock.s"
-	@echo "... tests/midiout.o"
-	@echo "... tests/midiout.i"
-	@echo "... tests/midiout.s"
-	@echo "... tests/midiprobe.o"
-	@echo "... tests/midiprobe.i"
-	@echo "... tests/midiprobe.s"
-	@echo "... tests/qmidiin.o"
-	@echo "... tests/qmidiin.i"
-	@echo "... tests/qmidiin.s"
-	@echo "... tests/sysextest.o"
-	@echo "... tests/sysextest.i"
-	@echo "... tests/sysextest.s"
+	@echo "... pigpio"
+	@echo "... pigpiod_if2"
+	@echo "... pig2vcd"
+	@echo "... pigpiod"
+	@echo "... list_install_components"
+	@echo "... x_pigpiod_if2"
+	@echo "... pigs"
+	@echo "... edit_cache"
+	@echo "... x_pigpio"
+	@echo "... package"
+	@echo "... package_source"
+	@echo "... install/local"
+	@echo "... rebuild_cache"
+	@echo "... command.o"
+	@echo "... command.i"
+	@echo "... command.s"
+	@echo "... pig2vcd.o"
+	@echo "... pig2vcd.i"
+	@echo "... pig2vcd.s"
+	@echo "... pigpio.o"
+	@echo "... pigpio.i"
+	@echo "... pigpio.s"
+	@echo "... pigpiod.o"
+	@echo "... pigpiod.i"
+	@echo "... pigpiod.s"
+	@echo "... pigpiod_if.o"
+	@echo "... pigpiod_if.i"
+	@echo "... pigpiod_if.s"
+	@echo "... pigpiod_if2.o"
+	@echo "... pigpiod_if2.i"
+	@echo "... pigpiod_if2.s"
+	@echo "... pigs.o"
+	@echo "... pigs.i"
+	@echo "... pigs.s"
+	@echo "... x_pigpio.o"
+	@echo "... x_pigpio.i"
+	@echo "... x_pigpio.s"
+	@echo "... x_pigpiod_if.o"
+	@echo "... x_pigpiod_if.i"
+	@echo "... x_pigpiod_if.s"
+	@echo "... x_pigpiod_if2.o"
+	@echo "... x_pigpiod_if2.i"
+	@echo "... x_pigpiod_if2.s"
 .PHONY : help
 
 
