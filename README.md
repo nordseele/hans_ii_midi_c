@@ -4,17 +4,13 @@ Monome Teletype + Hans | II to MIDI
 
 #### Compile:
 
-    git clone https://github.com/nordseele/hans_ii_midi_c.git
-    cd hans_ii_midi_c
-    git submodule init
-    git submodule update
 
-    cd build
-    make
+    g++ -Wall -D__LINUX_ALSA__ -o hans_ii_midi main.cpp RtMidi.cpp -lpigpio -lasound -lpthread
 
-#### Run (temp):
 
-sudo ./home/pi/hans_ii_midi_c/build/hans_ii_midi
+#### Run:
+
+sudo ./hans_ii_midi
 
 
 #### Troubleshooting: 
@@ -26,8 +22,6 @@ sudo ./home/pi/hans_ii_midi_c/build/hans_ii_midi
 
 #### Tasks
 
-    - Task -> fix issue with cmake not copying the files corretly following a sudo make install. (cf Rtmidiconfig.cmake)
-    - Create a service. 
     - 🧹
     - ⚒
 
