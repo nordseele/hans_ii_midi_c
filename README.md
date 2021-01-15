@@ -11,12 +11,12 @@ Monome Teletype + Hans | II to MIDI
 
 #### Run:
 
-sudo ./hans_ii_midi
+    sudo ./hans_ii_midi
 
 #### Add a service
 
-sudo cp hans_ii_midi.service /etc/systemd/system/
-sudo enable hans_ii_midi.service
+    sudo cp hans_ii_midi.service /etc/systemd/system/
+    sudo systemctl enable hans_ii_midi.service
 
 #### Troubleshooting: 
 
