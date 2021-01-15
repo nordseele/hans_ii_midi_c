@@ -1,6 +1,6 @@
 #include <iostream>
 #include <cstdlib>
-#include "RtMidi.h"
+#include <RtMidi.h>
 #include <pigpio.h>
 
 #define SLAVE_I2C_ADDRESS 0x41

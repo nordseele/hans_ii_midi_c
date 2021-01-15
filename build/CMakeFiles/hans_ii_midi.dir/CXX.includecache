@@ -6,3 +6,13 @@
 
 #IncludeRegexTransform: 
 
+/home/pi/hans_ii_midi_c/main.cpp
+iostream
+-
+cstdlib
+-
+RtMidi.h
+-
+pigpio.h
+-
+
