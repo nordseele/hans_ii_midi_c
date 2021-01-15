@@ -1,1 +1,0 @@
-/usr/bin/c++   -Wall   CMakeFiles/midiclock.dir/tests/midiclock.cpp.o  -o tests/midiclock -Wl,-rpath,/home/pi/hans_ii_midi_c/build/rtmidi librtmidi.so.5.0.0 -ljack /usr/lib/arm-linux-gnueabihf/libasound.so -lpthread 
