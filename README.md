@@ -25,9 +25,3 @@ sudo ./hans_ii_midi
 
     - 🧹
     - ⚒
-
-#### Special update script for K
-Ssh to Hans with `sudo ssh pi@hans.local` and run the following commands. 
-
-    wget https://raw.githubusercontent.com/nordseele/hans_ii_midi_c/master/update.sh
-    chmod +x update.sh && ./update.sh
