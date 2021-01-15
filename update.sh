@@ -1,5 +1,6 @@
 #!/bin/sh
 
+sudo apt-get install cmake
 sudo systemctl stop hans_ii_midi
 sudo systemctl disable hans_ii_midi
 sudo systemctl stop pigpiod
