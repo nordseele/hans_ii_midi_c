@@ -17,6 +17,8 @@ Monome Teletype + Hans | II to MIDI
 
     sudo cp hans_ii_midi.service /etc/systemd/system/
     sudo systemctl enable hans_ii_midi.service
+    
+    sudo reboot
 
 #### Troubleshooting: 
 
