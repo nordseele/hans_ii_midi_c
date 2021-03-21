@@ -26,12 +26,12 @@ Monome Teletype + Hans | II to MIDI
     sudo systemctl disable pigpio
     
 ### Usage:
-    Hans doesn't have it's own TT operators. For sending MIDI from Teletype, you'll use the Disting EX MIDI operators.
-    https://github.com/scanner-darkly/teletype/wiki/DISTING-EX-INTEGRATION#midi-ops 
-    By default, Hans receives ii at the address 0x41 
-    
-    Another possibliity would be to use the II generic ops for formating MIDI messages.
-    i.e: `IISB2 144 22 76` to send a Note On 22 message on channel 1 with a velocity of 76
+Hans doesn't have it's own TT operators. For sending MIDI from Teletype, you'll use the Disting EX MIDI operators.
+https://github.com/scanner-darkly/teletype/wiki/DISTING-EX-INTEGRATION#midi-ops 
+By default, Hans receives ii at the address 0x41 
+
+Another possibliity would be to use the II generic ops for formating MIDI messages.
+i.e: `IISB2 144 22 76` to send a Note On 22 message on channel 1 with a velocity of 76
 
 #### Tasks
 
