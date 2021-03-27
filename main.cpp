@@ -170,7 +170,6 @@ int main()
 
 /*
   HANS_II_MIDI // Teletype to MIDI via I2C 0.0.1
-  Nordseele 2021 | written in pure "newbie" c++ | Could (and will) surely be improved but needs intensive testing first.
   Usage: Connect Teletype to Hans (ii follower). Use the Disting EX MIDI ops.
   Requirements: Hans add-on board for RPI Z.
   Libraries: Pigpio + RTMidi.
