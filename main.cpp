@@ -2,6 +2,7 @@
 #include <cstdlib>
 #include <pigpio.h>
 #include "RtMidi.h"
+#include <unistd.h>
 
 #define SLAVE_I2C_ADDRESS 0x41
 #define DEBUG false
@@ -159,6 +160,8 @@ int main()
             }
           }
         } 
+        // allow thread to sleep: reduces the CPU usage by 2 and doesn't seem to affect the reception.
+        usleep(1); 
       } 
     }
     else {
