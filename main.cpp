@@ -5,7 +5,7 @@
 #include <unistd.h>
 
 #define SLAVE_I2C_ADDRESS 0x41
-#define DEBUG false
+#define DEBUG true
 
 using namespace std;
 
