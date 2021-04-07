@@ -51,7 +51,7 @@ int getControlBits(int address /* max 127 */, bool open) {
 
     int flags;
     if(open)
-        flags = /*RE:*/ (1 << 9) | /*TE:*/ (1 << 8) | /*I2:*/ (1 << 2) | /*EN:*/ (1 << 0);
+        flags = /*RE:*/ (1 << 9) | /*TE:*/ (0 << 8) | /*I2:*/ (1 << 2) | /*EN:*/ (1 << 0);
     else // Close/Abort
         flags = /*BK:*/ (1 << 7) | /*I2:*/ (0 << 2) | /*EN:*/ (0 << 0);
 
@@ -73,17 +73,19 @@ int main()
  
   // I2C follower init
   gpioInitialise();
+  xfer.rxCnt = 0;
   cout << "Initialized GPIOs\n";
 
   // Close any old device
   xfer.control = getControlBits(SLAVE_I2C_ADDRESS, false);
   bscXfer(&xfer);
-
+  xfer.rxCnt = 0;
+  
   // Set I2C slave Address 
   xfer.control = getControlBits(SLAVE_I2C_ADDRESS, true);
   int status = bscXfer(&xfer); 
   
-  // Parse, format and send MIDI message -- Use event ? 
+  // Parse, format and send MIDI message
   if (status >= 0) {
       cout << "Opened connection with Teletype\n";
       xfer.rxCnt = 0;
@@ -91,14 +93,24 @@ int main()
         bscXfer(&xfer);
         if(xfer.rxCnt > 0) {
           if (DEBUG) {
-            cout << "received\n";
             for(int i = 0; i < xfer.rxCnt; i++) {
               cout << +xfer.rxBuf[i] << " ";
             }
             cout << "\n";
           }
+      // SUPER SIMPLIFIED VERSION - NOT RISK FREE
+      /*
+          if (xfer.rxCnt > 0 && xfer.rxBuf[0] == 0x4F) {
+            vector<unsigned char> message;
+            for(int i = 1; i < xfer.rxCnt; i++) {
+              message.push_back(xfer.rxBuf[i]);
+            }
+            midiout->sendMessage(&message);
+          }
 
-          for(int i = 0; i < xfer.rxCnt; i++) {
+      */
+
+        for(int i = 0; i < xfer.rxCnt; i++) {
             int byte = xfer.rxBuf[i];
             int is_status_byte = xfer.rxBuf[i] >> 7;
 
@@ -158,10 +170,13 @@ int main()
                 break;
               }
             }
-          }
+          } 
+
+
+
         } 
         // allow thread to sleep: reduces the CPU usage by 2 and doesn't seem to affect the reception.
-        usleep(1); 
+        usleep(2); 
       } 
     }
     else {
