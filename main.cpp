@@ -47,8 +47,6 @@ int getControlBits(int address /* max 127 */, bool open) {
     EN  enable BSC peripheral
     */
 
-    // Flags like this: 0b/*IT:*/0/*HC:*/0/*TF:*/0/*IR:*/0/*RE:*/0/*TE:*/0/*BK:*/0/*EC:*/0/*ES:*/0/*PL:*/0/*PH:*/0/*I2:*/0/*SP:*/0/*EN:*/0;
-
     int flags;
     if(open)
         flags = /*RE:*/ (1 << 9) | /*TE:*/ (0 << 8) | /*I2:*/ (1 << 2) | /*EN:*/ (1 << 0);
@@ -98,17 +96,6 @@ int main()
             }
             cout << "\n";
           }
-      // SUPER SIMPLIFIED VERSION - NOT RISK FREE
-      /*
-          if (xfer.rxCnt > 0 && xfer.rxBuf[0] == 0x4F) {
-            vector<unsigned char> message;
-            for(int i = 1; i < xfer.rxCnt; i++) {
-              message.push_back(xfer.rxBuf[i]);
-            }
-            midiout->sendMessage(&message);
-          }
-
-      */
 
         for(int i = 0; i < xfer.rxCnt; i++) {
             int byte = xfer.rxBuf[i];
@@ -171,9 +158,6 @@ int main()
               }
             }
           } 
-
-
-
         } 
         // allow thread to sleep: reduces the CPU usage by 2 and doesn't seem to affect the reception.
         usleep(2); 
@@ -188,7 +172,7 @@ int main()
 
 /*
   HANS_II_MIDI // Teletype to MIDI via I2C 0.0.1
-  Usage: Connect Teletype to Hans (ii follower). Use the Disting EX MIDI ops.
+  Usage: Connect Teletype to Hans (ii follower). Use the Disting EX MIDI ops. Not compatible with Crow.
   Requirements: Hans add-on board for RPI Z.
   Libraries: Pigpio + RTMidi.
 */
