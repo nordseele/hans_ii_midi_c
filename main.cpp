@@ -159,8 +159,7 @@ int main()
             }
           } 
         } 
-        // allow thread to sleep: reduces the CPU usage by 2 and doesn't seem to affect the reception.
-        usleep(2); 
+        usleep(500); 
       } 
     }
     else {

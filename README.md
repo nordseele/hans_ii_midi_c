@@ -6,7 +6,7 @@ Monome Teletype + Hans | II to MIDI
     git clone https://github.com/nordseele/hans_ii_midi_c.git
     sudo apt-get install -y pigpio
     cd hans_ii_midi_c
-    g++ -Wall -D__LINUX_ALSA__ -o hans_ii_midi main.cpp RtMidi.cpp -lpigpio -lasound -lpthread
+    g++ -Wall -w -D__LINUX_ALSA__ -o hans_ii_midi main.cpp RtMidi.cpp -lpigpio -lasound -lpthread
 
 
 #### Running:
