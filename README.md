@@ -2,8 +2,10 @@
 
 Monome Teletype + Hans | II to MIDI
 
+____
 
-### IMPORTANT: 
+
+#### IMPORTANT: 
 
 ##### Incompatibility with Monome CROW
 At the time of writing (april 2021), this program is not compatible with Monome Crow, they cannot be connected to the same i2c bus.
