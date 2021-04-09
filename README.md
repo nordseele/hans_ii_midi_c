@@ -7,10 +7,10 @@ ____
 
 #### IMPORTANT: 
 
-##### Incompatibility with Monome CROW
+#### Incompatibility with Monome CROW
 At the time of writing (april 2021), this program is not compatible with Monome Crow, they cannot be connected to the same i2c bus.
 
-##### Connection to the i2c header A on the Hans board
+#### Connection to the i2c header A on the Hans board
 Teletype must be connected to the i2c header [ A ] (cf. silkscreen).
 
 
