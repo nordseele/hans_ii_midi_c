@@ -1,6 +1,18 @@
-# # Hans [ Teletype ii => MIDI ] 
+## Hans [ Teletype ii => MIDI ] 
 
 Monome Teletype + Hans | II to MIDI
+
+
+### IMPORTANT: 
+
+##### Incompatibility with Monome CROW
+At the time of writing (april 2021), this program is not compatible with Monome Crow, they cannot be connected to the same i2c bus.
+
+##### Connection to the i2c header A on the Hans board
+Teletype must be connected to the i2c header [ A ] (cf. silkscreen).
+
+
+-----
 
 #### Compiling:
     git clone https://github.com/nordseele/hans_ii_midi_c.git
@@ -8,13 +20,6 @@ Monome Teletype + Hans | II to MIDI
     cd hans_ii_midi_c
     g++ -Wall -w -D__LINUX_ALSA__ -o hans_ii_midi main.cpp RtMidi.cpp -lpigpio -lasound -lpthread
 
-#### IMPORTANT: 
-
-##### Incompatibility with Monome CROW
-At the time of writing (april 2021), this program is not compatible with Monome Crow, they cannot be connected to the same i2c bus.
-
-##### Connection to the i2c header A on the Hans board
-Teletype must be connected to the i2c header [ A ] (cf. silkscreen).
 
 #### Running:
 
