@@ -68,9 +68,9 @@ int main()
               int operation = byte & 0xF0;
               vector<unsigned char> message;
               
-              // Temporary code
               switch (operation)
                 {
+                // notes and CC
                 case 0x80:
                 case 0x90:
                 case 0xB0:
@@ -86,7 +86,7 @@ int main()
                     midiout->sendMessage(&message);
                   }
                   break;
-
+                // Prg change
                 case 0xC0:
                   message.push_back(xfer.rxBuf[i]);
                   for(int j = 1; j < 2; j++) {
@@ -100,21 +100,10 @@ int main()
                     midiout->sendMessage(&message);
                   }
                   break;
-    
+                // Beatclock | 0xF8, 0xFA, 0xFB, 0xFC
                 case 0xF0:
-                  if (xfer.rxBuf[i] == 0xF8){
-                    message.push_back(xfer.rxBuf[i]);
-                    midiout->sendMessage(&message);
-                  } else if (xfer.rxBuf[i] == 0xFA){
-                    message.push_back(xfer.rxBuf[i]);
-                    midiout->sendMessage(&message);                      
-                  } else if (xfer.rxBuf[i] == 0xFB){
-                    message.push_back(xfer.rxBuf[i]);
-                    midiout->sendMessage(&message);                      
-                  } else if (xfer.rxBuf[i] == 0xFC){
-                    message.push_back(xfer.rxBuf[i]);
-                    midiout->sendMessage(&message);                      
-                  }
+                  message.push_back(xfer.rxBuf[i]);
+                  midiout->sendMessage(&message);
                   break;
 
                 default:
@@ -126,7 +115,7 @@ int main()
           }
           
         } 
-        usleep(1000); 
+        usleep(1000); // reduce usleep time if needed.
       } 
     }
     else {
