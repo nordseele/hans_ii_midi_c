@@ -8,6 +8,10 @@ Monome Teletype + Hans | II to MIDI
     cd hans_ii_midi_c
     g++ -Wall -w -D__LINUX_ALSA__ -o hans_ii_midi main.cpp RtMidi.cpp -lpigpio -lasound -lpthread
 
+#### IMPORTANT: 
+
+##### Incompatibility with Monome CROW
+At the time of writing (april 2021), this program is not compatible with Monome Crow, they cannot be connected to the same i2c bus.
 
 #### Running:
 
@@ -35,7 +39,3 @@ By default, Hans receives ii at the address 0x41
 Another possibliity would be to use the II generic ops for formating MIDI messages.
 i.e: `IISB2 144 22 76` to send a Note On 22 message on channel 1 with a velocity of 76
 
-#### Tasks
-
-    - 🧹
-    - ⚒
