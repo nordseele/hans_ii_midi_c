@@ -100,7 +100,7 @@ int main()
                     midiout->sendMessage(&message);
                   }
                   break;
-                // Beatclock | 0xF8, 0xFA, 0xFB, 0xFC
+                // Beatclock | 0xF8, 0xFA, 0xFB, 0xFC | Sent twice from TT or bug ?
                 case 0xF0:
                   message.push_back(xfer.rxBuf[i]);
                   midiout->sendMessage(&message);

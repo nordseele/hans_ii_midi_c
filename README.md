@@ -1,7 +1,8 @@
 ## Hans [ Teletype ii => MIDI ] 
 
-Monome Teletype + Hans | II to MIDI
 
+#### Description 
+MIDI from Teletype over i2c. Output on serial MIDI and USB MIDI. [Soon: OSC]
 ____
 
 
@@ -48,4 +49,9 @@ By default, Hans receives ii at the address 0x41
 
 Another possibliity would be to use the II generic ops for formating MIDI messages.
 i.e: `IISB2 144 22 76` to send a Note On 22 message on channel 1 with a velocity of 76
+
+
+### Roadmap
+
+- OSC client for TELETYPE to OSC
 
